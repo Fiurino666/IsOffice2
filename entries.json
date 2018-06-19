@@ -1,0 +1,509 @@
+{
+  "nextEntryId": 88,
+  "nodes": [
+    {
+      "id": "0",
+      "name": "TextData",
+      "type": null,
+      "children": [
+        {
+          "id": "67",
+          "name": "TextDateScript",
+          "type": "script"
+        },
+        {
+          "id": "68",
+          "name": "FR",
+          "type": "script"
+        },
+        {
+          "id": "69",
+          "name": "EN",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Interface0Personnalisation",
+      "type": null,
+      "children": [
+        {
+          "id": "14",
+          "name": "Scene",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "15",
+          "name": "Script",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "11",
+          "name": "Sprite",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "12",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Interface1Principal",
+      "type": null,
+      "children": [
+        {
+          "id": "16",
+          "name": "Scene",
+          "type": null,
+          "children": [
+            {
+              "id": "73",
+              "name": "PrincipalScene",
+              "type": "scene"
+            }
+          ]
+        },
+        {
+          "id": "17",
+          "name": "Script",
+          "type": null,
+          "children": [
+            {
+              "id": "55",
+              "name": "ScriptPrincipal",
+              "type": "script"
+            },
+            {
+              "id": "87",
+              "name": "PhaseScript",
+              "type": "script"
+            }
+          ]
+        },
+        {
+          "id": "18",
+          "name": "Sprite",
+          "type": null,
+          "children": [
+            {
+              "id": "48",
+              "name": "Comptable",
+              "type": "sprite"
+            },
+            {
+              "id": "85",
+              "name": "ComptableLivre",
+              "type": "sprite"
+            },
+            {
+              "id": "83",
+              "name": "Ouvrier",
+              "type": "sprite"
+            },
+            {
+              "id": "84",
+              "name": "OuvrierMachine",
+              "type": "sprite"
+            },
+            {
+              "id": "86",
+              "name": "Commercial",
+              "type": "sprite"
+            },
+            {
+              "id": "49",
+              "name": "Fond",
+              "type": "sprite"
+            },
+            {
+              "id": "50",
+              "name": "Patron",
+              "type": "sprite"
+            },
+            {
+              "id": "51",
+              "name": "Ecran",
+              "type": "sprite"
+            },
+            {
+              "id": "52",
+              "name": "Chassis",
+              "type": "sprite"
+            },
+            {
+              "id": "53",
+              "name": "Composant",
+              "type": "sprite"
+            },
+            {
+              "id": "54",
+              "name": "Tablette",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "19",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Interface2Personnel",
+      "type": null,
+      "children": [
+        {
+          "id": "20",
+          "name": "Scene",
+          "type": null,
+          "children": [
+            {
+              "id": "65",
+              "name": "PersonnelScene",
+              "type": "scene"
+            }
+          ]
+        },
+        {
+          "id": "21",
+          "name": "Script",
+          "type": null,
+          "children": [
+            {
+              "id": "71",
+              "name": "PersonnelScript",
+              "type": "script"
+            }
+          ]
+        },
+        {
+          "id": "22",
+          "name": "Sprite",
+          "type": null,
+          "children": [
+            {
+              "id": "58",
+              "name": "Ouvrier",
+              "type": "sprite"
+            },
+            {
+              "id": "59",
+              "name": "Commercial",
+              "type": "sprite"
+            },
+            {
+              "id": "60",
+              "name": "Comptable",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "23",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Interface3Achat",
+      "type": null,
+      "children": [
+        {
+          "id": "24",
+          "name": "Scene",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "25",
+          "name": "Script",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "26",
+          "name": "Sprite",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "27",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Interface4Produire",
+      "type": null,
+      "children": [
+        {
+          "id": "28",
+          "name": "Scene",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "29",
+          "name": "Script",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "30",
+          "name": "Sprite",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "31",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Interface5Vendre",
+      "type": null,
+      "children": [
+        {
+          "id": "32",
+          "name": "Scene",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "33",
+          "name": "Script",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "34",
+          "name": "Sprite",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "35",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Interface6Compter",
+      "type": null,
+      "children": [
+        {
+          "id": "36",
+          "name": "Scene",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "37",
+          "name": "Script",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "38",
+          "name": "Sprite",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "39",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Interface7Menu",
+      "type": null,
+      "children": [
+        {
+          "id": "40",
+          "name": "Scene",
+          "type": null,
+          "children": [
+            {
+              "id": "66",
+              "name": "MenuScene",
+              "type": "scene"
+            }
+          ]
+        },
+        {
+          "id": "41",
+          "name": "Script",
+          "type": null,
+          "children": [
+            {
+              "id": "70",
+              "name": "MenuScript",
+              "type": "script"
+            }
+          ]
+        },
+        {
+          "id": "42",
+          "name": "Sprite",
+          "type": null,
+          "children": [
+            {
+              "id": "57",
+              "name": "Sport",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "43",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Cycle du jeu",
+      "type": null,
+      "children": [
+        {
+          "id": "44",
+          "name": "Sprite",
+          "type": null,
+          "children": [
+            {
+              "id": "72",
+              "name": "CycleScript",
+              "type": "script"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Global",
+      "type": null,
+      "children": [
+        {
+          "id": "13",
+          "name": "Font",
+          "type": null,
+          "children": [
+            {
+              "id": "45",
+              "name": "Principale",
+              "type": "font"
+            },
+            {
+              "id": "46",
+              "name": "Titre",
+              "type": "font"
+            },
+            {
+              "id": "74",
+              "name": "Bold",
+              "type": "font"
+            },
+            {
+              "id": "75",
+              "name": "Black",
+              "type": "font"
+            },
+            {
+              "id": "76",
+              "name": "Italic",
+              "type": "font"
+            },
+            {
+              "id": "77",
+              "name": "DemiBold",
+              "type": "font"
+            },
+            {
+              "id": "78",
+              "name": "ExtraBold",
+              "type": "font"
+            },
+            {
+              "id": "79",
+              "name": "Light",
+              "type": "font"
+            },
+            {
+              "id": "80",
+              "name": "Medium",
+              "type": "font"
+            },
+            {
+              "id": "81",
+              "name": "Regular",
+              "type": "font"
+            },
+            {
+              "id": "82",
+              "name": "Thin",
+              "type": "font"
+            }
+          ]
+        },
+        {
+          "id": "61",
+          "name": "Sprite",
+          "type": null,
+          "children": [
+            {
+              "id": "62",
+              "name": "Bouton",
+              "type": "sprite"
+            },
+            {
+              "id": "63",
+              "name": "Assistant",
+              "type": "sprite"
+            },
+            {
+              "id": "64",
+              "name": "FondPhase",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "56",
+          "name": "ScriptGlobal",
+          "type": "script"
+        }
+      ]
+    }
+  ]
+}

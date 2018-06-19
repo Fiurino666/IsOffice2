@@ -1,0 +1,66 @@
+{
+  "behaviors": {
+    "ScriptPrincipalBehavior": {
+      "scriptId": "55",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "phaseIndex",
+          "type": "number"
+        },
+        {
+          "name": "isHover",
+          "type": "boolean"
+        }
+      ]
+    },
+    "MenuScriptBehavior": {
+      "scriptId": "70",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "menuIndex",
+          "type": "number"
+        },
+        {
+          "name": "isHover",
+          "type": "boolean"
+        }
+      ]
+    },
+    "PersonnelScriptBehavior": {
+      "scriptId": "71",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "menuIndex",
+          "type": "number"
+        },
+        {
+          "name": "isHover",
+          "type": "boolean"
+        }
+      ]
+    },
+    "CycleScriptBehavior": {
+      "scriptId": "72",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "PhaseScriptBehavior": {
+      "scriptId": "87",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "menuIndex",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}
