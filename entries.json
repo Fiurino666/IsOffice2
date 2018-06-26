@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 88,
+  "nextEntryId": 106,
   "nodes": [
     {
       "id": "0",
@@ -32,13 +32,35 @@
           "id": "14",
           "name": "Scene",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "88",
+              "name": "ScenePerso",
+              "type": "scene"
+            }
+          ]
         },
         {
           "id": "15",
           "name": "Script",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "94",
+              "name": "ScriptPerso",
+              "type": "script"
+            },
+            {
+              "id": "95",
+              "name": "ScriptPersonnalisation",
+              "type": "script"
+            },
+            {
+              "id": "98",
+              "name": "ScriptInput",
+              "type": "script"
+            }
+          ]
         },
         {
           "id": "11",
@@ -206,6 +228,31 @@
               "id": "60",
               "name": "Comptable",
               "type": "sprite"
+            },
+            {
+              "id": "100",
+              "name": "Tablette",
+              "type": "sprite"
+            },
+            {
+              "id": "101",
+              "name": "Fleche",
+              "type": "sprite"
+            },
+            {
+              "id": "102",
+              "name": "txtOuvrier",
+              "type": "sprite"
+            },
+            {
+              "id": "103",
+              "name": "txtCommercial",
+              "type": "sprite"
+            },
+            {
+              "id": "104",
+              "name": "txtComptable",
+              "type": "sprite"
             }
           ]
         },
@@ -226,7 +273,13 @@
           "id": "24",
           "name": "Scene",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "89",
+              "name": "SceneAcheter",
+              "type": "scene"
+            }
+          ]
         },
         {
           "id": "25",
@@ -257,7 +310,13 @@
           "id": "28",
           "name": "Scene",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "90",
+              "name": "SceneProduire",
+              "type": "scene"
+            }
+          ]
         },
         {
           "id": "29",
@@ -288,7 +347,13 @@
           "id": "32",
           "name": "Scene",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "91",
+              "name": "SceneVendre",
+              "type": "scene"
+            }
+          ]
         },
         {
           "id": "33",
@@ -319,7 +384,13 @@
           "id": "36",
           "name": "Scene",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "92",
+              "name": "SceneCompter",
+              "type": "scene"
+            }
+          ]
         },
         {
           "id": "37",
@@ -379,6 +450,11 @@
               "id": "57",
               "name": "Sport",
               "type": "sprite"
+            },
+            {
+              "id": "105",
+              "name": "FondAlternatif",
+              "type": "sprite"
             }
           ]
         },
@@ -397,7 +473,7 @@
       "children": [
         {
           "id": "44",
-          "name": "Sprite",
+          "name": "Script",
           "type": null,
           "children": [
             {

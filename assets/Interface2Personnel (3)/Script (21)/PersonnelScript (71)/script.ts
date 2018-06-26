@@ -5,14 +5,49 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   ray = new Sup.Math.Ray();
   isHover: boolean = false;
   
+  //on relie les boutons
+  EmbaucherOuvrier : Sup.Actor = Sup.getActor("Bouton").getChild("EmbaucherOuvrier");
+  EmbaucherCommercial : Sup.Actor = Sup.getActor("Bouton").getChild("EmbaucherCommercial");
+  EmbaucherComptable : Sup.Actor = Sup.getActor("Bouton").getChild("EmbaucherComptable");
+  LicencierOuvrier : Sup.Actor = Sup.getActor("Bouton").getChild("LicencierOuvrier");
+  LicencierCommercial : Sup.Actor = Sup.getActor("Bouton").getChild("LicencierCommercial");
+  LicencierComptable : Sup.Actor = Sup.getActor("Bouton").getChild("LicencierComptable");
+  Valider : Sup.Actor = Sup.getActor("Bouton").getChild("Valider");
+  Annuler : Sup.Actor = Sup.getActor("Bouton").getChild("Annuler");
+    
+  EffectifOuvrier : Sup.Actor = Sup.getActor("Variable").getChild("Ouvrier").getChild("EffO");
+  ValeurEmbOuvrier : Sup.Actor = Sup.getActor("Variable").getChild("Ouvrier").getChild("EmbO");
+  ValeurLicOuvrier : Sup.Actor = Sup.getActor("Variable").getChild("Ouvrier").getChild("LicO");
+  SalaireTotOuvrier : Sup.Actor = Sup.getActor("Variable").getChild("Ouvrier").getChild("SalO");
+  TotalOuvrier : Sup.Actor = Sup.getActor("Variable").getChild("Ouvrier").getChild("TotO");
+    
+  EffectifCommercial : Sup.Actor = Sup.getActor("Variable").getChild("Commercial").getChild("EffC");
+  ValeurEmbCommercial : Sup.Actor = Sup.getActor("Variable").getChild("Commercial").getChild("EmbC");
+  ValeurLicCommercial : Sup.Actor = Sup.getActor("Variable").getChild("Commercial").getChild("LicC");
+  SalaireTotCommercial : Sup.Actor = Sup.getActor("Variable").getChild("Commercial").getChild("SalC");
+  TotalCommercial : Sup.Actor = Sup.getActor("Variable").getChild("Commercial").getChild("TotC");
+    
+  EffectifComptable : Sup.Actor = Sup.getActor("Variable").getChild("Comptable").getChild("EffCC");
+  ValeurEmbComptable : Sup.Actor = Sup.getActor("Variable").getChild("Comptable").getChild("EmbCC");
+  ValeurLicComptable : Sup.Actor = Sup.getActor("Variable").getChild("Comptable").getChild("LicCC");
+  SalaireTotComptable : Sup.Actor = Sup.getActor("Variable").getChild("Comptable").getChild("SalCC");
+    
+  MasseSalariale : Sup.Actor = Sup.getActor("Variable").getChild("Masse").getChild("MasseSalariale");
+  
+  //on initialise les variables locales, necessaires pour le bouton annuler
+  localnbOuvrier: number = nbOuvrier;
+  localnbCommercial: number = nbCommercial;
+  localnbComptable: number = nbComptable;
+  
   awake() {
     jeuTour = 1;
     Sup.log(`jeuTour: ${jeuTour}`);
+    
   }
   
   start() {
     this.cliqueBouton();
-    this.menus = Sup.getActor("Boutons").getChild("Rectangle").getChildren();
+    this.menus = Sup.getActor("Bouton").getChildren();
     
     this.updateMenu(1);
   }
@@ -22,72 +57,75 @@ class PersonnelScriptBehavior extends Sup.Behavior {
     this.updateMenu(1);
     //enleve le flip vertical du clik sur le bouton
     this.noclic();
-    
-    //pour que le fait de passer le curseur dessus change l opacite a 0.7
+    //pour le curseur quand il est dessus change l opacite a 0.7
     this.mouseNavigation();
   }
   
   cliqueBouton(){
     
-    //on relie les boutons
-    const EmbaucherOuvrier : Sup.Actor = Sup.getActor("Boutons").getChild("Rectangle").getChild("btnEmbaucherOuvrier");
-    const EmbaucherCommercial : Sup.Actor = Sup.getActor("Boutons").getChild("Rectangle").getChild("btnEmbaucherCommercial");
-    const EmbaucherComptable : Sup.Actor = Sup.getActor("Boutons").getChild("Rectangle").getChild("btnEmbaucherComptable");
-    const LicencierOuvrier : Sup.Actor = Sup.getActor("Boutons").getChild("Rectangle").getChild("btnLicencierOuvrier");
-    const LicencierCommercial : Sup.Actor = Sup.getActor("Boutons").getChild("Rectangle").getChild("btnLicencierCommercial");
-    const LicencierComptable : Sup.Actor = Sup.getActor("Boutons").getChild("Rectangle").getChild("btnLicencierComptable");
-    
-    const AfficheOuvrier : Sup.Actor = Sup.getActor("Labels").getChild("AfficheOuvrier");
-    const AfficheCommercial : Sup.Actor = Sup.getActor("Labels").getChild("AfficheCommercial");
-    const AfficheComptable : Sup.Actor = Sup.getActor("Labels").getChild("AfficheComptable");
-    
     //on leur donne des instructions : Embaucher
-    EmbaucherOuvrier.fMouseInput.emitter.on("leftClickReleased", () => { 
-      nbOuvrier += 1;
-      AfficheOuvrier.textRenderer.setText(nbOuvrier);
-      this.clicVisuel(EmbaucherOuvrier);
+    this.EmbaucherOuvrier.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.localnbOuvrier += 1;
+      this.EffectifOuvrier.textRenderer.setText(this.localnbOuvrier);
+      this.clicVisuel(this.EmbaucherOuvrier);
       //Sup.log(`Nombre d ouvrier ${nbOuvrier}`);
     });
 
-    EmbaucherCommercial.fMouseInput.emitter.on("leftClickReleased", () => { 
-      nbCommercial += 1;
-      AfficheCommercial.textRenderer.setText(nbCommercial);
-      this.clicVisuel(EmbaucherCommercial);
+    this.EmbaucherCommercial.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.localnbCommercial += 1;
+      this.EffectifCommercial.textRenderer.setText(this.localnbCommercial);
+      this.clicVisuel(this.EmbaucherCommercial);
       //Sup.log(`Nombre d commercial ${nbCommercial}`); 
     });
     
-    EmbaucherComptable.fMouseInput.emitter.on("leftClickReleased", () => { 
-      nbComptable += 1;
-      AfficheComptable.textRenderer.setText(nbComptable);
-      this.clicVisuel(EmbaucherComptable);
+    this.EmbaucherComptable.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.localnbComptable += 1;
+      this.EffectifComptable.textRenderer.setText(this.localnbComptable);
+      this.clicVisuel(this.EmbaucherComptable);
       //Sup.log(`Nombre d comptable ${nbComptable}`); 
     });
     
     //Licencier
-    LicencierOuvrier.fMouseInput.emitter.on("leftClickReleased", () => { 
-      if(nbOuvrier > 0){
-        nbOuvrier -= 1;
+    this.LicencierOuvrier.fMouseInput.emitter.on("leftClickReleased", () => { 
+      if(this.localnbOuvrier > 0){
+        this.localnbOuvrier -= 1;
       }
-      AfficheOuvrier.textRenderer.setText(nbOuvrier);
-      this.clicVisuel(LicencierOuvrier);
+      this.EffectifOuvrier.textRenderer.setText(this.localnbOuvrier);
+      this.clicVisuel(this.LicencierOuvrier);
       //Sup.log(`Nombre d ouvrier ${nbOuvrier}`);
     });
     
-    LicencierCommercial.fMouseInput.emitter.on("leftClickReleased", () => { 
-      if(nbCommercial > 0){
-        nbCommercial -= 1;
+    this.LicencierCommercial.fMouseInput.emitter.on("leftClickReleased", () => { 
+      if(this.localnbCommercial > 0){
+        this.localnbCommercial -= 1;
       }
-      AfficheCommercial.textRenderer.setText(nbCommercial);
-      this.clicVisuel(LicencierCommercial);
+      this.EffectifCommercial.textRenderer.setText(this.localnbCommercial);
+      this.clicVisuel(this.LicencierCommercial);
       //Sup.log(`Nombre d commercial ${nbCommercial}`);
     });
     
-    LicencierComptable.fMouseInput.emitter.on("leftClickReleased", () => { 
-      if(nbComptable > 0){
-        nbComptable -= 1;
+    this.LicencierComptable.fMouseInput.emitter.on("leftClickReleased", () => { 
+      if(this.localnbComptable > 0){
+        this.localnbComptable -= 1;
       }
-      AfficheComptable.textRenderer.setText(nbComptable);
-      this.clicVisuel(LicencierComptable);
+      this.EffectifComptable.textRenderer.setText(this.localnbComptable);
+      this.clicVisuel(this.LicencierComptable);
+      //Sup.log(`Nombre d comptable ${nbComptable}`); 
+    });
+    
+    this.Annuler.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.localnbOuvrier = nbOuvrier;
+      this.localnbCommercial = nbCommercial;
+      this.localnbComptable = nbComptable;
+      // !!!!! A gerer rafraichir l'affichage des labels !!!!!!!
+      //Sup.log(`Nombre d comptable ${nbComptable}`);
+    });
+    
+    this.Valider.fMouseInput.emitter.on("leftClickReleased", () => { 
+      nbOuvrier=this.localnbOuvrier;
+      nbCommercial=this.localnbCommercial;
+      nbComptable=this.localnbComptable;
+      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
       //Sup.log(`Nombre d comptable ${nbComptable}`); 
     });
     
@@ -103,7 +141,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         this.isHover = true;
       }
       this.menuIndex = this.menus.indexOf(hits[0].actor);
-      this.updateMenu( 0.7);
+      this.updateMenu(0.7);
     }
     else{
       if(this.isHover){

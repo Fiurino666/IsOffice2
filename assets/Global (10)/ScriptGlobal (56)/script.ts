@@ -5,3 +5,5 @@ var nbOuvrier: number = 0;
 var nbCommercial: number = 0;
 var nbComptable: number = 0;
 var solde: number = 200000;
+var nom: string  = "";
+var societe: string  = "";

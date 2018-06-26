@@ -15,16 +15,17 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     //On recupere tous les elements contenus dans Menu
     this.phases = Sup.getActor("Phase").getChildren();
     this.updatePhase();
-    this.menu = Sup.getActor("Element").getChild("Fixe").getChild("Menu");
-    this.menu.textRenderer.setOpacity(1);
-    this.menuClique();
+
     this.lblSolde = Sup.getActor("Element").getChild("Fixe").getChild("Solde");
     this.lblSolde.textRenderer.setText(solde + " E");
+    Sup.getActor("Element").getChild("Fixe").getChild("TxtBureauDe").textRenderer.setText("Bureau de "+nom);
+    this.menu = Sup.getActor("Element").getChild("Fixe").getChild("Menu");
   }
 
   update() {
     this.keyNavigation();
     this.mouseNavigation();
+    //this.menuClique();
   }
   
   keyNavigation(){
@@ -60,6 +61,8 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
       }
       this.phaseIndex = this.phases.indexOf(hits[0].actor);
       this.updatePhase();
+      if(Sup.Input.wasMouseButtonJustPressed(0))
+        this.phaseAction();
     }
     //ne pas oublier de desactiver le hover lorsque l on sort
     else{
@@ -69,8 +72,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     }
     
     //un clique gauche appel la fonction
-    if(Sup.Input.wasMouseButtonJustPressed(0))
-      this.phaseAction();
+    
   }
   
   updatePhase(){
@@ -104,7 +106,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   }
   
   menuClique(){
-    //pour afficher l'animation sur la clique du bouton menu
+    //pour afficher l'animation sur le clique du bouton menu
     this.ray.setFromCamera(this.actor.camera, Sup.Input.getMousePosition());
     let hits = this.ray.intersectActor(this.menu);
     if(hits.length > 0){
@@ -112,7 +114,6 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
         this.isHover = true;
       }
       this.phaseIndex = this.phases.indexOf(hits[0].actor);
-      this.menu.textRenderer.setOpacity(0.7);
       if(Sup.Input.wasMouseButtonJustPressed(0))
         Sup.loadScene("Interface7Menu/Scene/MenuScene");
     }

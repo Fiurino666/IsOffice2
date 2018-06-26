@@ -26,8 +26,8 @@
         }
       ],
       "position": {
-        "x": 0,
-        "y": 0,
+        "x": 0.039515335112810135,
+        "y": -0.04741818457841873,
         "z": 0
       },
       "orientation": {
@@ -37,8 +37,8 @@
         "w": 1
       },
       "scale": {
-        "x": 1,
-        "y": 1,
+        "x": 0.984509708273737,
+        "y": 0.9848871909637055,
         "z": 1
       },
       "visible": true,
@@ -54,7 +54,7 @@
           "type": "Camera",
           "config": {
             "formatVersion": 1,
-            "mode": "perspective",
+            "mode": "orthographic",
             "fov": 45,
             "orthographicScale": 10,
             "viewport": {
@@ -68,11 +68,19 @@
             "farClippingPlane": 1000
           },
           "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "MenuScriptBehavior",
+            "propertyValues": {}
+          },
+          "id": "1"
         }
       ],
       "position": {
-        "x": -0.248,
-        "y": 0.071,
+        "x": 0,
+        "y": 0,
         "z": 50
       },
       "orientation": {
@@ -82,8 +90,8 @@
         "w": 1
       },
       "scale": {
-        "x": 1,
-        "y": 1,
+        "x": 1.05,
+        "y": 1.05,
         "z": 1
       },
       "visible": true,
@@ -107,7 +115,7 @@
                 "text": "Menu",
                 "alignment": "center",
                 "verticalAlignment": "center",
-                "size": 40,
+                "size": 80,
                 "color": null,
                 "overrideOpacity": false,
                 "opacity": null
@@ -116,9 +124,9 @@
             }
           ],
           "position": {
-            "x": -0.537407785654068,
-            "y": 4.220231920480728,
-            "z": 0
+            "x": -0.537,
+            "y": 4.22,
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -127,8 +135,8 @@
             "w": 1
           },
           "scale": {
-            "x": 0.5,
-            "y": 0.5,
+            "x": 0.2,
+            "y": 0.2,
             "z": 1
           },
           "visible": true,
@@ -157,9 +165,9 @@
             }
           ],
           "position": {
-            "x": -7.539515107870102,
-            "y": 1.0273971855640411,
-            "z": 0
+            "x": -7.54,
+            "y": 1.027,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -186,7 +194,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "80",
-                "text": "Charger",
+                "text": "Charger Partie",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -198,9 +206,9 @@
             }
           ],
           "position": {
-            "x": -7.586933225393295,
-            "y": -0.9483666121959686,
-            "z": 0
+            "x": -7.587,
+            "y": -0.948,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -239,9 +247,9 @@
             }
           ],
           "position": {
-            "x": -7.6343508660793304,
-            "y": -2.9873546063899994,
-            "z": 0
+            "x": -7.634,
+            "y": -2.987,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -280,9 +288,9 @@
             }
           ],
           "position": {
-            "x": 1.991571456193924,
-            "y": 1.0590098202228546,
-            "z": 0
+            "x": 1.992,
+            "y": 1.059,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -321,9 +329,9 @@
             }
           ],
           "position": {
-            "x": 1.944153219461441,
-            "y": -0.9641722738742828,
-            "z": 0
+            "x": 1.944,
+            "y": -0.964,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -362,9 +370,9 @@
             }
           ],
           "position": {
-            "x": 1.9125410616397858,
-            "y": -2.939936250448227,
-            "z": 0
+            "x": 1.913,
+            "y": -2.94,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -383,7 +391,7 @@
         },
         {
           "id": "21",
-          "name": "txtBanque",
+          "name": "txtScore",
           "children": [],
           "components": [
             {
@@ -391,7 +399,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "80",
-                "text": "Banque",
+                "text": "Score",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -403,9 +411,9 @@
             }
           ],
           "position": {
-            "x": 7.033721357584,
-            "y": 1.0273976624011993,
-            "z": 0
+            "x": 7.034,
+            "y": 1.027,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -444,9 +452,9 @@
             }
           ],
           "position": {
-            "x": 6.970496565103531,
-            "y": -0.9799784123897552,
-            "z": 0
+            "x": 6.97,
+            "y": -0.98,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -485,9 +493,9 @@
             }
           ],
           "position": {
-            "x": 6.9388841688632965,
-            "y": -2.971548408269882,
-            "z": 0
+            "x": 6.939,
+            "y": -2.972,
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -507,9 +515,9 @@
       ],
       "components": [],
       "position": {
-        "x": -0.2476290762424469,
-        "y": 0.0711275041103363,
-        "z": 0
+        "x": -0.248,
+        "y": 0.071,
+        "z": 1
       },
       "orientation": {
         "x": 0,
@@ -556,7 +564,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -564,7 +572,7 @@
           "position": {
             "x": -7.5,
             "y": 1,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -607,7 +615,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -615,7 +623,7 @@
           "position": {
             "x": -7.563,
             "y": -1,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -658,7 +666,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -666,7 +674,7 @@
           "position": {
             "x": -7.563,
             "y": -3,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -709,7 +717,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -717,7 +725,7 @@
           "position": {
             "x": 2,
             "y": 1,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -760,7 +768,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -768,7 +776,7 @@
           "position": {
             "x": 2,
             "y": -1,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -811,7 +819,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -819,7 +827,7 @@
           "position": {
             "x": 2,
             "y": -3,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -838,7 +846,7 @@
         },
         {
           "id": "12",
-          "name": "btnBanque",
+          "name": "btnScore",
           "children": [],
           "components": [
             {
@@ -862,7 +870,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -870,7 +878,7 @@
           "position": {
             "x": 7,
             "y": 1,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -913,7 +921,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -921,7 +929,7 @@
           "position": {
             "x": 7,
             "y": -1,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -964,7 +972,7 @@
             {
               "type": "fMouseInput",
               "config": {
-                "cameraActorName": ""
+                "cameraActorName": "Camera"
               },
               "id": "1"
             }
@@ -972,7 +980,7 @@
           "position": {
             "x": 7,
             "y": -3,
-            "z": 0
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -1014,7 +1022,96 @@
     {
       "id": "5",
       "name": "Images",
-      "children": [],
+      "children": [
+        {
+          "id": "24",
+          "name": "Assistant",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "63",
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -1.528,
+            "y": 5.613,
+            "z": 10
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": -0.17441493473343817,
+            "w": 0.9846722441677597
+          },
+          "scale": {
+            "x": 0.4999999979565546,
+            "y": 0.3749999914701372,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "25",
+          "name": "Cadre",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "105",
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 11.769054644017743,
+            "y": -5.583538613531289,
+            "z": -1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.4,
+            "y": 0.4,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
       "components": [
         {
           "type": "SpriteRenderer",
@@ -1036,9 +1133,9 @@
         }
       ],
       "position": {
-        "x": -3.7407803535461426,
-        "y": 0.03951539844274521,
-        "z": 0
+        "x": -3.741,
+        "y": 0.04,
+        "z": 1
       },
       "orientation": {
         "x": 0,

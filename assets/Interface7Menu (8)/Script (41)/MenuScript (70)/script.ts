@@ -17,6 +17,7 @@ class MenuScriptBehavior extends Sup.Behavior {
   }
   
   update() {
+    this.noclic();
     
   }
   
@@ -52,10 +53,12 @@ class MenuScriptBehavior extends Sup.Behavior {
     
     btnFermerMenu.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.clicVisuel(btnFermerMenu);
+      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
     });
     
     btnQuitterJeu.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.clicVisuel(btnQuitterJeu); 
+      Sup.exit();
     });
     
     btnCredits.fMouseInput.emitter.on("leftClickReleased", () => { 
@@ -106,12 +109,12 @@ class MenuScriptBehavior extends Sup.Behavior {
     }
   
   clicVisuel(act: Sup.Actor) {
-    act.spriteRenderer.setVerticalFlip(true)
+    act.spriteRenderer.setVerticalFlip(true);
   }
   
   noclic() {
     for(let i = 0; i < this.menus.length; i++){
-      this.menus[i].spriteRenderer.setVerticalFlip(false)
+      this.menus[i].spriteRenderer.setVerticalFlip(false);
     }
   }
   

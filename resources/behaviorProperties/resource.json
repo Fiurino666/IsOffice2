@@ -42,6 +42,18 @@
         {
           "name": "isHover",
           "type": "boolean"
+        },
+        {
+          "name": "localnbOuvrier",
+          "type": "number"
+        },
+        {
+          "name": "localnbCommercial",
+          "type": "number"
+        },
+        {
+          "name": "localnbComptable",
+          "type": "number"
         }
       ]
     },
@@ -58,6 +70,79 @@
       "properties": [
         {
           "name": "menuIndex",
+          "type": "number"
+        }
+      ]
+    },
+    "ScriptPersoBehavior": {
+      "scriptId": "94",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "text1",
+          "type": "string"
+        },
+        {
+          "name": "text2",
+          "type": "string"
+        },
+        {
+          "name": "column1",
+          "type": "number"
+        },
+        {
+          "name": "column2",
+          "type": "number"
+        },
+        {
+          "name": "cursorWidth",
+          "type": "number"
+        },
+        {
+          "name": "blinkTimer",
+          "type": "number"
+        }
+      ]
+    },
+    "ScriptPersonnalisationBehavior": {
+      "scriptId": "95",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "text1",
+          "type": "string"
+        },
+        {
+          "name": "text2",
+          "type": "string"
+        },
+        {
+          "name": "column1",
+          "type": "number"
+        },
+        {
+          "name": "column2",
+          "type": "number"
+        },
+        {
+          "name": "cursorWidth",
+          "type": "number"
+        }
+      ]
+    },
+    "ScriptInputBehavior": {
+      "scriptId": "98",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "valeur",
+          "type": "number"
+        },
+        {
+          "name": "column",
           "type": "number"
         }
       ]
