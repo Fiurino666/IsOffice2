@@ -54,6 +54,58 @@
         {
           "name": "localnbComptable",
           "type": "number"
+        },
+        {
+          "name": "totalCoutOuvrier",
+          "type": "number"
+        },
+        {
+          "name": "totalCoutCommercial",
+          "type": "number"
+        },
+        {
+          "name": "totalCoutComptable",
+          "type": "number"
+        },
+        {
+          "name": "salaireOuvrier",
+          "type": "number"
+        },
+        {
+          "name": "licencierOuvrier",
+          "type": "number"
+        },
+        {
+          "name": "nbfoislicencierO",
+          "type": "number"
+        },
+        {
+          "name": "salaireCommercial",
+          "type": "number"
+        },
+        {
+          "name": "licencierCommercial",
+          "type": "number"
+        },
+        {
+          "name": "nbfoislicencierC",
+          "type": "number"
+        },
+        {
+          "name": "salaireComptable",
+          "type": "number"
+        },
+        {
+          "name": "licencierComptable",
+          "type": "number"
+        },
+        {
+          "name": "nbfoislicencierCC",
+          "type": "number"
+        },
+        {
+          "name": "timer",
+          "type": "number"
         }
       ]
     },
@@ -74,64 +126,6 @@
         }
       ]
     },
-    "ScriptPersoBehavior": {
-      "scriptId": "94",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "text1",
-          "type": "string"
-        },
-        {
-          "name": "text2",
-          "type": "string"
-        },
-        {
-          "name": "column1",
-          "type": "number"
-        },
-        {
-          "name": "column2",
-          "type": "number"
-        },
-        {
-          "name": "cursorWidth",
-          "type": "number"
-        },
-        {
-          "name": "blinkTimer",
-          "type": "number"
-        }
-      ]
-    },
-    "ScriptPersonnalisationBehavior": {
-      "scriptId": "95",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "text1",
-          "type": "string"
-        },
-        {
-          "name": "text2",
-          "type": "string"
-        },
-        {
-          "name": "column1",
-          "type": "number"
-        },
-        {
-          "name": "column2",
-          "type": "number"
-        },
-        {
-          "name": "cursorWidth",
-          "type": "number"
-        }
-      ]
-    },
     "ScriptInputBehavior": {
       "scriptId": "98",
       "line": 0,
@@ -144,6 +138,36 @@
         {
           "name": "column",
           "type": "number"
+        }
+      ]
+    },
+    "CliqueMenuBoutonBehavior": {
+      "scriptId": "111",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "phaseIndex",
+          "type": "number"
+        },
+        {
+          "name": "isHover",
+          "type": "boolean"
+        }
+      ]
+    },
+    "ButtonBehavior": {
+      "scriptId": "114",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "disabled",
+          "type": "boolean"
+        },
+        {
+          "name": "interactive",
+          "type": "boolean"
         }
       ]
     }

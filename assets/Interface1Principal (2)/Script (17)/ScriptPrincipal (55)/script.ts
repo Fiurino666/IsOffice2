@@ -4,14 +4,9 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   phases : Sup.Actor[];
   ray = new Sup.Math.Ray();
   isHover: boolean = false;
-  menu : Sup.Actor;
   lblSolde : Sup.Actor;
   
   awake() {
-    
-  }
-  
-  start() {
     //On recupere tous les elements contenus dans Menu
     this.phases = Sup.getActor("Phase").getChildren();
     this.updatePhase();
@@ -19,13 +14,11 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     this.lblSolde = Sup.getActor("Element").getChild("Fixe").getChild("Solde");
     this.lblSolde.textRenderer.setText(solde + " E");
     Sup.getActor("Element").getChild("Fixe").getChild("TxtBureauDe").textRenderer.setText("Bureau de "+nom);
-    this.menu = Sup.getActor("Element").getChild("Fixe").getChild("Menu");
   }
 
   update() {
     this.keyNavigation();
     this.mouseNavigation();
-    //this.menuClique();
   }
   
   keyNavigation(){
@@ -105,19 +98,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     }
   }
   
-  menuClique(){
-    //pour afficher l'animation sur le clique du bouton menu
-    this.ray.setFromCamera(this.actor.camera, Sup.Input.getMousePosition());
-    let hits = this.ray.intersectActor(this.menu);
-    if(hits.length > 0){
-      if(this.isHover != true){
-        this.isHover = true;
-      }
-      this.phaseIndex = this.phases.indexOf(hits[0].actor);
-      if(Sup.Input.wasMouseButtonJustPressed(0))
-        Sup.loadScene("Interface7Menu/Scene/MenuScene");
-    }
-  }
+  
   
 }
 Sup.registerBehavior(ScriptPrincipalBehavior);

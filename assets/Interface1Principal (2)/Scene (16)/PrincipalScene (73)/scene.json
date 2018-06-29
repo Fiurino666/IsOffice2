@@ -84,6 +84,14 @@
             "propertyValues": {}
           },
           "id": "2"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "CliqueMenuBoutonBehavior",
+            "propertyValues": {}
+          },
+          "id": "3"
         }
       ],
       "position": {
@@ -551,11 +559,19 @@
                   "id": "0"
                 },
                 {
+                  "type": "Behavior",
+                  "config": {
+                    "behaviorName": "ButtonBehavior",
+                    "propertyValues": {}
+                  },
+                  "id": "2"
+                },
+                {
                   "type": "fMouseInput",
                   "config": {
                     "cameraActorName": "Camera"
                   },
-                  "id": "1"
+                  "id": "3"
                 }
               ],
               "position": {

@@ -2,12 +2,9 @@ class PhaseScriptBehavior extends Sup.Behavior {
   
   menus : Sup.Actor[];
   menuIndex: number = 0;
-  awake() {
-    
-  }
   
-  start() {
-    this.menus = Sup.getActor("Phase").getChildren();
+  awake() {
+        this.menus = Sup.getActor("Phase").getChildren();
     this.updateEnabledButton();
   }
 

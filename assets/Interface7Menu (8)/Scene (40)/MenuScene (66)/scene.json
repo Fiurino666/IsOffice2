@@ -536,7 +536,7 @@
     },
     {
       "id": "4",
-      "name": "Boutons",
+      "name": "Bouton",
       "children": [
         {
           "id": "6",
@@ -562,11 +562,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -613,11 +614,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -664,11 +666,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -715,11 +718,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -766,11 +770,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -817,11 +822,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -868,11 +874,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -919,11 +926,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {
@@ -970,11 +978,12 @@
               "id": "0"
             },
             {
-              "type": "fMouseInput",
+              "type": "Behavior",
               "config": {
-                "cameraActorName": "Camera"
+                "behaviorName": "ButtonBehavior",
+                "propertyValues": {}
               },
-              "id": "1"
+              "id": "2"
             }
           ],
           "position": {

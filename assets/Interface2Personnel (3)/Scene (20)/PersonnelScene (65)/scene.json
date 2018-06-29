@@ -67,7 +67,15 @@
             "nearClippingPlane": 0.1,
             "farClippingPlane": 1000
           },
-          "id": "0"
+          "id": "1"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "PersonnelScriptBehavior",
+            "propertyValues": {}
+          },
+          "id": "2"
         }
       ],
       "position": {
@@ -82,7 +90,7 @@
         "w": 1
       },
       "scale": {
-        "x": 1,
+        "x": 1.05,
         "y": 1,
         "z": 1
       },
@@ -1097,11 +1105,18 @@
                 "opacity": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "1"
             }
           ],
           "position": {
-            "x": -35.827,
-            "y": 20.008,
+            "x": -35.65137250322823,
+            "y": 19.849936962127686,
             "z": 2
           },
           "orientation": {
@@ -1165,7 +1180,7 @@
       "position": {
         "x": 0,
         "y": 0,
-        "z": 50
+        "z": 2
       },
       "orientation": {
         "x": 0,
@@ -1208,6 +1223,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "2"
             }
           ],
           "position": {
@@ -1252,6 +1274,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "2"
             }
           ],
           "position": {
@@ -1296,6 +1325,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "2"
             }
           ],
           "position": {
@@ -1340,6 +1376,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "3"
             }
           ],
           "position": {
@@ -1384,6 +1427,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "2"
             }
           ],
           "position": {
@@ -1428,6 +1478,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "2"
             }
           ],
           "position": {
@@ -1472,6 +1529,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "2"
             }
           ],
           "position": {
@@ -1516,6 +1580,13 @@
                 "shaderAssetId": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "2"
             }
           ],
           "position": {
@@ -1541,9 +1612,9 @@
       ],
       "components": [],
       "position": {
-        "x": -7.270811080932617,
-        "y": -0.6928344964981079,
-        "z": 50
+        "x": -7.271,
+        "y": -0.693,
+        "z": 1
       },
       "orientation": {
         "x": 0,
@@ -1633,8 +1704,8 @@
             }
           ],
           "position": {
-            "x": -3.035,
-            "y": 2.007,
+            "x": -3.3037041425704956,
+            "y": 1.8331327140331268,
             "z": 1
           },
           "orientation": {
@@ -2535,9 +2606,9 @@
       ],
       "components": [],
       "position": {
-        "x": 0.2845100164413452,
-        "y": -0.25026342272758484,
-        "z": 50
+        "x": 0.285,
+        "y": -0.25,
+        "z": 1
       },
       "orientation": {
         "x": 0,
@@ -2791,7 +2862,7 @@
         },
         {
           "id": "57",
-          "name": "Commerciale",
+          "name": "Commercial",
           "children": [
             {
               "id": "62",
@@ -3321,9 +3392,9 @@
       ],
       "components": [],
       "position": {
-        "x": 0.2845100164413452,
-        "y": -0.25026342272758484,
-        "z": 50
+        "x": 0.285,
+        "y": -0.25,
+        "z": 1
       },
       "orientation": {
         "x": 0,

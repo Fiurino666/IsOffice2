@@ -40,15 +40,15 @@ class ScriptInputBehavior extends Sup.Behavior {
         case 0:
           Sup.getActor("Texte").getChild("LabelNom").setVisible(false);
           Sup.getActor("Texte").getChild("LabelSociete").setVisible(true);
-          this.cursorActor1.textRenderer.setText("Bonjour "+nom);
+          this.cursorActor1.textRenderer.setText("Très bien, allons y "+nom);
           break;
           //troisieme fois que nous avons appuyer sur entree
         case 1:
           Sup.getActor("Texte").getChild("LabelSociete").setVisible(false);
           this.cursorActor2.textRenderer.setText("");
-          this.cursorActor1.textRenderer.setSize(26);
-          this.cursorActor1.setLocalScale(0.4, 0.4, 1);
-          this.cursorActor1.textRenderer.setText("Très bien, je suis Henri votre assistant, \n notre entreprise " +societe+"\n fabrique des télephones portables. \n A vous de gérer maintenant!");
+          this.cursorActor1.textRenderer.setSize(36);
+          this.cursorActor1.setLocalScale(0.2, 0.2, 1);
+          this.cursorActor1.textRenderer.setText("Je suis Henri votre assistant, \n notre entreprise " +societe+"\n fabrique des télephones portables. \n A vous de gérer maintenant!");
           break;
         case 2:
           Sup.loadScene("Interface1Principal/Scene/PrincipalScene");

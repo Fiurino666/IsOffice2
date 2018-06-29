@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 106,
+  "nextEntryId": 116,
   "nodes": [
     {
       "id": "0",
@@ -45,16 +45,6 @@
           "name": "Script",
           "type": null,
           "children": [
-            {
-              "id": "94",
-              "name": "ScriptPerso",
-              "type": "script"
-            },
-            {
-              "id": "95",
-              "name": "ScriptPersonnalisation",
-              "type": "script"
-            },
             {
               "id": "98",
               "name": "ScriptInput",
@@ -106,6 +96,11 @@
             {
               "id": "87",
               "name": "PhaseScript",
+              "type": "script"
+            },
+            {
+              "id": "111",
+              "name": "CliqueMenuBouton",
               "type": "script"
             }
           ]
@@ -467,6 +462,37 @@
       ]
     },
     {
+      "id": "106",
+      "name": "Interface8Banque",
+      "type": null,
+      "children": [
+        {
+          "id": "107",
+          "name": "Scene",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "108",
+          "name": "Script",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "109",
+          "name": "Sprite",
+          "type": null,
+          "children": []
+        },
+        {
+          "id": "110",
+          "name": "Sound",
+          "type": null,
+          "children": []
+        }
+      ]
+    },
+    {
       "id": "9",
       "name": "Cycle du jeu",
       "type": null,
@@ -577,6 +603,16 @@
         {
           "id": "56",
           "name": "ScriptGlobal",
+          "type": "script"
+        },
+        {
+          "id": "114",
+          "name": "Button Behavior",
+          "type": "script"
+        },
+        {
+          "id": "115",
+          "name": "Mouse",
           "type": "script"
         }
       ]

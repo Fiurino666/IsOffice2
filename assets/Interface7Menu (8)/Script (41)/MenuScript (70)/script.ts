@@ -5,36 +5,61 @@ class MenuScriptBehavior extends Sup.Behavior {
   ray = new Sup.Math.Ray();
   isHover: boolean = false;
   
+  start() {
+  //on relie les boutons
+    const btnNouvellePartie = Sup.getActor("Bouton").getChild("btnNouvellePartie").getBehavior(ButtonBehavior);
+    btnNouvellePartie.onClick = () => {
+        Sup.log(" btnNouvellePartie");
+      };
+    const btnCharger = Sup.getActor("Bouton").getChild("btnCharger").getBehavior(ButtonBehavior);
+    btnCharger.onClick = () => {
+      Sup.log(" btnCharger");
+    };
+    const btnSauvegarder = Sup.getActor("Bouton").getChild("btnSauvegarder").getBehavior(ButtonBehavior);
+    btnSauvegarder.onClick = () => {
+      Sup.log(" btnSauvegarder");
+    };
+    const btnFermerMenu = Sup.getActor("Bouton").getChild("btnFermerMenu").getBehavior(ButtonBehavior);
+    btnFermerMenu.onClick = () => {
+      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+    };
+    const btnQuitterJeu = Sup.getActor("Bouton").getChild("btnQuitterJeu").getBehavior(ButtonBehavior);
+    btnQuitterJeu.onClick = () => {
+      Sup.log(" btnQuitterJeu");
+    };
+    const btnCredits = Sup.getActor("Bouton").getChild("btnCredits").getBehavior(ButtonBehavior);
+    btnCredits.onClick = () => {
+      Sup.log(" btnCredits");
+    };
+    const btnScore = Sup.getActor("Bouton").getChild("btnScore").getBehavior(ButtonBehavior);
+    btnCredits.onClick = () => {
+      Sup.log(" btnCredits");
+    };
+    const btnSiteInternet = Sup.getActor("Bouton").getChild("btnSiteInternet").getBehavior(ButtonBehavior);
+    btnSiteInternet.onClick = () => {
+      Sup.log(" btnSiteInternet");
+    };
+    const btnTutoriel = Sup.getActor("Bouton").getChild("btnTutoriel").getBehavior(ButtonBehavior);
+    btnTutoriel.onClick = () => {
+      Sup.log(" btnTutoriel");
+    };
+  }
+  
   awake() {
     
+    //this.menus = Sup.getActor("Bouton").getChildren();
+    //this.updateMenu(1);
   }
 
-  start() {
-    this.cliqueBouton();
-    this.menus = Sup.getActor("Boutons").getChildren();
-    
-    this.updateMenu(1);
-  }
   
   update() {
-    this.noclic();
-    
+    Mouse.update(this.actor.camera);
   }
   
-  cliqueBouton(){
-    
-    //on relie les boutons
-    const btnNouvellePartie : Sup.Actor = Sup.getActor("Boutons").getChild("btnNouvellePartie");
-    const btnCharger : Sup.Actor = Sup.getActor("Boutons").getChild("btnCharger");
-    const btnSauvegarder : Sup.Actor = Sup.getActor("Boutons").getChild("btnSauvegarder");
-    const btnBanque : Sup.Actor = Sup.getActor("Boutons").getChild("btnBanque");
-    const btnFermerMenu : Sup.Actor = Sup.getActor("Boutons").getChild("btnFermerMenu");
-    const btnQuitterJeu : Sup.Actor = Sup.getActor("Boutons").getChild("btnQuitterJeu");
-    const btnCredits : Sup.Actor = Sup.getActor("Boutons").getChild("btnCredits");
-    const btnSiteInternet : Sup.Actor = Sup.getActor("Boutons").getChild("btnSiteInternet");
-    const btnTutoriel : Sup.Actor = Sup.getActor("Boutons").getChild("btnTutoriel");
+
     
     //on leur donne des instructions : Embaucher
+    /*
     btnNouvellePartie.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.clicVisuel(btnNouvellePartie);
     });
@@ -72,7 +97,7 @@ class MenuScriptBehavior extends Sup.Behavior {
     btnTutoriel.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.clicVisuel(btnTutoriel); 
     });
-  }
+  
   
   mouseNavigation(){
     
@@ -115,8 +140,8 @@ class MenuScriptBehavior extends Sup.Behavior {
   noclic() {
     for(let i = 0; i < this.menus.length; i++){
       this.menus[i].spriteRenderer.setVerticalFlip(false);
-    }
-  }
+    }*/
+  
   
 }
 Sup.registerBehavior(MenuScriptBehavior);
