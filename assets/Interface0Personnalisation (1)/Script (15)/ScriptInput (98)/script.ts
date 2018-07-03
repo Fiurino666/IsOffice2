@@ -3,6 +3,8 @@ class ScriptInputBehavior extends Sup.Behavior {
   
   cursorActor1: Sup.Actor;
   cursorActor2: Sup.Actor;
+  imgInput1: Sup.Actor;
+  imgInput2: Sup.Actor;
   valeur: number = 0;
   column = 0;
   font: Sup.Font;
@@ -12,6 +14,8 @@ class ScriptInputBehavior extends Sup.Behavior {
     this.font = Sup.getActor("Element").getChild("InputNom").textRenderer.getFont();
     this.cursorActor2 = Sup.getActor("Element").getChild("InputSociete");
     Sup.getActor("Texte").getChild("LabelSociete").setVisible(false);
+    this.imgInput1 = Sup.getActor("Element").getChild("ImgInput1");
+    this.imgInput2 = Sup.getActor("Element").getChild("ImgInput2");
   }
 
   update() {
@@ -22,8 +26,6 @@ class ScriptInputBehavior extends Sup.Behavior {
       this.suppr(nom);
       nom = nom + Sup.Input.getTextEntered();
       this.cursorActor1.textRenderer.setText(""+nom);
-      
-      
     }
     
     //si on a deja appuyer une fois sur entree
@@ -31,7 +33,8 @@ class ScriptInputBehavior extends Sup.Behavior {
       this.suppr(societe);
       societe = societe + Sup.Input.getTextEntered();
       this.cursorActor2.textRenderer.setText(""+societe);
-      
+      this.imgInput1.setVisible(false);
+      this.imgInput2.setVisible(true);
     }
     
     if (Sup.Input.wasKeyJustPressed("RETURN")) {
@@ -41,9 +44,12 @@ class ScriptInputBehavior extends Sup.Behavior {
           Sup.getActor("Texte").getChild("LabelNom").setVisible(false);
           Sup.getActor("Texte").getChild("LabelSociete").setVisible(true);
           this.cursorActor1.textRenderer.setText("Très bien, allons y "+nom);
+          
+          
           break;
           //troisieme fois que nous avons appuyer sur entree
         case 1:
+          this.imgInput2.setVisible(false);
           Sup.getActor("Texte").getChild("LabelSociete").setVisible(false);
           this.cursorActor2.textRenderer.setText("");
           this.cursorActor1.textRenderer.setSize(36);

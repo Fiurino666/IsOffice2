@@ -19,30 +19,13 @@
       "scriptId": "70",
       "line": 0,
       "parentBehavior": null,
-      "properties": [
-        {
-          "name": "menuIndex",
-          "type": "number"
-        },
-        {
-          "name": "isHover",
-          "type": "boolean"
-        }
-      ]
+      "properties": []
     },
     "PersonnelScriptBehavior": {
       "scriptId": "71",
       "line": 0,
       "parentBehavior": null,
       "properties": [
-        {
-          "name": "menuIndex",
-          "type": "number"
-        },
-        {
-          "name": "isHover",
-          "type": "boolean"
-        },
         {
           "name": "localnbOuvrier",
           "type": "number"
@@ -168,6 +151,27 @@
         {
           "name": "interactive",
           "type": "boolean"
+        }
+      ]
+    },
+    "ScriptAchatClickBehavior": {
+      "scriptId": "116",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "ScriptAchatConcurrenceBehavior": {
+      "scriptId": "117",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "timer",
+          "type": "number"
+        },
+        {
+          "name": "affiche",
+          "type": "string"
         }
       ]
     }

@@ -370,8 +370,8 @@
             }
           ],
           "position": {
-            "x": 38.792,
-            "y": -1.058,
+            "x": 37.47482421759105,
+            "y": -1.6112136840820312,
             "z": 2
           },
           "orientation": {
@@ -411,8 +411,8 @@
             }
           ],
           "position": {
-            "x": 38.617,
-            "y": -5.247,
+            "x": 37.651071171825606,
+            "y": -6.827611327171326,
             "z": 2
           },
           "orientation": {
@@ -1217,8 +1217,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -1268,8 +1268,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -1284,8 +1284,8 @@
             }
           ],
           "position": {
-            "x": 14.279,
-            "y": 0.5,
+            "x": 14.01029634475708,
+            "y": 0.3577449917793274,
             "z": 1
           },
           "orientation": {
@@ -1319,8 +1319,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -1335,8 +1335,8 @@
             }
           ],
           "position": {
-            "x": 14.279,
-            "y": -0.369,
+            "x": 14.057714462280273,
+            "y": -0.6535099148750305,
             "z": 1
           },
           "orientation": {
@@ -1370,8 +1370,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -1421,8 +1421,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -1472,8 +1472,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -1523,8 +1523,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -1574,8 +1574,8 @@
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
+                "overrideOpacity": true,
+                "opacity": 1,
                 "materialType": "basic",
                 "shaderAssetId": null
               },
@@ -2597,6 +2597,50 @@
           "scale": {
             "x": 1,
             "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "83",
+          "name": "Logo",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "118",
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -3.3932112753391266,
+            "y": 4.686717987060547,
+            "z": 49
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.2,
+            "y": 0.2,
             "z": 1
           },
           "visible": true,

@@ -26,8 +26,8 @@
         }
       ],
       "position": {
-        "x": 0,
-        "y": 0,
+        "x": 0.06322451680898666,
+        "y": -0.06322440505027771,
         "z": 0
       },
       "orientation": {
@@ -127,8 +127,8 @@
             }
           ],
           "position": {
-            "x": 7.229,
-            "y": -0.348,
+            "x": 5.205817699432373,
+            "y": 0.9322949647903442,
             "z": 1
           },
           "orientation": {
@@ -168,8 +168,8 @@
             }
           ],
           "position": {
-            "x": -3.453564405441284,
-            "y": -0.34052756428718567,
+            "x": -3,
+            "y": -0.341,
             "z": 1
           },
           "orientation": {
@@ -209,8 +209,8 @@
             }
           ],
           "position": {
-            "x": -2.8009653091430664,
-            "y": -3.565396785736084,
+            "x": -3,
+            "y": -3.565,
             "z": 1
           },
           "orientation": {
@@ -225,6 +225,94 @@
             "z": 1
           },
           "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "11",
+          "name": "ImgInput1",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "119",
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": true,
+                "opacity": 0.7,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -3,
+            "y": -0.3,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.5,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "12",
+          "name": "ImgInput2",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "119",
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": true,
+                "opacity": 0.7,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -3,
+            "y": -3.472,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.5,
+            "y": 1,
+            "z": 1
+          },
+          "visible": false,
           "layer": 0,
           "prefab": null
         }
@@ -329,6 +417,47 @@
           },
           "scale": {
             "x": 0.2,
+            "y": 0.2,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "10",
+          "name": "Titre",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "46",
+                "text": "Bienvenue à IsOffice \nle simulateur d'entreprise",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 50,
+                "color": null,
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.6834096312522888,
+            "y": 4.223297119140625,
+            "z": 50
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.18,
             "y": 0.2,
             "z": 1
           },

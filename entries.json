@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 116,
+  "nextEntryId": 120,
   "nodes": [
     {
       "id": "0",
@@ -56,7 +56,13 @@
           "id": "11",
           "name": "Sprite",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "119",
+              "name": "Input",
+              "type": "sprite"
+            }
+          ]
         },
         {
           "id": "12",
@@ -248,6 +254,11 @@
               "id": "104",
               "name": "txtComptable",
               "type": "sprite"
+            },
+            {
+              "id": "118",
+              "name": "PiedPiper",
+              "type": "sprite"
             }
           ]
         },
@@ -280,7 +291,18 @@
           "id": "25",
           "name": "Script",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "116",
+              "name": "ScriptAchatClick",
+              "type": "script"
+            },
+            {
+              "id": "117",
+              "name": "ScriptAchatConcurrence",
+              "type": "script"
+            }
+          ]
         },
         {
           "id": "26",

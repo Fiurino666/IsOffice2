@@ -81,7 +81,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
         Sup.loadScene("Interface2Personnel/Scene/PersonnelScene");
         break;
         case 1:
-        Sup.loadScene("Interface3Acheter/Scene/AcheterScene");
+        Sup.loadScene("Interface3Achat/Scene/SceneAcheter");
         break;
         case 2:
         Sup.loadScene("Interface4Produire/Scene/ProduireScene");

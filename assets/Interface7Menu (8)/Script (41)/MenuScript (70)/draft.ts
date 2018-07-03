@@ -28,7 +28,7 @@ class MenuScriptBehavior extends Sup.Behavior {
   
   start() {
   //on relie les boutons et on leur attribue l'action du click
-    const behaNouvellePartie = this.btnNouvellePartie.getBehavior(ButtonBehavior);
+    const behaNouvellePartie = this.btnNouvellePartie..fMouseInput.emitter.on("leftClickReleased", () => { ;
     behaNouvellePartie.onClick = () => {
         Sup.log(" btnNouvellePartie");
       clicVisuel(this.btnNouvellePartie);
