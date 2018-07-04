@@ -28,52 +28,43 @@ class MenuScriptBehavior extends Sup.Behavior {
   
   start() {
   //on relie les boutons et on leur attribue l'action du click
-    const behaNouvellePartie = this.btnNouvellePartie.getBehavior(ButtonBehavior);
-    behaNouvellePartie.onClick = () => {
+    this.btnNouvellePartie.fMouseInput.emitter.on("leftClickReleased", () => { 
         Sup.log(" btnNouvellePartie");
       clicVisuel(this.btnNouvellePartie);
-      };
-    const behaCharger = this.btnCharger.getBehavior(ButtonBehavior);
-    behaCharger.onClick = () => {
+      });
+    this.btnCharger.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" btnCharger");
       clicVisuel(this.btnCharger);
-    };
-    const behaSauvegarder = this.btnSauvegarder.getBehavior(ButtonBehavior);
-    behaSauvegarder.onClick = () => {
+    });
+    this.btnSauvegarder.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" btnSauvegarder");
       clicVisuel(this.btnSauvegarder);
-    };
-    const behaFermerMenu = this.btnFermerMenu.getBehavior(ButtonBehavior);
-    behaFermerMenu.onClick = () => {
+    });
+    this.btnFermerMenu.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" fermerMenu");
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
-    };
-    const behaQuitterJeu = this.btnQuitterJeu.getBehavior(ButtonBehavior);
-    behaQuitterJeu.onClick = () => {
+    });
+    this.btnQuitterJeu.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" btnQuitterJeu");
       clicVisuel(this.btnQuitterJeu);
       Sup.exit();
-    };
-    const behaCredits = this.btnCredits.getBehavior(ButtonBehavior);
-    behaCredits.onClick = () => {
+    });
+    this.btnCredits.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" btnCredits");
       clicVisuel(this.btnCredits);
-    };
-    const behaScore = this.btnScore.getBehavior(ButtonBehavior);
-    behaScore.onClick = () => {
+    });
+    this.btnScore.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" btnScore");
       clicVisuel(this.btnScore);
-    };
-    const behaSiteInternet = this.btnSiteInternet.getBehavior(ButtonBehavior);
-    behaSiteInternet.onClick = () => {
+    });
+    this.btnSiteInternet.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" btnSiteInternet");
       clicVisuel(this.btnSiteInternet);
-    };
-    const behaTutoriel = this.btnTutoriel.getBehavior(ButtonBehavior);
-    behaTutoriel.onClick = () => {
+    });
+    this.btnTutoriel.fMouseInput.emitter.on("leftClickReleased", () => { 
       Sup.log(" btnTutoriel");
       clicVisuel(this.btnTutoriel);
-    };
+    });
   }
   
   update() {

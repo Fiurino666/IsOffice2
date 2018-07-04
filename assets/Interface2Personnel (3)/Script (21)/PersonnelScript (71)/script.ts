@@ -22,6 +22,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   licencierComptable: number = 550;
   nbfoislicencierCC: number = 0;
   
+  //le timer permet de ne pas revenir au menu precedent lors de deux clics trop proche
   timer: number = 0;
   
    //on declare les boutons

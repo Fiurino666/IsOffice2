@@ -6,6 +6,12 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   isHover: boolean = false;
   lblSolde : Sup.Actor;
   
+  ouvrierPersonne : Sup.Actor;
+  ouvrierMeuble : Sup.Actor;
+  commercialPersonne : Sup.Actor;
+  comptableMeuble : Sup.Actor;
+  comptablePersonne : Sup.Actor;
+  
   awake() {
     //On recupere tous les elements contenus dans Menu
     this.phases = Sup.getActor("Phase").getChildren();
@@ -14,11 +20,17 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     this.lblSolde = Sup.getActor("Element").getChild("Fixe").getChild("Solde");
     this.lblSolde.textRenderer.setText(solde + " E");
     Sup.getActor("Element").getChild("Fixe").getChild("TxtBureauDe").textRenderer.setText("Bureau de "+nom);
+    this.ouvrierPersonne = Sup.getActor("Element").getChild("Dynamique").getChild("OuvrierPersonne");
+    this.ouvrierMeuble = Sup.getActor("Element").getChild("Dynamique").getChild("OuvrierMeuble");
+    this.commercialPersonne = Sup.getActor("Element").getChild("Dynamique").getChild("CommercialPersonne");
+    this.comptableMeuble = Sup.getActor("Element").getChild("Dynamique").getChild("ComptableMeuble");
+    this.comptablePersonne = Sup.getActor("Element").getChild("Dynamique").getChild("ComptablePersonne");
   }
 
   update() {
     this.keyNavigation();
     this.mouseNavigation();
+    this.afficheDynamique();
   }
   
   keyNavigation(){
@@ -98,6 +110,33 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     }
   }
   
+  afficheDynamique(){
+    
+    if(nbOuvrier>0){
+      this.ouvrierPersonne.setVisible(true);
+      this.ouvrierMeuble.setVisible(true);
+    }
+    else{
+      this.ouvrierPersonne.setVisible(false);
+      this.ouvrierMeuble.setVisible(false);
+    }
+    if(nbComptable>0){
+      this.comptableMeuble.setVisible(true);
+      this.comptablePersonne.setVisible(true);
+    }
+    else{
+      this.comptableMeuble.setVisible(false);
+      this.comptablePersonne.setVisible(false);
+    }
+     if(nbComptable>0){
+       this.commercialPersonne.setVisible(true);
+     }
+    else{
+      this.commercialPersonne.setVisible(false);
+    }
+    
+   
+  }
   
   
 }

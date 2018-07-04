@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 120,
+  "nextEntryId": 122,
   "nodes": [
     {
       "id": "0",
@@ -308,7 +308,18 @@
           "id": "26",
           "name": "Sprite",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "120",
+              "name": "Rond",
+              "type": "sprite"
+            },
+            {
+              "id": "121",
+              "name": "Fleche",
+              "type": "sprite"
+            }
+          ]
         },
         {
           "id": "27",

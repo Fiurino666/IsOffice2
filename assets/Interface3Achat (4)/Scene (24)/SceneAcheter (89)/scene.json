@@ -28,14 +28,6 @@
         {
           "type": "Behavior",
           "config": {
-            "behaviorName": "ScriptAchatConcurrenceBehavior",
-            "propertyValues": {}
-          },
-          "id": "1"
-        },
-        {
-          "type": "Behavior",
-          "config": {
             "behaviorName": "ScriptAchatClickBehavior",
             "propertyValues": {}
           },
@@ -133,6 +125,13 @@
                     "opacity": null
                   },
                   "id": "0"
+                },
+                {
+                  "type": "fMouseInput",
+                  "config": {
+                    "cameraActorName": "Camera"
+                  },
+                  "id": "1"
                 }
               ],
               "position": {
@@ -239,7 +238,7 @@
             },
             {
               "id": "10",
-              "name": "txtEcran",
+              "name": "TxtEcran",
               "children": [],
               "components": [
                 {
@@ -280,7 +279,7 @@
             },
             {
               "id": "11",
-              "name": "txtChassis",
+              "name": "TxtChassis",
               "children": [],
               "components": [
                 {
@@ -321,7 +320,7 @@
             },
             {
               "id": "12",
-              "name": "txtComposant",
+              "name": "TxtComposant",
               "children": [],
               "components": [
                 {
@@ -738,6 +737,13 @@
                     "opacity": null
                   },
                   "id": "0"
+                },
+                {
+                  "type": "fMouseInput",
+                  "config": {
+                    "cameraActorName": "Camera"
+                  },
+                  "id": "1"
                 }
               ],
               "position": {
@@ -800,6 +806,252 @@
               "visible": true,
               "layer": 0,
               "prefab": null
+            },
+            {
+              "id": "32",
+              "name": "Txt1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "1",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 18,
+                    "color": "f21a40",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -8.05,
+                "y": 8.4,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "33",
+              "name": "Txt2",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "2",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 18,
+                    "color": "ffffff",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -4.05,
+                "y": 8.4,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "34",
+              "name": "Txt3",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "3",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 18,
+                    "color": null,
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 0,
+                "y": 8.4,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "35",
+              "name": "Txt4",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "4",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 18,
+                    "color": null,
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 4,
+                "y": 8.4,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "36",
+              "name": "Txt5",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "5",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 18,
+                    "color": null,
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 8,
+                "y": 8.4,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "37",
+              "name": "TxtAffichage",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "Text",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 32,
+                    "color": null,
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -0.212,
+                "y": 5.393,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 0.6,
+                "y": 0.6,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
             }
           ],
           "components": [],
@@ -826,7 +1078,455 @@
         {
           "id": "17",
           "name": "Element",
-          "children": [],
+          "children": [
+            {
+              "id": "26",
+              "name": "Step Navigation",
+              "children": [
+                {
+                  "id": "21",
+                  "name": "Btn1",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "120",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": true,
+                        "opacity": 1,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": -7.98,
+                    "y": 3.363,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.6000000238418579,
+                    "y": 0.6000000238418579,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "22",
+                  "name": "Btn2",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "120",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": true,
+                        "opacity": 1,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": -3.98,
+                    "y": 3.363,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.6000000238418579,
+                    "y": 0.6000000238418579,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "23",
+                  "name": "Btn3",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "120",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": true,
+                        "opacity": 1,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": 0.02,
+                    "y": 3.363,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.6000000238418579,
+                    "y": 0.6000000238418579,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "24",
+                  "name": "Btn4",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "120",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": true,
+                        "opacity": 1,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": 4.02,
+                    "y": 3.363,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.6000000238418579,
+                    "y": 0.6000000238418579,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "25",
+                  "name": "Btn5",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "120",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": true,
+                        "opacity": 1,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": 8.02,
+                    "y": 3.363,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.6000000238418579,
+                    "y": 0.6000000238418579,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "28",
+                  "name": "Fleche1",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "121",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": false,
+                        "opacity": null,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": -6,
+                    "y": 3.35,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.4,
+                    "y": 0.4,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "29",
+                  "name": "Fleche2",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "121",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": false,
+                        "opacity": null,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": -2,
+                    "y": 3.35,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.4,
+                    "y": 0.4,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "30",
+                  "name": "Fleche3",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "121",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": false,
+                        "opacity": null,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": 2,
+                    "y": 3.35,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.4,
+                    "y": 0.4,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "31",
+                  "name": "Fleche4",
+                  "children": [],
+                  "components": [
+                    {
+                      "type": "SpriteRenderer",
+                      "config": {
+                        "formatVersion": 1,
+                        "spriteAssetId": "121",
+                        "animationId": null,
+                        "horizontalFlip": false,
+                        "verticalFlip": false,
+                        "castShadow": false,
+                        "receiveShadow": false,
+                        "color": "ffffff",
+                        "overrideOpacity": false,
+                        "opacity": null,
+                        "materialType": "basic",
+                        "shaderAssetId": null
+                      },
+                      "id": "0"
+                    }
+                  ],
+                  "position": {
+                    "x": 6,
+                    "y": 3.35,
+                    "z": 1
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 0.4,
+                    "y": 0.4,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                }
+              ],
+              "components": [],
+              "position": {
+                "x": -0.02,
+                "y": 5.137,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "27",
+              "name": "Bouton",
+              "children": [],
+              "components": [],
+              "position": {
+                "x": -0.02,
+                "y": 5.137,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            }
+          ],
           "components": [],
           "position": {
             "x": 0,

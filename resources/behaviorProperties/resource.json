@@ -156,9 +156,14 @@
     },
     "ScriptAchatClickBehavior": {
       "scriptId": "116",
-      "line": 0,
+      "line": 2,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "timer",
+          "type": "number"
+        }
+      ]
     },
     "ScriptAchatConcurrenceBehavior": {
       "scriptId": "117",
@@ -172,6 +177,14 @@
         {
           "name": "affiche",
           "type": "string"
+        },
+        {
+          "name": "iaTotal",
+          "type": "number"
+        },
+        {
+          "name": "etapeN",
+          "type": "number"
         }
       ]
     }
