@@ -68,6 +68,14 @@
             "farClippingPlane": 1000
           },
           "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "ScriptProduireBehavior",
+            "propertyValues": {}
+          },
+          "id": "2"
         }
       ],
       "position": {
@@ -118,11 +126,60 @@
     {
       "id": "3",
       "name": "Texte",
-      "children": [],
+      "children": [
+        {
+          "id": "4",
+          "name": "Quit",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "81",
+                "text": "Revenir à \nla fenêtre\nprécédente",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": null,
+                "color": "000000",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "1"
+            }
+          ],
+          "position": {
+            "x": 0.624,
+            "y": -0.47,
+            "z": 1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
       "components": [],
       "position": {
-        "x": 0,
-        "y": 0,
+        "x": -6.496311664581299,
+        "y": 3.9120125770568848,
         "z": 0
       },
       "orientation": {
@@ -132,8 +189,8 @@
         "w": 1
       },
       "scale": {
-        "x": 1,
-        "y": 1,
+        "x": 0.18,
+        "y": 0.2,
         "z": 1
       },
       "visible": true,

@@ -69,7 +69,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
       if(Sup.Input.wasMouseButtonJustPressed(0))
         this.phaseAction();
     }
-    //ne pas oublier de desactiver le hover lorsque l on sort
+    //ne pas oublier de desactiver le hover lorsqu'on sort
     else{
       if(this.isHover){
         this.isHover = false;
@@ -81,37 +81,46 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   }
   
   updatePhase(){
-    
+    //baisse l'opacite de 30% lorsque le curseur est dessus
     for(let i = 0; i<this.phases.length;i++){
       this.phases[i].textRenderer.setOpacity(i === this.phaseIndex ? 1 : 0.7);
     }
   }
   
   phaseAction(){
+    //pour avancer dans le menu
     switch(jeuTour){
-        case 0:
+      case 0:{
         Sup.loadScene("Interface2Personnel/Scene/PersonnelScene");
         break;
-        case 1:
+      }
+      case 1:{
         Sup.loadScene("Interface3Achat/Scene/SceneAcheter");
         break;
-        case 2:
-        Sup.loadScene("Interface4Produire/Scene/ProduireScene");
+      }
+      case 2:{
+        Sup.loadScene("Interface4Produire/Scene/SceneProduire");
         break;
-        case 3:
-        Sup.loadScene("Interface5Vendre/Scene/VendreScene");
+      }
+      case 3:{
+        Sup.loadScene("Interface5Vendre/Scene/SceneVendre");
         break;
-        case 4:
-        Sup.loadScene("Interface6Compter/Scene/CompterScene");
+      }
+      case 4:{
+        Sup.loadScene("Interface6Compter/Scene/SceneCompter");
         break;
-      default:
+      }
+      default:{
+        Sup.log("error 0257");
         break;
+      }
+        
         
     }
   }
   
   afficheDynamique(){
-    
+    //permet de cacher les images et textes correspondant au click user
     if(nbOuvrier>0){
       this.ouvrierPersonne.setVisible(true);
       this.ouvrierMeuble.setVisible(true);
@@ -128,7 +137,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
       this.comptableMeuble.setVisible(false);
       this.comptablePersonne.setVisible(false);
     }
-     if(nbComptable>0){
+     if(nbCommercial>0){
        this.commercialPersonne.setVisible(true);
      }
     else{

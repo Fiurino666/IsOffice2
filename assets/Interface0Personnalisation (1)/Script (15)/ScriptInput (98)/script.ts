@@ -40,15 +40,15 @@ class ScriptInputBehavior extends Sup.Behavior {
     if (Sup.Input.wasKeyJustPressed("RETURN")) {
       switch (this.valeur){
           //on appuie deux fois sur entree
-        case 0:
+        case 0:{
           Sup.getActor("Texte").getChild("LabelNom").setVisible(false);
           Sup.getActor("Texte").getChild("LabelSociete").setVisible(true);
           this.cursorActor1.textRenderer.setText("Très bien, allons y "+nom);
-          
-          
           break;
+        }
+          
           //troisieme fois que nous avons appuyer sur entree
-        case 1:
+        case 1:{
           this.imgInput2.setVisible(false);
           Sup.getActor("Texte").getChild("LabelSociete").setVisible(false);
           this.cursorActor2.textRenderer.setText("");
@@ -56,9 +56,11 @@ class ScriptInputBehavior extends Sup.Behavior {
           this.cursorActor1.setLocalScale(0.2, 0.2, 1);
           this.cursorActor1.textRenderer.setText("Je suis Henri votre assistant, \n notre entreprise " +societe+"\n fabrique des télephones portables. \n A vous de gérer maintenant! \n Appuyer sur Entrée pour la suite");
           break;
-        case 2:
+        }
+        case 2:{
           Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
           break;
+        }
       }
       this.valeur ++;
     }

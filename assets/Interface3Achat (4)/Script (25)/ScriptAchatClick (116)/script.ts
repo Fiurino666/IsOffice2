@@ -1,4 +1,9 @@
+//savoir quel element a été cliqué
 var element : String;
+//savoir si les valeurs on été cliqués
+var boolVisibleEcran : boolean = true;
+var boolVisibleChassis : boolean = true;
+var boolVisibleComposant : boolean = true;
 
 class ScriptAchatClickBehavior extends Sup.Behavior {
   
@@ -13,7 +18,6 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
   txtEcran : Sup.Actor;
   txtChassis : Sup.Actor;
   txtComposant : Sup.Actor;
-  
   
   timer: number = 0;
   
@@ -84,26 +88,50 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
   
   //rend au demarrage de la fenetre tous les boutons visibles
   initialise(){
-    this.btnChassis.setVisible(true);
-    this.btnComposant.setVisible(true);
-    this.btnEcran.setVisible(true);
-    this.txtChassis.setVisible(true);
-    this.txtComposant.setVisible(true);
-    this.txtEcran.setVisible(true);
+    if(boolVisibleEcran){
+      this.btnEcran.setVisible(true);
+      this.txtEcran.setVisible(true);
+    }
+    else{
+      this.btnEcran.setVisible(false);
+      this.txtEcran.setVisible(false);
+    }
+    if(boolVisibleComposant){
+      this.btnComposant.setVisible(true);
+      this.txtComposant.setVisible(true);
+    }
+    else{
+      this.btnComposant.setVisible(false);
+      this.txtComposant.setVisible(false);
+    }
+    if(boolVisibleChassis){
+      this.btnChassis.setVisible(true);
+      this.txtChassis.setVisible(true);
+    }
+    else{
+      this.btnChassis.setVisible(false);
+      this.txtChassis.setVisible(false);
+    }
+    
+    
+    
     element = "";
   }
   
   quitteEcran(param){
     if(this.timer > 90){
-        jeuTour = param;
-        Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
-      }
+      jeuTour = param;
+      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+    }
   }
   
   testSortie(){
     //on teste si on a cliquer sur les trois elements
-    if(!this.btnChassis.getVisible() && !this.btnComposant.getVisible() && !this.btnEcran.getVisible()){
+    if(!boolVisibleEcran && !boolVisibleComposant && !boolVisibleChassis){
       //permet de quitter la partie achat pour passer a production etape 3
+      boolVisibleEcran = true;
+      boolVisibleComposant = true;
+      boolVisibleChassis = true;
       this.quitteEcran(2);
     }
   }
