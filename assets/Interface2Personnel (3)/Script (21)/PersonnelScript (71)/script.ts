@@ -102,7 +102,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   update() {
     //permet de remettre l opacite a 1 par defaut
     updateMenu(this.menus);
-    //enleve le flip vertical du clik sur le bouton
+    //enleve le flip vertical du click sur le bouton
     noclic(this.menus);
     //pour le curseur quand il est dessus change l opacite a 0.7
     //mouseNavigation();

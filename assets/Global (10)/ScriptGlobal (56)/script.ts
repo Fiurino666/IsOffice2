@@ -1,3 +1,5 @@
+
+
 //Pour savoir a quel tour de jou nous en sommes
 var jeuTour: number = 0;
 //Une fois tous les tour de jeu effectué nous avons finis un mois

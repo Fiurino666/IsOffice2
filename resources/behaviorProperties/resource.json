@@ -167,7 +167,7 @@
     },
     "ScriptAchatConcurrenceBehavior": {
       "scriptId": "117",
-      "line": 0,
+      "line": 1,
       "parentBehavior": null,
       "properties": [
         {
@@ -202,12 +202,6 @@
           "type": "number"
         }
       ]
-    },
-    "PrefabBoutonBehavior": {
-      "scriptId": "124",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": []
     }
   }
 }
