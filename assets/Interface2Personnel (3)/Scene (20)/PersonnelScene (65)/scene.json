@@ -288,7 +288,7 @@
             }
           ],
           "position": {
-            "x": -10.734,
+            "x": -10.79,
             "y": -0.9,
             "z": 2
           },
@@ -329,7 +329,7 @@
             }
           ],
           "position": {
-            "x": 14.205,
+            "x": 14.8,
             "y": -0.9,
             "z": 2
           },
@@ -440,7 +440,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "81",
-                "text": "Cout : ",
+                "text": "Coût : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -481,7 +481,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "81",
-                "text": "Cout : ",
+                "text": "Coût : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -522,7 +522,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "81",
-                "text": "Cout : ",
+                "text": "Coût : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -563,7 +563,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "81",
-                "text": "Cout : ",
+                "text": "Coût : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -604,7 +604,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "81",
-                "text": "Cout : ",
+                "text": "Coût : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -645,7 +645,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "81",
-                "text": "Cout : ",
+                "text": "Coût : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -809,7 +809,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "81",
-                "text": "Masse Salariale: ",
+                "text": "Masse Salariale : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,

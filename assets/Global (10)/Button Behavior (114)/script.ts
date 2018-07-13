@@ -17,7 +17,7 @@ class ButtonBehavior extends Sup.Behavior {
   onUnhover: Function;
   
   awake() {
-    if (this.actor.spriteRenderer == null) new Sup.SpriteRenderer(this.actor, "Basics/Medium Button Frame");
+    if (this.actor.spriteRenderer == null) new Sup.SpriteRenderer(this.actor, "error button behavior");
     
     if (this.actor.spriteRenderer.getSprite().path.indexOf("Negative") !== -1) {
       this.textColor = new Sup.Color(0xd63232);

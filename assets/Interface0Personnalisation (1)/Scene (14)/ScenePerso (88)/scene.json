@@ -352,7 +352,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "80",
-                "text": "Bonjour ... euh quel est votre nom patron?",
+                "text": "Bonjour... euh quel est votre nom patron ?",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 36,
@@ -393,7 +393,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "80",
-                "text": "Quel est le nom de notre societe deja?",
+                "text": "Quel est le nom de notre société déjà ?",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 36,

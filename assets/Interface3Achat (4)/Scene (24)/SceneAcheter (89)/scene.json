@@ -1040,7 +1040,7 @@
             },
             {
               "id": "38",
-              "name": "TxtOutput1",
+              "name": "TxtOutput0",
               "children": [],
               "components": [
                 {
@@ -1051,7 +1051,7 @@
                     "text": "Text",
                     "alignment": "center",
                     "verticalAlignment": "center",
-                    "size": 60,
+                    "size": 40,
                     "color": "ff8000",
                     "overrideOpacity": false,
                     "opacity": null
@@ -1061,7 +1061,7 @@
               ],
               "position": {
                 "x": -0.621,
-                "y": 7.8,
+                "y": 8,
                 "z": 1
               },
               "orientation": {
@@ -1081,7 +1081,7 @@
             },
             {
               "id": "109",
-              "name": "TxtOutput2",
+              "name": "TxtOutput1",
               "children": [],
               "components": [
                 {
@@ -1092,7 +1092,7 @@
                     "text": "Text",
                     "alignment": "center",
                     "verticalAlignment": "center",
-                    "size": 60,
+                    "size": 40,
                     "color": "ff8000",
                     "overrideOpacity": false,
                     "opacity": null
@@ -1102,7 +1102,7 @@
               ],
               "position": {
                 "x": -0.621,
-                "y": 6.8,
+                "y": 7.2,
                 "z": 1
               },
               "orientation": {
@@ -1122,6 +1122,47 @@
             },
             {
               "id": "110",
+              "name": "TxtOutput2",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "Text",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "ff8000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -0.621,
+                "y": 6.4,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 0.18,
+                "y": 0.2,
+                "z": 1
+              },
+              "visible": false,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "111",
               "name": "TxtOutput3",
               "children": [],
               "components": [
@@ -1133,7 +1174,7 @@
                     "text": "Text",
                     "alignment": "center",
                     "verticalAlignment": "center",
-                    "size": 60,
+                    "size": 40,
                     "color": "ff8000",
                     "overrideOpacity": false,
                     "opacity": null
@@ -1143,7 +1184,89 @@
               ],
               "position": {
                 "x": -0.621,
-                "y": 5.8,
+                "y": 5.6,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 0.18,
+                "y": 0.2,
+                "z": 1
+              },
+              "visible": false,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "112",
+              "name": "TxtOutput4",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "Text",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "ff8000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -0.621,
+                "y": 4.8,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 0.18,
+                "y": 0.2,
+                "z": 1
+              },
+              "visible": false,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "113",
+              "name": "TxtOutput5",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "81",
+                    "text": "Text",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "ff8000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -0.621,
+                "y": 4,
                 "z": 1
               },
               "orientation": {
@@ -3012,7 +3135,1445 @@
               "position": {
                 "x": -1.573,
                 "y": 1.347,
+                "z": 2
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
                 "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "114",
+              "name": "Enchere",
+              "children": [
+                {
+                  "id": "116",
+                  "name": "Sprite",
+                  "children": [
+                    {
+                      "id": "118",
+                      "name": "0",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -7.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "119",
+                      "name": "1",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -5.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "120",
+                      "name": "2",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -3.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "121",
+                      "name": "3",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -1.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "122",
+                      "name": "4",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 0.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "123",
+                      "name": "5",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 2.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "124",
+                      "name": "6",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 4.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "125",
+                      "name": "7",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 6.5,
+                        "y": -1.8000001907348633,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "126",
+                      "name": "8",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -7.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "127",
+                      "name": "9",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -5.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "128",
+                      "name": "10",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -3.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "129",
+                      "name": "11",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -1.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "130",
+                      "name": "12",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 0.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "131",
+                      "name": "13",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 2.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "132",
+                      "name": "14",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 4.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "133",
+                      "name": "15",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "SpriteRenderer",
+                          "config": {
+                            "formatVersion": 1,
+                            "spriteAssetId": "62",
+                            "animationId": null,
+                            "horizontalFlip": false,
+                            "verticalFlip": false,
+                            "castShadow": false,
+                            "receiveShadow": false,
+                            "color": "ffffff",
+                            "overrideOpacity": false,
+                            "opacity": null,
+                            "materialType": "basic",
+                            "shaderAssetId": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 6.5,
+                        "y": -3,
+                        "z": -47
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.4000000059604645,
+                        "y": 0.5,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    }
+                  ],
+                  "components": [],
+                  "position": {
+                    "x": -1.891464650630951,
+                    "y": 3.7315597534179688,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 1,
+                    "y": 1,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                },
+                {
+                  "id": "117",
+                  "name": "Texte",
+                  "children": [
+                    {
+                      "id": "115",
+                      "name": "0",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "50",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -7.517516851425171,
+                        "y": -1.8166923522949219,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "134",
+                      "name": "1",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "100",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -5.518,
+                        "y": -1.817,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "135",
+                      "name": "2",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "150",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -3.518,
+                        "y": -1.817,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "136",
+                      "name": "3",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "200",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -1.518,
+                        "y": -1.817,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "137",
+                      "name": "4",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "250",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 0.518,
+                        "y": -1.817,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "138",
+                      "name": "5",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "300",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 2.518,
+                        "y": -1.817,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "139",
+                      "name": "6",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "350",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 4.518,
+                        "y": -1.817,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "140",
+                      "name": "7",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "400",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 6.518,
+                        "y": -1.817,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "141",
+                      "name": "8",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "450",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -7.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "142",
+                      "name": "9",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "500",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -5.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "143",
+                      "name": "10",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "550",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -3.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "144",
+                      "name": "11",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "600",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": -1.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "145",
+                      "name": "12",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "650",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 0.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.10000000149011612,
+                        "y": 0.10000000149011612,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "146",
+                      "name": "13",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "700",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 2.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.1,
+                        "y": 0.1,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "147",
+                      "name": "14",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "750",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 4.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.1,
+                        "y": 0.1,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    },
+                    {
+                      "id": "148",
+                      "name": "15",
+                      "children": [],
+                      "components": [
+                        {
+                          "type": "TextRenderer",
+                          "config": {
+                            "formatVersion": 2,
+                            "fontAssetId": "81",
+                            "text": "800",
+                            "alignment": "center",
+                            "verticalAlignment": "center",
+                            "size": 140,
+                            "color": null,
+                            "overrideOpacity": false,
+                            "opacity": null
+                          },
+                          "id": "0"
+                        }
+                      ],
+                      "position": {
+                        "x": 6.518,
+                        "y": -3,
+                        "z": -45
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0,
+                        "w": 1
+                      },
+                      "scale": {
+                        "x": 0.1,
+                        "y": 0.1,
+                        "z": 1
+                      },
+                      "visible": false,
+                      "layer": 0,
+                      "prefab": null
+                    }
+                  ],
+                  "components": [],
+                  "position": {
+                    "x": -1.891464650630951,
+                    "y": 3.7315597534179688,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "w": 1
+                  },
+                  "scale": {
+                    "x": 1,
+                    "y": 1,
+                    "z": 1
+                  },
+                  "visible": true,
+                  "layer": 0,
+                  "prefab": null
+                }
+              ],
+              "components": [],
+              "position": {
+                "x": 1.5672984421253204,
+                "y": 3.6082592010498047,
+                "z": 49
               },
               "orientation": {
                 "x": 0,

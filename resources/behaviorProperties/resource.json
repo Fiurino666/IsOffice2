@@ -179,16 +179,24 @@
           "type": "number"
         },
         {
-          "name": "etapeN",
-          "type": "number"
-        },
-        {
           "name": "valeur",
           "type": "number"
         },
         {
           "name": "element2",
           "type": "string"
+        },
+        {
+          "name": "lotNombre",
+          "type": "number"
+        },
+        {
+          "name": "lotDivise",
+          "type": "number"
+        },
+        {
+          "name": "lotChoisi",
+          "type": "number"
         }
       ]
     },
