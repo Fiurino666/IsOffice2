@@ -1,4 +1,3 @@
-
 class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   //Pour définir les intentions d'achat des entreprises concurrentes
   iaArray = new Array(3);
@@ -26,6 +25,11 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   lotNombre : number;
   lotDivise : number;
   lotChoisi : number;
+  prixEnchere : number;
+  elementAchat : number;
+  prixAchat : number;
+  premiereFois:boolean = false;
+  deuxiemeFois:boolean = false;
   
   awake(){
     //pour gerer l'ajout continue de 16 boutons
@@ -42,7 +46,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     Sup.log(this.iaTotal);
     this.qInfo.textRenderer.setText("Achat "+this.element2);
     updateMenu(this.boutonNombre.getChildren());
-    this.gestionCliqueBouton();
   }
 
   update(){
@@ -51,7 +54,9 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     //enleve le flip vertical du clik sur le bouton
     noclic(this.boutonNombre.getChildren());
     this.affichageConcurrence();
-    
+    this.timer ++;
+    updateMenu(this.enchereSprite);
+    noclic(this.enchereSprite);
   }
   
   //crée des valeurs random pour simuler la concurrence
@@ -101,8 +106,22 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter ?");
             this.visibleNombre(true);
             this.visibleTxt(false);
-            Sup.log("valeur "+this.valeur);
-          
+            //Sup.log("valeur "+this.valeur);
+          if(!this.premiereFois){
+            for (let i=0; i<16; i++){
+              
+                this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
+                  //affecte a lotnombre selon le montant du bouton cliqué
+                  this.lotNombre = i;
+                  this.calculIA();
+                  //permet d'allez à l'affichage suivant
+                  this.valeur ++;
+                  Sup.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                  this.timer = 0;
+                } ); 
+              }
+              this.premiereFois = true;
+            }
             break;
 
           case 2:  //si on a deja appuyer une fois sur entree
@@ -111,7 +130,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape3.textRenderer.setColor(255,255,255);
             this.etape4.textRenderer.setColor(255,255,255);
             this.etape5.textRenderer.setColor(255,255,255);
-            this.timer ++;
+            
             this.visibleNombre(false);
             this.txtAffiche[0].textRenderer.setText(this.affiche[0]);
             this.txtAffiche[1].setVisible(true);
@@ -125,18 +144,17 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.txtAffiche[4].textRenderer.setText("Les intentions d'achat du marché sont estimées à "+this.iaTotal+" / 4 soit : "+ this.lotDivise +" lots.");
             this.txtAffiche[5].setVisible(true);
             this.txtAffiche[5].textRenderer.setText("Appuyer sur Entrée");
-            Sup.log("valeur "+this.valeur);
+            //Sup.log("valeur "+this.valeur);
             //si le joueur appuie sur entrer ou alors qu'il appuie sur le click gauche de la souris et que le timer soit superieur a 90
-            if (Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0) && this.timer > 90)) {      
-              
-              //je met cette fonction ici pour qu'elle ne soit appeler qu'une fois
-              this.gestionCliqueBouton();
+            if (Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0) && this.timer > 90)) {
+
               this.valeur ++;
               for (let i=0; i<16; i++){
-                new fMouseInput (this.enchereSprite[i]);
-                this.enchereSprite[i].fMouseInput.setCameraActorName("Camera");
+                
+                //utile afin de supprimer le once precedent de l emittevent s'il n'a ps ete cliquer
+                this.boutonTableau[i].fMouseInput.emitter.removeAllListeners("leftClickReleased");
               }
-              updateMenu(this.enchereSprite);
+              this.timer = 0;
             }
             break;
 
@@ -151,8 +169,36 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.visibleTxt(false);
             this.afficheNBNombre();
             
-            Sup.log("valeur "+this.valeur);
-
+            //Sup.log("valeur "+this.valeur);
+            if(!this.deuxiemeFois){
+              for (let i=0; i<16; i++){
+                this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
+                  Sup.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+                   //affecte a lotnombre selon le montant du bouton cliqué
+                  this.lotChoisi = i;
+                  Sup.log("lotChoisi: "+this.lotChoisi);
+                   //cache les boutons
+                  this.visibleNombre(false);
+                   //affiche les boutons suivants
+                  this.visibleEnchere(true);
+                  this.timer = 0;
+                  //pour cacher les boutons
+                  this.lotDivise = -1;
+                  this.afficheNBNombre();
+                  this.txtAffiche[0].textRenderer.setText("A quel prix ?");
+              });
+                this.enchereSprite[i].fMouseInput.emitter.once("leftClickReleased", () => {
+                  this.prixEnchere = i;
+                  this.enchere();
+                  
+                  /////////////////////////////////////////////////////////////
+                  
+               });
+                this.deuxiemeFois = true;
+             }
+            
+            }
+            noclic(this.enchereSprite);
             break;
 
           case 4:
@@ -163,7 +209,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape5.textRenderer.setColor(255,255,255);
           
             this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter chez le fabricant 2 ?");
-            this.afficheNBNombre();
+            //this.afficheNBNombre();
             
             break;
           
@@ -175,13 +221,13 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape5.textRenderer.setColor(242,26,64);
           
             this.txtAffiche[0].textRenderer.setText("Combien de lots"+ this.element2 +" voulez-vous acheter chez le fabricant 3 ?");
-            this.afficheNBNombre();  
-            Sup.log("valeur "+this.valeur);
+            //this.afficheNBNombre();  
+            //Sup.log("valeur "+this.valeur);
             
             break;
           
           case 6:
-            Sup.log("valeur "+this.valeur);
+            //Sup.log("valeur "+this.valeur);
             this.camera.moveY(-11);
             this.camera.getBehavior(ScriptAchatConcurrenceBehavior).destroy;
             this.valeur=1;
@@ -189,7 +235,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             break;
 
           default:
-            Sup.log("test switch 585");
+            //Sup.log("test switch 585");
             break;
 
     }
@@ -200,7 +246,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   visibleNombre(boolVisible){ 
     this.boutonNombre.setVisible(boolVisible);
     this.texteNombre.setVisible(boolVisible);
-    Sup.log("visibleNombre: "+boolVisible);
+    //Sup.log("visibleNombre: "+boolVisible);
   }
   
   //cache ou affiche les encheres
@@ -209,21 +255,21 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       this.enchereSprite[i].setVisible(boolVisible);
       this.enchereTexte[i].setVisible(boolVisible);
     }
-    Sup.log("visibleEnchere: "+boolVisible);
+    //Sup.log("visibleEnchere: "+boolVisible);
   }
   
   //pour afficher ou cacher les txtAffiche de 1 à 5, le 0 reste toujours visible
   visibleTxt(bool: boolean){
     for (let i = 1; i <6; i++){
       this.txtAffiche[i].setVisible(bool);
-      Sup.log("visibleTxt: "+bool);
+      //Sup.log("visibleTxt: "+bool);
     }
   }
   
   //affiche les lots d'élements qui nous sont disponibles
   afficheNBNombre(){
     this.visibleNombre(true);
-    Sup.log("afficheNBNombre() lotdivise = "+this.lotDivise);
+    //Sup.log("afficheNBNombre() lotdivise = "+this.lotDivise);
     for(let i=0; i<16; i++){
       this.boutonTableau[i].setVisible(false);
       this.texteTableau[i].setVisible(false);
@@ -231,66 +277,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     for(let i=0; i<this.lotDivise+1; i++){
       this.boutonTableau[i].setVisible(true);
       this.texteTableau[i].setVisible(true);
-    }
-  }
-  
-  gestionCliqueBouton(){
-    switch(this.valeur){
-        case 1: //il est appeler au lancement pour initialiser le click
-            for (let i=0; i<16; i++){
-               this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
-                 //affecte a lotnombre selon le montant du bouton cliqué
-                 this.lotNombre = i;
-                 this.calculIA();
-                 //permet d'allez à l'affichage suivant
-                 this.valeur ++;
-                 Sup.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-                 this.timer ++;
-              });
-            }
-            Sup.log("GCB case 1");
-          break;
-
-        case 2:
-          Sup.log("GCB case 2");
-          for (let i=0; i<16; i++){
-              this.boutonTableau[i].fMouseInput.emitter.removeAllListeners();
-          }
-          break;
-
-        case 3://lorsque les boutons d'intentions d'achat on été cliqués on les reaffecte pour l'achat effectif
-          for (let i=0; i<16; i++){
-            
-            this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
-              Sup.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
-               //affecte a lotnombre selon le montant du bouton cliqué
-              this.lotChoisi = i;
-               //permet d'allez à l'affichage suivant
-              this.valeur ++;
-               //cache les boutons
-              this.visibleNombre(false);
-               //affiche les boutons suivants
-              this.visibleEnchere(true);
-            }); }
-          Sup.log("GCB case 3");
-        Sup.log("lotChoisi: "+this.lotChoisi);
-          break;
-
-        case 4:
-          Sup.log("GCB case 4");
-          break;
-
-        case 5:
-          Sup.log("GCB case 5");
-          break;
-
-        case 6:
-          Sup.log("GCB case 6");
-          break;
-
-        default:
-          Sup.log("test switch GCB default");
-          break;
     }
   }
   
@@ -310,14 +296,16 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.camera = Sup.getActor("Camera");
     this.boutonTableau = Sup.getActor("Vue2").getChild("Element").getChild("Bouton").getChildren();
     this.texteTableau = Sup.getActor("Vue2").getChild("Element").getChild("Texte").getChildren();
+    this.enchereSprite = Sup.getActor("Vue2").getChild("Element").getChild("Enchere").getChild("Sprite").getChildren();
+    this.enchereTexte  = Sup.getActor("Vue2").getChild("Element").getChild("Enchere").getChild("Texte").getChildren();
+    
     for (let i = 0; i <16; i++){
       let toto:string = "Sprite"+i.toString();
       new fMouseInput (this.boutonTableau[i]);
       this.boutonTableau[i].fMouseInput.setCameraActorName("Camera");
+      new fMouseInput (this.enchereSprite[i]);
+      this.enchereSprite[i].fMouseInput.setCameraActorName("Camera");
     }
-    this.enchereSprite = Sup.getActor("Vue2").getChild("Element").getChild("Enchere").getChild("Sprite").getChildren();
-    this.enchereTexte  = Sup.getActor("Vue2").getChild("Element").getChild("Enchere").getChild("Texte").getChildren();
-    
   }
   
   //rajoute notre intention d'achat à celui des ordis
@@ -330,6 +318,14 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.lotDivise = this.iaTotal/4;
     this.lotDivise = Math.floor(this.lotDivise);
     Sup.log("lotDivise fin ="+this.lotDivise);
+  }
+  
+  enchere(){
+    Sup.log("ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc");
+    
+    this.elementAchat = this.lotChoisi * (this.prixEnchere+1)*50;
+    Sup.log("prixEnchere: "+this.prixEnchere);
+    Sup.log("elementAchat: "+this.elementAchat);
   }
   
 }

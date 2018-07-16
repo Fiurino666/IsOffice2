@@ -167,7 +167,7 @@
     },
     "ScriptAchatConcurrenceBehavior": {
       "scriptId": "117",
-      "line": 1,
+      "line": 0,
       "parentBehavior": null,
       "properties": [
         {
@@ -197,6 +197,26 @@
         {
           "name": "lotChoisi",
           "type": "number"
+        },
+        {
+          "name": "prixEnchere",
+          "type": "number"
+        },
+        {
+          "name": "elementAchat",
+          "type": "number"
+        },
+        {
+          "name": "prixAchat",
+          "type": "number"
+        },
+        {
+          "name": "premiereFois",
+          "type": "boolean"
+        },
+        {
+          "name": "deuxiemeFois",
+          "type": "boolean"
         }
       ]
     },
