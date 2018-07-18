@@ -207,7 +207,15 @@
           "type": "number"
         },
         {
+          "name": "elementAchatTotal",
+          "type": "number"
+        },
+        {
           "name": "prixAchat",
+          "type": "number"
+        },
+        {
+          "name": "prixAchatTotal",
           "type": "number"
         },
         {
@@ -216,6 +224,10 @@
         },
         {
           "name": "deuxiemeFois",
+          "type": "boolean"
+        },
+        {
+          "name": "troisiemeFois",
           "type": "boolean"
         }
       ]
