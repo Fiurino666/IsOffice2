@@ -173,7 +173,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape4.textRenderer.setColor(255,255,255);
             this.etape5.textRenderer.setColor(255,255,255);
             
-          Sup.log("timer "+this.timer);
             if(!this.deuxiemeFois){
               this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter chez le fabricant 1 ?");
               this.afficheNBNombre(this.lotDivise);
