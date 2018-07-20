@@ -14,10 +14,15 @@ var nbChassis: number = 0;
 var nbComposant: number = 0;
 var nbLotFini: number = 0;
 var solde: number = 20000;
+var valTimer: number = 70;
 
 //variables personnalisés par le joueur sur l'interface 0
 var nom: string  = "";
 var societe: string  = "";
+
+//pour la musique
+var musicMuted = false;
+var musicPlayer = Sup.Audio.playSound("Global/Sound/Intro", 0.1, { loop: true });;
 
 function mouseOnHover(camera: Sup.Camera, boutons: Sup.Actor[]){
   let ray = new Sup.Math.Ray();
@@ -49,4 +54,16 @@ function noclic(boutons: Sup.Actor[]) {
   for(let i = 0; i < boutons.length; i++){
     boutons[i].spriteRenderer.setVerticalFlip(false);
   }
+}
+
+function musicAwake(){
+  if (musicMuted) musicPlayer.pause();
+}
+
+function musicUpdate(){
+  if (Sup.Input.wasKeyJustPressed("PAUSE")) {
+      musicMuted = !musicMuted;
+      if (musicMuted) musicPlayer.pause();
+      else musicPlayer.play();
+    }
 }

@@ -1,7 +1,7 @@
 class PersonnelScriptBehavior extends Sup.Behavior {
 
   menus : Sup.Actor[];
-
+  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });;
   //on initialise les variables locales, necessaires pour le bouton annuler
   localnbOuvrier: number = nbOuvrier.valueOf();
   localnbCommercial: number = nbCommercial.valueOf();
@@ -116,31 +116,38 @@ class PersonnelScriptBehavior extends Sup.Behavior {
     
     //on leur donne des instructions : Embaucher
     this.EmbaucherOuvrier.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       this.calculClick("ouvrier", "plus");
     });
 
     this.EmbaucherCommercial.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       this.calculClick("commercial", "plus");
     });
     
     this.EmbaucherComptable.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       this.calculClick("comptable", "plus");
     });
     
     //Licencier
     this.LicencierOuvrier.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       this.calculClick("ouvrier", "moins");
     });
     
-    this.LicencierCommercial.fMouseInput.emitter.on("leftClickReleased", () => { 
+    this.LicencierCommercial.fMouseInput.emitter.on("leftClickReleased", () => {
+      this.musicPlayer.play();
       this.calculClick("commercial", "moins");
     });
     
     this.LicencierComptable.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       this.calculClick("comptable", "moins"); 
     });
     
     this.Annuler.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       this.localnbOuvrier = nbOuvrier;
       this.localnbCommercial = nbCommercial;
       this.localnbComptable = nbComptable;
@@ -148,6 +155,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
     });
     
     this.Valider.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       nbOuvrier=this.localnbOuvrier.valueOf();
       nbCommercial=this.localnbCommercial.valueOf();
       nbComptable=this.localnbComptable.valueOf();
@@ -156,8 +164,9 @@ class PersonnelScriptBehavior extends Sup.Behavior {
     });
     
     this.Quitter.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
       //Un timer me permet de gerer lorsque l'on clique sur le menu et qu'on reclique par inadvertance au même endroit
-      if(this.timer > 90){
+      if(this.timer > valTimer){
         jeuTour = 0;
         Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
       }

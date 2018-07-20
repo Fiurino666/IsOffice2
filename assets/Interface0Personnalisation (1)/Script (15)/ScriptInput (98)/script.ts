@@ -16,28 +16,29 @@ class ScriptInputBehavior extends Sup.Behavior {
     Sup.getActor("Texte").getChild("LabelSociete").setVisible(false);
     this.imgInput1 = Sup.getActor("Element").getChild("ImgInput1");
     this.imgInput2 = Sup.getActor("Element").getChild("ImgInput2");
+    musicAwake();
   }
 
   update() {
-    this.column = Sup.Input.getTextEntered().length;
+    musicUpdate();
     
+    Sup.log("this.column "+this.column);
     //si on a pas encore appuyer sur entree
     if(this.valeur == 0){
-      this.suppr(nom);
-      nom = nom + Sup.Input.getTextEntered();
+      nom = this.suppr(nom);
       this.cursorActor1.textRenderer.setText(""+nom);
     }
     
+    
     //si on a deja appuyer une fois sur entree
     if(this.valeur == 1){
-      this.suppr(societe);
-      societe = societe + Sup.Input.getTextEntered();
+      societe = this.suppr(societe);
       this.cursorActor2.textRenderer.setText(""+societe);
       this.imgInput1.setVisible(false);
       this.imgInput2.setVisible(true);
     }
     
-    if (Sup.Input.wasKeyJustPressed("RETURN")) {
+    if (Sup.Input.wasKeyJustPressed("RETURN") || Sup.Input.wasMouseButtonJustPressed(2)) {
       switch (this.valeur){
           //on appuie deux fois sur entree
         case 0:{
@@ -54,7 +55,7 @@ class ScriptInputBehavior extends Sup.Behavior {
           this.cursorActor2.textRenderer.setText("");
           this.cursorActor1.textRenderer.setSize(36);
           this.cursorActor1.setLocalScale(0.2, 0.2, 1);
-          this.cursorActor1.textRenderer.setText("Je suis Henri votre assistant, \n notre entreprise " +societe+"\n fabrique des téléphones portables. \n A vous de gérer maintenant! \n Appuyer sur Entrée pour la suite...");
+          this.cursorActor1.textRenderer.setText("Je suis Henri votre assistant personnel, \n notre entreprise " +societe+"\n fabrique des téléphones portables. \n À vous de gérer maintenant patron ! \n Appuyer sur Entrée ou cliquer pour la suite ...");
           break;
         }
         case 2:{
@@ -66,14 +67,18 @@ class ScriptInputBehavior extends Sup.Behavior {
     }
   }
   
-  suppr(text){
+  suppr(text):string{
     //supprimer caractere ne marche pas
-    if (Sup.Input.wasKeyJustPressed("BACK_SPACE", { autoRepeat: true })) {
+   if (Sup.Input.wasKeyJustPressed("BACK_SPACE", { autoRepeat: true })) {
+      this.column = text.length+1;
       this.column --;
       text = text.substring(0, this.column - 1) + text.substring(this.column);
       this.column = Math.max(0, this.column - 1);
     }
-    
+    else{
+      text = text + Sup.Input.getTextEntered();
+    }
+    return text;
   }
   
   

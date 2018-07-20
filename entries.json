@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 125,
+  "nextEntryId": 128,
   "nodes": [
     {
       "id": "0",
@@ -177,7 +177,13 @@
           "id": "19",
           "name": "Sound",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "127",
+              "name": "Clique",
+              "type": "sound"
+            }
+          ]
         }
       ]
     },
@@ -653,6 +659,18 @@
           "id": "115",
           "name": "Mouse",
           "type": "script"
+        },
+        {
+          "id": "126",
+          "name": "Sound",
+          "type": null,
+          "children": [
+            {
+              "id": "125",
+              "name": "Intro",
+              "type": "sound"
+            }
+          ]
         }
       ]
     }

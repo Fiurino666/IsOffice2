@@ -215,10 +215,6 @@
           "type": "number"
         },
         {
-          "name": "prixAchatTotal",
-          "type": "number"
-        },
-        {
           "name": "premiereFois",
           "type": "boolean"
         },
@@ -229,6 +225,22 @@
         {
           "name": "troisiemeFois",
           "type": "boolean"
+        },
+        {
+          "name": "fab1",
+          "type": "string"
+        },
+        {
+          "name": "fab2",
+          "type": "string"
+        },
+        {
+          "name": "fab3",
+          "type": "string"
+        },
+        {
+          "name": "delaiTime",
+          "type": "number"
         }
       ]
     },

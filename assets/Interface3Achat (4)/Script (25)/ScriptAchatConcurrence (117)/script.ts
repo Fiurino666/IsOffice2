@@ -27,23 +27,28 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   lotChoisi : number; //nombre de lot que le joueur a choisi pour un fabricant
   prixEnchere : number; //quel prix a été proposé par le joueur pour l'enchere
   elementAchat : number; //combien d'élément le joueur a pu effectivement acheter a ce fabricant
-  elementAchatTotal : number; //combien d'élément le joueur a pu effectivement acheter a tous les fabricants ce tour
+  elementAchatTotal : number = 0; //combien d'élément le joueur a pu effectivement acheter a tous les fabricants ce tour
   prixAchat : number; //le prix des achats a ce fabricant
-  prixAchatTotal : number; //le prix total des achats, a déduire du solde à la fin du script 
-  IAprixAchat = new Array(3); //pour stocker les prix d'achat formulé par l'IA en tableau
-  IAlotChoisi = new Array(3); //pareil que IAprixEnchere mais pour le nombre de lot
-  IAelementAchat = new Array(3);//stocke le nombre d'achat de chaque IA pour l'affichage
+  
+  IAprixAchat: number[] = new Array(3); //pour stocker les prix d'achat formulé par l'IA en tableau
+  IAlotChoisi: number[] = new Array(3); //pareil que IAprixEnchere mais pour le nombre de lot
+  IAelementAchat: number[] = new Array(3);//stocke le nombre d'achat de chaque IA pour l'affichage
   
   premiereFois:boolean = false; //pour éviter de créer les event emitter sur click plusieurs fois
   deuxiemeFois:boolean = false; //pour éviter de créer les event emitter sur click plusieurs fois
   troisiemeFois:boolean = false;
+  fab1 : string;
+  fab2 : string;
+  fab3 : string;
+  delaiTime : number = 25;
+  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });;
   
   awake(){
+    musicAwake();
     //pour gerer l'ajout continue de 16 boutons
     EventEmitter.defaultMaxListeners = 20;
     this.affecteActor();
     this.affichageElement();
-    
     this.randomize();
     for (let u = 0; u <3; u++){
       this.affiche[u] = "L'entreprise "+ entrepriseConc[u] +" a prévu d'acheter " +this.iaArray[u]+" lots.";
@@ -51,11 +56,15 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       this.iaTotal = this.iaTotal + this.iaArray[u];
     }
     Sup.log(this.iaTotal);
-    this.qInfo.textRenderer.setText("Achat "+this.element2);
+    this.visibleEnchere(false);
+    this.afficheNBNombre(15);
     updateMenu(this.boutonNombre.getChildren());
+    this.qInfo.textRenderer.setText(solde + " E"); //pour mettre a jour le solde a chaque achat
+    
   }
 
   update(){
+    musicUpdate();
     //permet de remettre l opacite a 1 par defaut
     updateMenu(this.boutonNombre.getChildren());
     //enleve le flip vertical du clik sur le bouton
@@ -65,6 +74,11 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     updateMenu(this.enchereSprite);
     noclic(this.enchereSprite);
   }
+  
+  onDestroy(){
+    this.initialise();
+  }
+    
   
   //crée des valeurs random pour simuler la concurrence
   randomize(){
@@ -80,16 +94,25 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     switch(element){
       case "ecran":{
         this.element2 = "d'écran";
+        this.fab1 = "Yama";
+        this.fab2 = "Fony";
+        this.fab3 = "Sansun";
         Sup.log("ecran");
         break;
       }
       case "chassis":{
         this.element2 = "de chassis";
+        this.fab1 = "HTD";
+        this.fab2 = "Viko";
+        this.fab3 = "Rouce";
         Sup.log("chassis");
         break;
       }
       case "composant":{
         this.element2 = "de composant";
+        this.fab1 = "Wouaie";
+        this.fab2 = "Tatel";
+        this.fab3 = "Twuyin";
         Sup.log("composant");
         break;
       }
@@ -101,7 +124,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
  
   
   affichageConcurrence(){
-    
       switch (this.valeur){
           case 1:    //si on a pas encore appuyer sur entree
             this.etape1.textRenderer.setColor(242,26,64);
@@ -109,15 +131,14 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape3.textRenderer.setColor(255,255,255);
             this.etape4.textRenderer.setColor(255,255,255);
             this.etape5.textRenderer.setColor(255,255,255);
-          
             this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter ?");
             this.visibleNombre(true);
             this.visibleTxt(false);
             //Sup.log("valeur "+this.valeur);
             if(!this.premiereFois){
               for (let i=0; i<16; i++){
-
                   this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
+                    this.musicPlayer.play();
                     //affecte a lotnombre selon le montant du bouton cliqué
                     this.lotNombre = i;
                     this.calculIA();
@@ -149,10 +170,11 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.txtAffiche[4].setVisible(true);
             this.txtAffiche[4].textRenderer.setText("Les intentions d'achat du marché sont estimées à "+this.iaTotal+" / 3 soit : "+ this.lotDivise +" lots.");
             this.txtAffiche[5].setVisible(true);
-            this.txtAffiche[5].textRenderer.setText("Appuyer sur Entrée");
+            this.txtAffiche[5].textRenderer.setText("Appuyer sur Entrée  ou cliquer");
             //Sup.log("valeur "+this.valeur);
             //si le joueur appuie sur entrer ou alors qu'il appuie sur le click gauche de la souris et que le timer soit superieur a 70
-            if (Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0) && this.timer > 70)) {
+            if ((Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0)) && this.timer > this.delaiTime)) {
+              this.musicPlayer.play();
               this.valeur ++;
               Sup.log("deuxieme click");
               for (let i=0; i<16; i++){
@@ -161,77 +183,16 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
               }
               this.timer = 0;
               this.visibleTxt(false);
-              
             }
             break;
 
           case 3:
-            
             this.etape1.textRenderer.setColor(255,255,255);
             this.etape2.textRenderer.setColor(255,255,255);
             this.etape3.textRenderer.setColor(242,26,64);
             this.etape4.textRenderer.setColor(255,255,255);
             this.etape5.textRenderer.setColor(255,255,255);
-            
-          Sup.log("timer "+this.timer);
-            if(!this.deuxiemeFois){
-              this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter chez le fabricant 1 ?");
-              this.afficheNBNombre(this.lotDivise);
-            }
-           
-            //Sup.log("valeur "+this.valeur);
-            
-              if(!this.deuxiemeFois && (this.timer > 60)){
-                for (let i=0; i<16; i++){
-                  this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
-                    Sup.log("troisieme click");
-                     //affecte a lotnombre selon le montant du bouton cliqué
-                    this.lotChoisi = i;
-                    Sup.log("lotChoisi: "+this.lotChoisi);
-                     //affiche les boutons suivants
-                    this.visibleEnchere(true);
-                    this.timer = 60;
-                    this.txtAffiche[0].textRenderer.setText("A quel prix ?");
-                    this.troisiemeFois = true;
-                    this.boutonTableau[i].fMouseInput.emitter.removeAllListeners("leftClickReleased");
-                    this.visibleNombre(false);
-                 });
-                }
-                this.deuxiemeFois = true;
-              }
-          
-              if(this.troisiemeFois && (this.timer > 120)){
-                for (let i=0; i<16; i++){
-                  this.enchereSprite[i].fMouseInput.emitter.once("leftClickReleased", () => {
-                    Sup.log("quatrieme click");
-                    this.prixEnchere = i;
-
-                    this.visibleEnchere(false);
-                    this.prixAchat = (this.prixEnchere+1)*50;
-                    this.enchere();
-                    this.txtAffiche[0].textRenderer.setText("Il y a "+this.lotDivise+" lots à acheter");
-                    this.visibleTxt(true);
-                    for (let i=0; i<3; i++){
-                      this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a acheté "+this.IAelementAchat[i]+" lots au prix de "+this.IAprixAchat[i]+" €");
-                    }
-                    this.txtAffiche[4].textRenderer.setText("Vous avez acheté "+this.elementAchat+" lots à "+this.prixAchat+" €");
-                    this.txtAffiche[5].textRenderer.setText("Appuyer sur Entrée");
-                    
-                    for (let i=0; i<16; i++){
-                      this.enchereSprite[i].fMouseInput.emitter.removeAllListeners("leftClickReleased");
-                    }
-                    this.timer = 0;
-                  });
-                }
-                this.troisiemeFois = false;
-              }
-              if(this.txtAffiche[0].textRenderer.getText() == "Il y a "+this.lotDivise+" lots à acheter"){
-                if (Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0) && this.timer > 70)) {
-                  this.valeur ++;
-                }
-              }
-          
-            //noclic(this.enchereSprite);
+            this.etapeF(this.fab1);
             break;
 
           case 4:
@@ -240,11 +201,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape3.textRenderer.setColor(255,255,255);
             this.etape4.textRenderer.setColor(242,26,64);
             this.etape5.textRenderer.setColor(255,255,255);
-          
-            this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter chez le fabricant 2 ?");
-            this.visibleTxt(false);
-            //this.afficheNBNombre();
-            
+            this.etapeF(this.fab2);
             break;
           
           case 5:
@@ -253,23 +210,39 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape3.textRenderer.setColor(255,255,255);
             this.etape4.textRenderer.setColor(255,255,255);
             this.etape5.textRenderer.setColor(242,26,64);
-          
-            this.txtAffiche[0].textRenderer.setText("Combien de lots"+ this.element2 +" voulez-vous acheter chez le fabricant 3 ?");
+            this.etapeF(this.fab3);
             //this.afficheNBNombre();  
             //Sup.log("valeur "+this.valeur);
-            
             break;
           
           case 6:
             //Sup.log("valeur "+this.valeur);
+            switch(element){
+              case "ecran":{
+                nbEcran = nbEcran + this.elementAchatTotal;
+                break;
+              }
+              case "chassis":{
+                nbChassis = nbChassis + this.elementAchatTotal;
+                break;
+              }
+              case "composant":{
+                nbComposant = nbComposant + this.elementAchatTotal;
+                break;
+              }
+              default:{
+                Sup.log("test 007");
+              }
+            }
             this.camera.moveY(-11);
+            //Sup.getActor("SceneAcheter").getBehavior(ScriptAchatClickBehavior).timer = 0;
+            Sup.log("JE DETRUIT CE BEHAVIOR");
+            this.initialise();
             this.camera.getBehavior(ScriptAchatConcurrenceBehavior).destroy;
-            this.valeur=1;
-            
             break;
 
           default:
-            //Sup.log("test switch 585");
+            Sup.log("test switch 585");
             break;
 
     }
@@ -352,7 +325,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     Sup.log("iatotal ds calculIA ="+this.iaTotal);
     this.iaTotal = this.iaTotal+this.lotNombre;
     Sup.log("calculIA fait: "+this.iaTotal);
-    
     this.lotDivise = this.iaTotal/3;
     this.lotDivise = Math.floor(this.lotDivise);
     Sup.log("lotDivise fin ="+this.lotDivise);
@@ -361,7 +333,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   //recupere le lot voulu et le prix d'enchere pour savoir si l'ordi a des encheres plus hautes
   enchere(){
     Sup.log("calcul enchere effectue");
-    
     Sup.log("prixAchat: "+this.prixAchat);
     this.enchereIA();
     let lotProvisoire = this.lotDivise;
@@ -378,8 +349,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       }else{
         this.IAelementAchat[0] = lotProvisoire;
         lotProvisoire = 0;
-      }
-      
+      } 
     }
     
     if ((this.IAprixAchat[1]>this.prixAchat) && lotProvisoire>0){
@@ -401,6 +371,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
         lotProvisoire = 0;
       }
     }
+    
     Sup.log("elementAchat 1:  "+this.elementAchat);
     //si le joueur a placer des encheres superieur a l'ordi ou qu'il reste des lots a prendre
     if(lotProvisoire >= this.lotChoisi ){
@@ -410,6 +381,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       this.elementAchat = lotProvisoire;
       lotProvisoire = 0;
     }
+    
     Sup.log("elementAchat 2:  "+this.elementAchat);
     //je gere l'affichage pour que l'ordi achete les composants aprés le joueur
     Sup.log("lotProvisoire"+lotProvisoire);
@@ -417,7 +389,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     Sup.log("this.IAelementAchat[1] "+this.IAelementAchat[1]);
     Sup.log("this.IAelementAchat[2] "+this.IAelementAchat[2]);
     Sup.log("this.elementAchat "+this.elementAchat);
-    
   }
   
   enchereIA(){
@@ -427,15 +398,144 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     for (let i = 0; i <3; i++){
       this.IAprixAchat[i] = (rng.random(0, 15)+1)*50;
       this.IAlotChoisi[i] = (rng.random(0, this.lotDivise));
-      Sup.log("this.IAprixEnchere["+i+"] avant tri"+this.IAprixAchat[i]);
-      Sup.log("this.IAlotChoisi["+i+"] avant tri"+this.IAlotChoisi[i]);
+      Sup.log("this.IAprixAchat["+i+"] avant tri"+this.IAprixAchat[i]);
+      Sup.log("this.IAlotChoisi["+i+"] oOo oOo oOo "+this.IAlotChoisi[i]);
     }
     //on trie le tableau
     this.IAprixAchat.sort(function(a, b){return b - a});
     for (let i = 0; i <3; i++){
-      Sup.log("this.IAprixEnchere["+i+"] apres tri"+this.IAprixAchat[i]);
+      Sup.log("this.IAprixAchat["+i+"] apres tri"+this.IAprixAchat[i]);
     }
+  }
+  
+  etapeF(fab){
+    //Sup.log("etapeF passe");
+    if(!this.deuxiemeFois){
+      this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter chez le fabricant "+fab+" ?");
+      if(this.lotDivise>15){ this.lotDivise = 15;}
+      this.afficheNBNombre(this.lotDivise);
+      this.visibleTxt(false);
+    }
+           
+    //Sup.log("valeur "+this.valeur);
+      if(!this.deuxiemeFois && (this.timer > this.delaiTime)){
+        Sup.log("deuxiemeFois est faux");
+        for (let i=0; i<16; i++){
+          this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
+            this.musicPlayer.play();
+            Sup.log("troisieme click");
+             //affecte a lotnombre selon le montant du bouton cliqué
+            this.lotChoisi = i;
+            Sup.log("lotChoisi: "+this.lotChoisi);
+             //affiche les boutons suivants
+            this.txtAffiche[0].textRenderer.setText("A quel prix ?");
+            this.visibleEnchere(true);
+            this.visibleNombre(false);
+            this.cacheNBNombre();
+            this.timer = 0;
+            this.troisiemeFois = true;
+            for (let j=0; j<16; j++){
+              this.boutonTableau[j].fMouseInput.emitter.removeAllListeners("leftClickReleased");
+            }
+            
+         });
+        }
+        this.deuxiemeFois = true;
+        Sup.log("deuxiemeFois est vrai");
+      }
 
+      if(this.troisiemeFois && (this.timer > this.delaiTime)){
+        for (let i=0; i<16; i++){
+          this.enchereSprite[i].fMouseInput.emitter.once("leftClickReleased", () => {
+            this.musicPlayer.play();
+            Sup.log("quatrieme click");
+            this.prixEnchere = i;
+            this.prixAchat = (this.prixEnchere+1)*50;
+            this.visibleEnchere(false);
+            this.enchere();
+            this.txtAffiche[0].textRenderer.setText("Il y a "+this.lotDivise+" lots à acheter");
+            this.visibleTxt(true);
+            for (let i=0; i<3; i++){
+              if(this.IAelementAchat[i] > 0){
+                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a acheté "+this.IAelementAchat[i]+" lots au prix de "+this.IAprixAchat[i]+" €");
+              }
+              else{
+                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a proposé une enchère au prix de "+this.IAprixAchat[i]+" € mais n'a pas pu remporter de lot.");
+              }
+              
+            }
+            if(this.elementAchat > 0){
+              this.txtAffiche[4].textRenderer.setText("Vous avez acheté "+this.elementAchat+" lots à "+this.prixAchat+" € soit "+this.elementAchat*this.prixAchat+" €");
+            }
+            else{
+              this.txtAffiche[4].textRenderer.setText("Vous avez proposé une enchère à "+this.prixAchat+" € mais vous n'avez remporté aucun lot.");
+            }
+            
+            this.txtAffiche[5].textRenderer.setText("Appuyer sur Entrée ou cliquer");
+            //C'est ici que l'on valide l'achat dans le jeu en enlevant le montant du solde et en ajoutant le lot acheter a l'entreprise
+            this.elementAchatTotal = this.elementAchatTotal + this.elementAchat;
+            
+            for (let i=0; i<16; i++){
+              this.enchereSprite[i].fMouseInput.emitter.removeAllListeners("leftClickReleased");
+            }
+            this.timer = 0;
+            Sup.log("Il y a "+this.lotDivise+" lots à acheter");
+            Sup.log("Vous avez acheté "+this.elementAchat+" lots à "+this.prixAchat+" €");
+          });
+        }
+        this.troisiemeFois = false;
+      }
+    
+      if(this.txtAffiche[0].textRenderer.getText() == "Il y a "+this.lotDivise+" lots à acheter"){
+        if (Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0) && this.timer > this.delaiTime)) {
+          this.musicPlayer.play();
+          this.valeur ++;
+          solde = solde - this.prixAchat*this.elementAchat;
+          
+          //il faut reinitialiser les variables 
+          this.deuxiemeFois = false;
+          this.troisiemeFois = false;
+          this.elementAchat = 0;
+          this.prixAchat = 0;
+          this.prixEnchere = 0;
+          this.visibleNombre(false);
+          for (let i=0; i<16; i++){
+            this.enchereSprite[i].fMouseInput.emitter.removeAllListeners("leftClickReleased");
+          }
+          this.timer = 0;
+        }
+      }
+    
+    this.qInfo.textRenderer.setText(solde + " E"); //pour mettre a jour le solde a chaque achat
+          
+  }
+  
+  initialise(){
+    this.timer = 0;
+    this.lotNombre = 0;
+    this.lotDivise = 0;
+    this.lotChoisi = 0;
+    this.prixEnchere = 0;
+    this.elementAchat = 0;
+    this.elementAchatTotal = 0;
+    this.prixAchat = 0;
+    this.premiereFois = false; 
+    this.deuxiemeFois = false;
+    this.troisiemeFois = false;
+    this.iaTotal = 0;
+    this.valeur = 1;
+    this.IAprixAchat = null ; this.IAprixAchat = new Array(3);
+    this.IAlotChoisi = null; this.IAlotChoisi = new Array(3);
+    this.IAelementAchat = null; this.IAelementAchat = new Array(3);
+    this.iaArray = null; this.iaArray = new Array(3);
+    this.affiche = null; this.affiche = new Array(6);
+    this.txtAffiche = null; this.txtAffiche = new Array(6);
+    this.boutonTableau = null; this.boutonTableau = new Array(16);
+    this.texteTableau = null; this.texteTableau = new Array(16);
+    this.enchereSprite = null; this.enchereSprite = new Array(16);
+    this.enchereTexte = null; this.enchereTexte = new Array(16);
+    this.affecteActor();
+    Sup.log("initialise ~~~~~~~~~~~~~~~~~~~~~~~~~~");
   }
   
 }
