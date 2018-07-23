@@ -24,6 +24,15 @@ var societe: string  = "";
 var musicMuted = false;
 var musicPlayer = Sup.Audio.playSound("Global/Sound/Intro", 0.1, { loop: true });;
 
+//savoir quel element a été cliqué
+var element : String;
+
+//savoir si les valeurs on été cliqués
+var boolVisibleEcran : boolean = true;
+var boolVisibleChassis : boolean = true;
+var boolVisibleComposant : boolean = true;
+var boolClique: boolean;
+
 function mouseOnHover(camera: Sup.Camera, boutons: Sup.Actor[]){
   let ray = new Sup.Math.Ray();
   ray.setFromCamera(camera, Sup.Input.getMousePosition());
@@ -66,4 +75,19 @@ function musicUpdate(){
       if (musicMuted) musicPlayer.pause();
       else musicPlayer.play();
     }
+}
+
+function setboolVisibleEcran(boolClique){
+  boolVisibleEcran = boolClique;
+  Sup.log("this.boolVisibleEcran modifié à "+boolVisibleEcran);
+}
+
+function setboolVisibleChassis(boolClique){
+  boolVisibleChassis = boolClique;
+  Sup.log("this.setboolVisibleChassis modifié à "+boolVisibleChassis);
+}
+
+function setboolVisibleComposant(boolClique){
+  boolVisibleComposant = boolClique;
+  Sup.log("this.boolVisibleComposant modifié à "+boolVisibleComposant);
 }

@@ -16,11 +16,11 @@ class ScriptInputBehavior extends Sup.Behavior {
     Sup.getActor("Texte").getChild("LabelSociete").setVisible(false);
     this.imgInput1 = Sup.getActor("Element").getChild("ImgInput1");
     this.imgInput2 = Sup.getActor("Element").getChild("ImgInput2");
-    musicAwake();
+    //musicAwake();
   }
 
   update() {
-    musicUpdate();
+    //musicUpdate();
     
     Sup.log("this.column "+this.column);
     //si on a pas encore appuyer sur entree
@@ -67,7 +67,7 @@ class ScriptInputBehavior extends Sup.Behavior {
     }
   }
   
-  suppr(text):string{
+  suppr(text:string):string{
     //supprimer caractere ne marche pas
    if (Sup.Input.wasKeyJustPressed("BACK_SPACE", { autoRepeat: true })) {
       this.column = text.length+1;
@@ -76,7 +76,10 @@ class ScriptInputBehavior extends Sup.Behavior {
       this.column = Math.max(0, this.column - 1);
     }
     else{
-      text = text + Sup.Input.getTextEntered();
+      if (text.length < 19){
+        text = text + Sup.Input.getTextEntered();
+      }
+      
     }
     return text;
   }

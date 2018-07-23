@@ -445,8 +445,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
               }
               else{
                 this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a proposé une enchère au prix de "+this.IAprixAchat[i]+" € mais n'a pas pu remporter de lot.");
-              }
-              
+              }              
             }
             this.prixAchat = 0;
             this.elementAchat = 0;
@@ -457,7 +456,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             }
          });
         //les boutons de 1 a 15
-        for (let i=1; i<16; i++){
+       for (let i=1; i<16; i++){
           this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
             this.musicPlayer.play();
             Sup.log("troisieme click");

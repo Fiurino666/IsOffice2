@@ -1,10 +1,3 @@
-//savoir quel element a été cliqué
-var element : String;
-//savoir si les valeurs on été cliqués
-var boolVisibleEcran : boolean = true;
-var boolVisibleChassis : boolean = true;
-var boolVisibleComposant : boolean = true;
-
 class ScriptAchatClickBehavior extends Sup.Behavior {
   
   menus1 : Sup.Actor[];
@@ -21,6 +14,7 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
   musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });;
   timer: number;
   
+  
   awake() {
     musicAwake();
     this.menus1 = Sup.getActor("Vue1").getChild("Element").getChildren();
@@ -32,60 +26,16 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
     this.txtComposant = Sup.getActor("Vue1").getChild("Texte").getChild("TxtComposant");
     this.camera = Sup.getActor("Camera");
     this.quitChoix = Sup.getActor("Vue1").getChild("Texte").getChild("Quit");
-    
+
     //this.menus2 = Sup.getActor("Vue2").getChild("Element").getChildren();
     this.quitElement = Sup.getActor("Vue2").getChild("Texte").getChild("Quit");
     this.timer = 0;
+    element = "";
+    this.initialise();
+    boolClique = true;
+    
   }
   
-  start() {
-    this.initialise();
-    if(this.timer = 25){
-      this.btnEcran.fMouseInput.emitter.on("leftClickReleased", () => {
-        this.musicPlayer.play();
-        //on cache les boutons utilises
-        this.btnEcran.setVisible(false);
-        this.txtEcran.setVisible(false);
-        //variable qui permet de savoir quel bouton a ete cliquer
-        element = "ecran";
-        //on deplace la camera vers le haut pour la suite
-        this.camera.moveY(11);
-        //on charge le script qui permet de continuer l'achat selon le choix du joueur
-        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
-      });
-      this.btnChassis.fMouseInput.emitter.on("leftClickReleased", () => { 
-        this.musicPlayer.play();
-        Sup.log(" behChassis");
-        this.btnChassis.setVisible(false);
-        this.txtChassis.setVisible(false);
-        element = "chassis";
-        this.camera.moveY(11);
-        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
-      });
-      this.btnComposant.fMouseInput.emitter.on("leftClickReleased", () => {
-        this.musicPlayer.play();
-        Sup.log(" behaComposant");
-        this.btnComposant.setVisible(false);
-        this.txtComposant.setVisible(false);
-        element = "composant";
-        this.camera.moveY(11);
-        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
-      });
-      this.quitChoix.fMouseInput.emitter.on("leftClickReleased", () => { 
-        if(this.timer > 90){
-          this.musicPlayer.play();
-          this.quitteEcran(1);
-        }
-      });
-      this.quitElement.fMouseInput.emitter.on("leftClickReleased", () => { 
-        this.musicPlayer.play();
-        Sup.log(" behaEcran");
-        this.camera.moveY(-11);
-        this.testSortie();
-      });
-    }
-  }
-
   update() {
     musicUpdate;
     this.timer ++;
@@ -93,9 +43,16 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
     noclic(this.menus1);
     //updateMenu(this.menus2);
     //noclic(this.menus2);
-    this.testSortie();
-    //this.initialise();
+    //this.testSortie();
+    this.initialise();
+    if ((this.timer = 25) && boolClique){
+      this.attribuClique();
+      boolClique = false;
+    }
+    
   }
+  
+  
   
   //rend au demarrage de la fenetre tous les boutons visibles
   initialise(){
@@ -123,8 +80,7 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
       this.btnChassis.setVisible(false);
       this.txtChassis.setVisible(false);
     }
-    element = "";
-  }
+}
   
   quitteEcran(param){
     if(this.timer > valTimer){
@@ -137,11 +93,45 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
     //on teste si on a cliquer sur les trois elements
     if(!boolVisibleEcran && !boolVisibleComposant && !boolVisibleChassis){
       //permet de quitter la partie achat pour passer a production etape 3
-      boolVisibleEcran = true;
-      boolVisibleComposant = true;
-      boolVisibleChassis = true;
       this.quitteEcran(2);
     }
+  }
+  
+  attribuClique(){
+    this.btnEcran.fMouseInput.emitter.once("leftClickReleased", () => {
+        this.musicPlayer.play();
+        //variable qui permet de savoir quel bouton a ete cliquer
+        element = "ecran";
+        //on deplace la camera vers le haut pour la suite
+        this.camera.moveY(11);
+        //on charge le script qui permet de continuer l'achat selon le choix du joueur
+        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
+      });
+      this.btnChassis.fMouseInput.emitter.once("leftClickReleased", () => { 
+        this.musicPlayer.play();
+        Sup.log(" behChassis");
+        element = "chassis";
+        this.camera.moveY(11);
+        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
+      });
+      this.btnComposant.fMouseInput.emitter.once("leftClickReleased", () => {
+        this.musicPlayer.play();
+        Sup.log(" behaComposant");
+        element = "composant";
+        this.camera.moveY(11);
+        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
+      });
+      this.quitChoix.fMouseInput.emitter.once("leftClickReleased", () => { 
+        this.musicPlayer.play();
+        this.quitteEcran(1);
+
+      });
+      this.quitElement.fMouseInput.emitter.on("leftClickReleased", () => { 
+        this.musicPlayer.play();
+        Sup.log(" behaEcran");
+        this.camera.moveY(-11);
+        this.testSortie();
+      });
   }
   
   /*destroyCamera(){

@@ -156,7 +156,7 @@
     },
     "ScriptAchatClickBehavior": {
       "scriptId": "116",
-      "line": 7,
+      "line": 0,
       "parentBehavior": null,
       "properties": [
         {
@@ -167,7 +167,7 @@
     },
     "ScriptAchatConcurrenceBehavior": {
       "scriptId": "117",
-      "line": 0,
+      "line": 1,
       "parentBehavior": null,
       "properties": [
         {
