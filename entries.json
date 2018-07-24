@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 128,
+  "nextEntryId": 133,
   "nodes": [
     {
       "id": "0",
@@ -108,6 +108,11 @@
               "id": "111",
               "name": "CliqueMenuBouton",
               "type": "script"
+            },
+            {
+              "id": "128",
+              "name": "ScriptTextBar",
+              "type": "script"
             }
           ]
         },
@@ -170,6 +175,11 @@
               "id": "54",
               "name": "Tablette",
               "type": "sprite"
+            },
+            {
+              "id": "130",
+              "name": "Notification Icon",
+              "type": "sprite"
             }
           ]
         },
@@ -184,6 +194,12 @@
               "type": "sound"
             }
           ]
+        },
+        {
+          "id": "129",
+          "name": "Prefab",
+          "type": null,
+          "children": []
         }
       ]
     },

@@ -254,6 +254,25 @@
           "type": "number"
         }
       ]
+    },
+    "ScriptTextBarBehavior": {
+      "scriptId": "128",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "time",
+          "type": "number"
+        },
+        {
+          "name": "textProgress",
+          "type": "number"
+        },
+        {
+          "name": "strDefile",
+          "type": "string"
+        }
+      ]
     }
   }
 }

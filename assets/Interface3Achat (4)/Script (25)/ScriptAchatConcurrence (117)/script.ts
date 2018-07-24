@@ -74,11 +74,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.timer ++;
     updateMenu(this.enchereSprite);
     noclic(this.enchereSprite);
-  }
-  
-  onDestroy(){
-    this.initialise();
-    
   }    
   
   //crée des valeurs random pour simuler la concurrence
@@ -127,6 +122,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   }
  
   affichageConcurrence(){
+    Sup.log("valeur "+this.valeur);
       switch (this.valeur){
           case 1:    //si on a pas encore appuyer sur entree
             this.etape1.textRenderer.setColor(242,26,64);
@@ -137,7 +133,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.txtAffiche[0].textRenderer.setText("Combien de lots "+ this.element2 +" voulez-vous acheter ?");
             this.visibleNombre(true);
             this.visibleTxt(false);
-            //Sup.log("valeur "+this.valeur);
+            Sup.log("valeur "+this.valeur);
             if(!this.premiereFois){
               for (let i=0; i<16; i++){
                   this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
@@ -244,7 +240,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.valeur = 1;
             //Sup.getActor("SceneAcheter").getBehavior(ScriptAchatClickBehavior).timer = 0;
             Sup.log("JE DETRUIT CE BEHAVIOR");
-            this.camera.getBehavior(ScriptAchatConcurrenceBehavior).destroy;
+            this.camera.getBehavior(ScriptAchatConcurrenceBehavior).destroy();
             this.quitteEcran();
             break;
 
@@ -253,7 +249,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             break;
 
     }
-  
   }
 
   //cacher ou montrer les boutons de 0 a 15
@@ -445,8 +440,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
               }
               else{
                 this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a proposé une enchère au prix de "+this.IAprixAchat[i]+" € mais n'a pas pu remporter de lot.");
-              }
-              
+              }              
             }
             this.prixAchat = 0;
             this.elementAchat = 0;
@@ -457,7 +451,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             }
          });
         //les boutons de 1 a 15
-        for (let i=1; i<16; i++){
+       for (let i=1; i<16; i++){
           this.boutonTableau[i].fMouseInput.emitter.once("leftClickReleased", () => {
             this.musicPlayer.play();
             Sup.log("troisieme click");
@@ -579,8 +573,8 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       //permet de quitter la partie achat pour passer a production etape 3
       Sup.log("DESTRUCTION COME BACK");
       jeuTour = 2;
-      this.camera.getBehavior(ScriptAchatClickBehavior).destroy;
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+      //this.camera.getBehavior(ScriptAchatClickBehavior).destroy();
     }
   }
   

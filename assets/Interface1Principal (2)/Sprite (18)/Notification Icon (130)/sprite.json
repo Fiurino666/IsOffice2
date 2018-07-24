@@ -5,14 +5,14 @@
   ],
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
-  "pixelsPerUnit": 100,
+  "pixelsPerUnit": 16,
   "framesPerSecond": 10,
-  "opacity": null,
+  "opacity": 1,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 256,
-    "height": 256
+    "width": 64,
+    "height": 64
   },
   "origin": {
     "x": 0.5,
