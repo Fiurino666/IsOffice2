@@ -271,6 +271,34 @@
         {
           "name": "strDefile",
           "type": "string"
+        },
+        {
+          "name": "strEcran",
+          "type": "string"
+        },
+        {
+          "name": "strChassis",
+          "type": "string"
+        },
+        {
+          "name": "strComposant",
+          "type": "string"
+        },
+        {
+          "name": "strOuvrier",
+          "type": "string"
+        },
+        {
+          "name": "strCommercial",
+          "type": "string"
+        },
+        {
+          "name": "strComptable",
+          "type": "string"
+        },
+        {
+          "name": "strFini",
+          "type": "string"
         }
       ]
     }

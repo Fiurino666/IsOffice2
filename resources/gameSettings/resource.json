@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "startupSceneId": "73",
+  "startupSceneId": null,
   "framesPerSecond": 60,
   "ratioNumerator": 2000,
   "ratioDenominator": 1070,

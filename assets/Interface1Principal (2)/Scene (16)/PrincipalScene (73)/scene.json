@@ -707,7 +707,7 @@
                     "text": "Text",
                     "alignment": "left",
                     "verticalAlignment": "center",
-                    "size": 40,
+                    "size": 32,
                     "color": "00de6f",
                     "overrideOpacity": false,
                     "opacity": null
@@ -716,8 +716,8 @@
                 }
               ],
               "position": {
-                "x": -6.859,
-                "y": -5.15,
+                "x": -6.85,
+                "y": -5.12,
                 "z": 2
               },
               "orientation": {
