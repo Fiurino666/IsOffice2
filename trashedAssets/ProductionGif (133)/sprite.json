@@ -4,29 +4,21 @@
     "map"
   ],
   "filtering": "pixelated",
-  "wrapping": "mirroredRepeat",
+  "wrapping": "clampToEdge",
   "pixelsPerUnit": 100,
   "framesPerSecond": 10,
   "opacity": null,
   "alphaTest": 0.1,
-  "frameOrder": "columns",
+  "frameOrder": "rows",
   "grid": {
-    "width": 333,
-    "height": 717
+    "width": 400,
+    "height": 300
   },
   "origin": {
     "x": 0.5,
     "y": 0.5
   },
-  "animations": [
-    {
-      "id": "0",
-      "name": "Animation",
-      "startFrameIndex": 0,
-      "endFrameIndex": 2,
-      "speed": 1
-    }
-  ],
+  "animations": [],
   "mapSlots": {
     "map": "map",
     "light": null,

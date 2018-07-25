@@ -112,7 +112,7 @@
               "config": {
                 "formatVersion": 1,
                 "spriteAssetId": "63",
-                "animationId": null,
+                "animationId": "",
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
@@ -160,7 +160,7 @@
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 36,
-                "color": "ff8000",
+                "color": "0da809",
                 "overrideOpacity": false,
                 "opacity": null
               },
@@ -201,7 +201,7 @@
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 36,
-                "color": "ff8000",
+                "color": "0da809",
                 "overrideOpacity": false,
                 "opacity": null
               },
@@ -356,7 +356,7 @@
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 36,
-                "color": "ff8000",
+                "color": "0da809",
                 "overrideOpacity": false,
                 "opacity": null
               },
@@ -397,7 +397,7 @@
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 36,
-                "color": "ff8000",
+                "color": "0da809",
                 "overrideOpacity": false,
                 "opacity": null
               },

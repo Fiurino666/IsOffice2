@@ -19,7 +19,8 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     this.updatePhase();
 
     this.lblSolde = Sup.getActor("Element").getChild("Fixe").getChild("Solde");
-    this.lblSolde.textRenderer.setText(solde + " E");
+    this.afficheSolde();
+    
     Sup.getActor("Element").getChild("Fixe").getChild("TxtBureauDe").textRenderer.setText("Bureau de "+nom);
     this.ouvrierPersonne = Sup.getActor("Element").getChild("Dynamique").getChild("OuvrierPersonne");
     this.ouvrierMeuble = Sup.getActor("Element").getChild("Dynamique").getChild("OuvrierMeuble");
@@ -148,6 +149,11 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     
    
   }
+  
+  afficheSolde(){
+    this.lblSolde.textRenderer.setText(solde.toString().replace(/(\d)(?=(\d{3})+\b)/g,'$1 ')+" €");
+  }
+    
   
   
 }

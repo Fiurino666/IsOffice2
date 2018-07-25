@@ -439,9 +439,10 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
                 this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a acheté "+this.IAelementAchat[i]+" lots au prix de "+this.IAprixAchat[i]+" €");
               }
               else{
-                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a proposé une enchère au prix de "+this.IAprixAchat[i]+" € mais n'a pas pu remporter de lot.");
+                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a proposé une enchère au prix de "+this.IAprixAchat[i]+" € mais n'a pas pu remporter de lot");
               }              
             }
+            this.txtAffiche[4].textRenderer.setText("Vous n'avez pas enchéri ce tour");
             this.prixAchat = 0;
             this.elementAchat = 0;
              //affiche les boutons suivants

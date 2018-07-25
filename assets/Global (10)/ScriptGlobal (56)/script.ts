@@ -1,4 +1,4 @@
-
+/////////// A sauvegarder dans la base \\\\\\\\\\\\\\
 //Pour savoir a quel tour de jou nous en sommes
 var jeuTour: number = 0;
 //Une fois tous les tour de jeu effectué nous avons finis un mois
@@ -14,7 +14,7 @@ var nbChassis: number = 0;
 var nbComposant: number = 0;
 var nbLotFini: number = 0;
 var solde: number = 20000;
-var valTimer: number = 70;
+///////////                            \\\\\\\\\\\\\\
 
 //variables personnalisés par le joueur sur l'interface 0
 var nom: string  = "";
@@ -23,6 +23,9 @@ var societe: string  = "";
 //pour la musique
 var musicMuted = false;
 var musicPlayer = Sup.Audio.playSound("Global/Sound/Intro", 0.1, { loop: true });;
+
+//défini le temps entre deux cliques
+var valTimer: number = 70;
 
 //savoir quel element a été cliqué
 var element : String;
@@ -71,10 +74,10 @@ function musicAwake(){
 
 function musicUpdate(){
   if (Sup.Input.wasKeyJustPressed("PAUSE")) {
-      musicMuted = !musicMuted;
-      if (musicMuted) musicPlayer.pause();
-      else musicPlayer.play();
-    }
+    musicMuted = !musicMuted;
+    if (musicMuted) musicPlayer.pause();
+    else musicPlayer.play();
+  }
 }
 
 function setboolVisibleEcran(boolClique){
@@ -90,4 +93,13 @@ function setboolVisibleChassis(boolClique){
 function setboolVisibleComposant(boolClique){
   boolVisibleComposant = boolClique;
   Sup.log("this.boolVisibleComposant modifié à "+boolVisibleComposant);
+}
+
+function animeAssistant(assistant: Sup.SpriteRenderer, anime:boolean){
+  if(anime){
+    assistant.setAnimation("Animation", false);
+  }else{
+    assistant.setAnimation("Pas", true);
+  }
+  
 }

@@ -1,6 +1,6 @@
 class ScriptInputBehavior extends Sup.Behavior {
   
-  
+  timer:number=0;
   cursorActor1: Sup.Actor;
   cursorActor2: Sup.Actor;
   imgInput1: Sup.Actor;
@@ -16,11 +16,18 @@ class ScriptInputBehavior extends Sup.Behavior {
     Sup.getActor("Texte").getChild("LabelSociete").setVisible(false);
     this.imgInput1 = Sup.getActor("Element").getChild("ImgInput1");
     this.imgInput2 = Sup.getActor("Element").getChild("ImgInput2");
-    //musicAwake();
+    animeAssistant(Sup.getActor("Element").getChild("Assistant").spriteRenderer, true);
+    musicAwake();
   }
 
   update() {
-    //musicUpdate();
+    musicUpdate();
+    this.timer++;
+    if(this.timer == 180){
+      animeAssistant(Sup.getActor("Element").getChild("Assistant").spriteRenderer, true);
+      this.timer=0;
+      
+    }
     
     Sup.log("this.column "+this.column);
     //si on a pas encore appuyer sur entree

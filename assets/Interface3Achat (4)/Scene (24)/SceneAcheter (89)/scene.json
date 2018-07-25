@@ -209,7 +209,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "ff8000",
+                    "color": "0da809",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -569,7 +569,7 @@
               "config": {
                 "formatVersion": 1,
                 "spriteAssetId": "63",
-                "animationId": null,
+                "animationId": "0",
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
@@ -1052,7 +1052,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "ff8000",
+                    "color": "0da809",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -1093,7 +1093,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "ff8000",
+                    "color": "0da809",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -1134,7 +1134,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "ff8000",
+                    "color": "0da809",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -1175,7 +1175,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "ff8000",
+                    "color": "0da809",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -1216,7 +1216,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "ff8000",
+                    "color": "0da809",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -1257,7 +1257,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "ff8000",
+                    "color": "0da809",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -1417,9 +1417,9 @@
                         "verticalFlip": false,
                         "castShadow": false,
                         "receiveShadow": false,
-                        "color": "ffffff",
+                        "color": "ffff00",
                         "overrideOpacity": true,
-                        "opacity": 1,
+                        "opacity": null,
                         "materialType": "basic",
                         "shaderAssetId": null
                       },

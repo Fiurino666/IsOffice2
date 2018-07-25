@@ -115,6 +115,10 @@
       "parentBehavior": null,
       "properties": [
         {
+          "name": "timer",
+          "type": "number"
+        },
+        {
           "name": "valeur",
           "type": "number"
         },
