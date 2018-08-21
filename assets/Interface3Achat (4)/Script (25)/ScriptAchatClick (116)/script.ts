@@ -85,6 +85,7 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
   quitteEcran(param){
     if(this.timer > valTimer){
       jeuTour = param;
+      Sup.log("quitteEcran "+param);
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
     }
   }
@@ -124,7 +125,6 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
       this.quitChoix.fMouseInput.emitter.once("leftClickReleased", () => { 
         this.musicPlayer.play();
         this.quitteEcran(1);
-
       });
       this.quitElement.fMouseInput.emitter.on("leftClickReleased", () => { 
         this.musicPlayer.play();
@@ -133,11 +133,6 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
         this.testSortie();
       });
   }
-  
-  /*destroyCamera(){
-    this.camera.getBehavior(ScriptAchatConcurrenceBehavior).destroy;
-    Sup.log("JE DETRUIT CE BEHAVIOR");
-  }*/
   
 }
 Sup.registerBehavior(ScriptAchatClickBehavior);

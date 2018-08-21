@@ -90,8 +90,8 @@
         "w": 1
       },
       "scale": {
-        "x": 1,
-        "y": 1,
+        "x": 1.1,
+        "y": 1.1,
         "z": 1
       },
       "visible": true,
@@ -101,12 +101,57 @@
     {
       "id": "2",
       "name": "Element",
-      "children": [],
+      "children": [
+        {
+          "id": "6",
+          "name": "Video",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "137",
+                "animationId": "1",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": true,
+                "opacity": 0.8,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 1,
+            "z": 2
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1.5,
+            "y": 1.5,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
       "components": [],
       "position": {
         "x": 0,
         "y": 0,
-        "z": 0
+        "z": 1
       },
       "orientation": {
         "x": 0,
@@ -136,8 +181,8 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
-                "text": "Revenir à \nla fenêtre\nprécédente",
+                "fontAssetId": "74",
+                "text": "Suivant",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": null,
@@ -156,8 +201,131 @@
             }
           ],
           "position": {
-            "x": 0.624,
-            "y": -0.47,
+            "x": -35.466621953330105,
+            "y": 20.236005783081055,
+            "z": 1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "5",
+          "name": "Titre",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "80",
+                "text": "Produire",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 80,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -4.6536192178405145,
+            "y": 20.55351495742798,
+            "z": 1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "7",
+          "name": "TxtOutput1",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "80",
+                "text": "Affiche",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 40,
+                "color": "0da809",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": -7,
+            "z": 1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "8",
+          "name": "TxtOutput2",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "80",
+                "text": "Affiche",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 40,
+                "color": "0da809",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": -12,
             "z": 1
           },
           "orientation": {
@@ -178,9 +346,9 @@
       ],
       "components": [],
       "position": {
-        "x": -6.496311664581299,
-        "y": 3.9120125770568848,
-        "z": 0
+        "x": 0,
+        "y": 0,
+        "z": 1
       },
       "orientation": {
         "x": 0,

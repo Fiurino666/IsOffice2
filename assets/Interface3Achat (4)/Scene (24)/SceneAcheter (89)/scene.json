@@ -46,8 +46,8 @@
         "w": 1
       },
       "scale": {
-        "x": 1,
-        "y": 1,
+        "x": 1.1,
+        "y": 1.1,
         "z": 1
       },
       "visible": true,
@@ -115,7 +115,7 @@
                   "type": "TextRenderer",
                   "config": {
                     "formatVersion": 2,
-                    "fontAssetId": "81",
+                    "fontAssetId": "74",
                     "text": "Revenir à \nla fenêtre\nprécédente",
                     "alignment": "center",
                     "verticalAlignment": "center",
@@ -163,7 +163,7 @@
                   "type": "TextRenderer",
                   "config": {
                     "formatVersion": 2,
-                    "fontAssetId": "46",
+                    "fontAssetId": "80",
                     "text": "Acheter",
                     "alignment": "center",
                     "verticalAlignment": "center",
@@ -686,7 +686,7 @@
                   "type": "TextRenderer",
                   "config": {
                     "formatVersion": 2,
-                    "fontAssetId": "46",
+                    "fontAssetId": "80",
                     "text": "Acheter",
                     "alignment": "center",
                     "verticalAlignment": "center",
@@ -727,7 +727,7 @@
                   "type": "TextRenderer",
                   "config": {
                     "formatVersion": 2,
-                    "fontAssetId": "81",
+                    "fontAssetId": "74",
                     "text": "Revenir à \nla fenêtre\nprécédente",
                     "alignment": "center",
                     "verticalAlignment": "center",
@@ -775,7 +775,7 @@
                   "type": "TextRenderer",
                   "config": {
                     "formatVersion": 2,
-                    "fontAssetId": "81",
+                    "fontAssetId": "79",
                     "text": "23 caracteres",
                     "alignment": "center",
                     "verticalAlignment": "center",
@@ -1257,7 +1257,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
-                    "color": "0da809",
+                    "color": "ffffff",
                     "overrideOpacity": false,
                     "opacity": null
                   },

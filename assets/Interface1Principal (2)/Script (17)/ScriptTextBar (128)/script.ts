@@ -17,8 +17,10 @@ class ScriptTextBarBehavior extends Sup.Behavior {
 
   update() {
     this.time++;
-    this.valeurString();
-    this.strDefile = "Votre entreprise "+societe+" a : "+nbEcran+" "+this.strEcran+", "+nbChassis+" "+this.strChassis+", "+nbComposant+" "+this.strComposant+", "+nbLotFini+" "+this.strFini+" de téléphones portables à vendre, et "+nbOuvrier+" "+this.strOuvrier+", "+nbCommercial+" "+this.strCommercial+", "+nbComptable+" "+this.strComptable+" sont engagés dans la société."
+    this.strDefile = "           Votre entreprise "+societe+" a : "+nbEcran+" "+gereS(nbEcran,"lot")+" "+gereS(nbEcran,"d'écran")+", "+nbChassis+" "+gereS(nbChassis,"lot")+
+      " de chassis"+", "+nbComposant+" "+gereS(nbComposant,"lot")+" de "+gereS(nbComposant,"composant")+", "+nbLotFini+" "+gereS(nbLotFini,"lot")+
+      " de téléphones portables à vendre, et "+nbOuvrier+" "+gereS(nbOuvrier,"ouvrier")+
+      ", "+nbCommercial+" "+gereS(nbCommercial,"commercial")+", "+nbComptable+" "+gereS(nbComptable,"comptable")+" sont engagés dans la société.";
     //this.txtDefile.setText(this.strDefile);
     if(this.time = 60){
       this.marquee();
@@ -42,48 +44,6 @@ class ScriptTextBarBehavior extends Sup.Behavior {
     
     
 }
-  
-  valeurString(){
-    if(nbEcran < 2){
-      this.strEcran = "lot d'écrans";
-    }else{
-      this.strEcran = "lots d'écrans";
-    }
-    if(nbChassis < 2){
-      this.strChassis = "lot de chassis";
-    }else{
-      this.strChassis = "lots de chassis";
-    }
-    if(nbComposant < 2){
-      this.strComposant = "lot de composants";
-    }else{
-      this.strComposant = "lots de composants";
-    }
-    
-    if(nbOuvrier < 2){
-      this.strOuvrier = "ouvrier";
-    }else{
-      this.strOuvrier = "ouvriers";
-    }
-    if(nbCommercial < 2){
-      this.strCommercial = "commercial";
-    }else{
-      this.strCommercial = "commerciaux";
-    }
-    if(nbComptable < 2){
-      this.strComptable = "comptable";
-    }else{
-      this.strComptable = "comptables";
-    }
-    
-    if(nbLotFini < 2){
-      this.strFini = "lot";
-    }else{
-      this.strFini = "lots";
-    }
-    
-  }
-
 
 }
 Sup.registerBehavior(ScriptTextBarBehavior);

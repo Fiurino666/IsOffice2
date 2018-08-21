@@ -101,5 +101,21 @@ function animeAssistant(assistant: Sup.SpriteRenderer, anime:boolean){
   }else{
     assistant.setAnimation("Pas", true);
   }
-  
 }
+
+function gereS(nb: number, str:string){
+  if(str == "commercial"){  //exception pour commercial
+    if(nb<2){
+      return "commercial";
+    }else{
+      return "commerciaux";
+    }    
+  }
+  if(nb<2){
+    str = str;
+  }else{
+    str = str + "s";
+  }
+  
+    return str;
+  }

@@ -52,7 +52,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.affichageElement();
     this.randomize();
     for (let u = 0; u <3; u++){
-      this.affiche[u] = "L'entreprise "+ entrepriseConc[u] +" a prévu d'acheter " +this.iaArray[u]+" lots.";
+      this.affiche[u] = "L'entreprise "+ entrepriseConc[u] +" a prévu d'acheter " +this.iaArray[u]+" "+gereS(this.iaArray[u],"lot")+".";
       Sup.log("affiche "+u+" : "+this.affiche[u]);
       this.iaTotal = this.iaTotal + this.iaArray[u];
     }
@@ -74,7 +74,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.timer ++;
     updateMenu(this.enchereSprite);
     noclic(this.enchereSprite);
-  }    
+  }
   
   //crée des valeurs random pour simuler la concurrence
   randomize(){
@@ -122,7 +122,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   }
  
   affichageConcurrence(){
-    Sup.log("valeur "+this.valeur);
+    //Sup.log("valeur "+this.valeur);
       switch (this.valeur){
           case 1:    //si on a pas encore appuyer sur entree
             this.etape1.textRenderer.setColor(242,26,64);
@@ -165,11 +165,11 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.txtAffiche[2].setVisible(true);
             this.txtAffiche[2].textRenderer.setText(this.affiche[2]);
             this.txtAffiche[3].setVisible(true);
-            this.txtAffiche[3].textRenderer.setText("Votre entreprise "+societe+" a prévu d'acheter "+this.lotNombre+ " lots.");
+            this.txtAffiche[3].textRenderer.setText("Votre entreprise "+societe+" a prévu d'acheter "+this.lotNombre+ " "+gereS(this.lotNombre, "lot")+".");
             this.txtAffiche[4].setVisible(true);
-            this.txtAffiche[4].textRenderer.setText("Les intentions d'achat du marché sont estimées à "+this.iaTotal+" / 3 soit : "+ this.lotDivise +" lots.");
+            this.txtAffiche[4].textRenderer.setText("Les intentions d'achat du marché sont estimées à "+this.iaTotal+" / 3 soit : "+ this.lotDivise +" "+gereS(this.lotDivise, "lot")+".");
             this.txtAffiche[5].setVisible(true);
-            this.txtAffiche[5].textRenderer.setText("Appuyer sur Entrée  ou cliquer");
+            this.txtAffiche[5].textRenderer.setText("Cliquez pour continuer");
             //Sup.log("valeur "+this.valeur);
             //si le joueur appuie sur entrer ou alors qu'il appuie sur le click gauche de la souris et que le timer soit superieur a 70
             if ((Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0)) && this.timer > this.delaiTime)) {
@@ -239,7 +239,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.camera.moveY(-11);
             this.valeur = 1;
             //Sup.getActor("SceneAcheter").getBehavior(ScriptAchatClickBehavior).timer = 0;
-            Sup.log("JE DETRUIT CE BEHAVIOR");
+            Sup.log("JE DETRUIS CE BEHAVIOR");
             this.camera.getBehavior(ScriptAchatConcurrenceBehavior).destroy();
             this.quitteEcran();
             break;
@@ -432,11 +432,11 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.prixEnchere = 0;
             Sup.log("lotChoisi: "+this.lotChoisi);
             this.enchere();
-            this.txtAffiche[0].textRenderer.setText("Il y a "+this.lotDivise+" lots à acheter");
+            this.txtAffiche[0].textRenderer.setText("Il y a "+this.lotDivise+" "+gereS(this.lotDivise,"lot")+" à acheter");
             this.visibleTxt(true);
             for (let i=0; i<3; i++){
               if(this.IAelementAchat[i] > 0){
-                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a acheté "+this.IAelementAchat[i]+" lots au prix de "+this.IAprixAchat[i]+" €");
+                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a acheté "+this.IAelementAchat[i]+" "+gereS(this.IAelementAchat[i],"lot")+" au prix de "+this.IAprixAchat[i]+" €");
               }
               else{
                 this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a proposé une enchère au prix de "+this.IAprixAchat[i]+" € mais n'a pas pu remporter de lot");
@@ -485,11 +485,11 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.prixAchat = (this.prixEnchere+1)*50;
             this.visibleEnchere(false);
             this.enchere();
-            this.txtAffiche[0].textRenderer.setText("Il y a "+this.lotDivise+" lots à acheter");
+            this.txtAffiche[0].textRenderer.setText("Il y a "+this.lotDivise+" "+gereS(this.lotDivise,"lot")+" à acheter");
             this.visibleTxt(true);
             for (let i=0; i<3; i++){
               if(this.IAelementAchat[i] > 0){
-                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a acheté "+this.IAelementAchat[i]+" lots au prix de "+this.IAprixAchat[i]+" €");
+                this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a acheté "+this.IAelementAchat[i]+" "+gereS(this.IAelementAchat[i],"lot")+" au prix de "+this.IAprixAchat[i]+" €");
               }
               else{
                 this.txtAffiche[i+1].textRenderer.setText("L'entreprise "+entrepriseConc[i]+" a proposé une enchère au prix de "+this.IAprixAchat[i]+" € mais n'a pas pu remporter de lot.");
@@ -497,13 +497,13 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
               
             }
             if(this.elementAchat > 0){
-              this.txtAffiche[4].textRenderer.setText("Vous avez acheté "+this.elementAchat+" lots à "+this.prixAchat+" € soit "+this.elementAchat*this.prixAchat+" €");
+              this.txtAffiche[4].textRenderer.setText("Vous avez acheté "+this.elementAchat+" "+gereS(this.elementAchat,"lot")+" à "+this.prixAchat+" € soit "+this.elementAchat*this.prixAchat+" €");
             }
             else{
               this.txtAffiche[4].textRenderer.setText("Vous avez proposé une enchère à "+this.prixAchat+" € mais vous n'avez remporté aucun lot.");
             }
             
-            this.txtAffiche[5].textRenderer.setText("Appuyer sur Entrée ou cliquer");
+            this.txtAffiche[5].textRenderer.setText("Cliquez pour continuer");
             //C'est ici que l'on valide l'achat dans le jeu en enlevant le montant du solde et en ajoutant le lot acheter a l'entreprise
             this.elementAchatTotal = this.elementAchatTotal + this.elementAchat;
             
@@ -566,7 +566,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.enchereSprite = null; this.enchereSprite = new Array(16);
     this.enchereTexte = null; this.enchereTexte = new Array(16);
     this.affecteActor();
-    Sup.log("initialise ~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    Sup.log("initialise");
   }
   
   quitteEcran(){

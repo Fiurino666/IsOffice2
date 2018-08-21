@@ -66,6 +66,7 @@ class MenuScriptBehavior extends Sup.Behavior {
       clicVisuel(this.btnScore);
     });
     this.btnSiteInternet.fMouseInput.emitter.on("leftClickReleased", () => { 
+      window.open("http://isoffice.nepita.eu/"); 
       this.musicPlayer.play();
       Sup.log(" btnSiteInternet");
       clicVisuel(this.btnSiteInternet);

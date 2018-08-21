@@ -254,7 +254,19 @@
       "parentBehavior": null,
       "properties": [
         {
+          "name": "strAffiche1",
+          "type": "string"
+        },
+        {
+          "name": "strAffiche2",
+          "type": "string"
+        },
+        {
           "name": "timer",
+          "type": "number"
+        },
+        {
+          "name": "numCalc",
           "type": "number"
         }
       ]

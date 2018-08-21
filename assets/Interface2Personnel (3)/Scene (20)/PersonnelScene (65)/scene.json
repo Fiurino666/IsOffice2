@@ -90,8 +90,8 @@
         "w": 1
       },
       "scale": {
-        "x": 1.05,
-        "y": 1,
+        "x": 1.1,
+        "y": 1.1,
         "z": 1
       },
       "visible": true,
@@ -124,7 +124,7 @@
             }
           ],
           "position": {
-            "x": -46.649,
+            "x": -45.5,
             "y": -0.9,
             "z": 2
           },
@@ -247,7 +247,7 @@
             }
           ],
           "position": {
-            "x": -36.111,
+            "x": -35,
             "y": -0.9,
             "z": 2
           },
@@ -452,7 +452,7 @@
             }
           ],
           "position": {
-            "x": -48.911,
+            "x": -48,
             "y": -4.2,
             "z": 2
           },
@@ -575,7 +575,7 @@
             }
           ],
           "position": {
-            "x": -38.286,
+            "x": -36.7,
             "y": -4.2,
             "z": 2
           },
@@ -685,7 +685,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Effectif : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -698,7 +698,7 @@
             }
           ],
           "position": {
-            "x": -46.979,
+            "x": -46,
             "y": -9.4,
             "z": 2
           },
@@ -726,7 +726,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Effectif : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -767,7 +767,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Effectif : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -808,7 +808,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Masse Salariale : ",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -849,7 +849,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Salaire :",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -862,7 +862,7 @@
             }
           ],
           "position": {
-            "x": -47.418,
+            "x": -46,
             "y": -15,
             "z": 2
           },
@@ -890,7 +890,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Salaire :",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -931,7 +931,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Salaire :",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -972,7 +972,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Total :",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -985,7 +985,7 @@
             }
           ],
           "position": {
-            "x": -47.945,
+            "x": -46,
             "y": -20,
             "z": 2
           },
@@ -1013,7 +1013,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Total :",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -1054,7 +1054,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "80",
                 "text": "Total :",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -1095,7 +1095,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "81",
+                "fontAssetId": "74",
                 "text": "Revenir à \nla fenêtre\nprécédente",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -1143,7 +1143,7 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "46",
+                "fontAssetId": "80",
                 "text": "Personnel",
                 "alignment": "center",
                 "verticalAlignment": "center",
@@ -1233,7 +1233,7 @@
             }
           ],
           "position": {
-            "x": -1.1,
+            "x": -0.9,
             "y": 0.5,
             "z": 1
           },
@@ -1488,7 +1488,7 @@
             }
           ],
           "position": {
-            "x": 0.806,
+            "x": 1,
             "y": 0.5,
             "z": 1
           },
@@ -1660,7 +1660,7 @@
             }
           ],
           "position": {
-            "x": -7.824,
+            "x": -7.6,
             "y": 1.77,
             "z": 1
           },
@@ -1792,7 +1792,7 @@
             }
           ],
           "position": {
-            "x": -7.65,
+            "x": -7.4,
             "y": -2.7,
             "z": 1
           },
@@ -1881,7 +1881,7 @@
           ],
           "position": {
             "x": 1.36,
-            "y": -2.653,
+            "y": -2.7,
             "z": 1
           },
           "orientation": {
@@ -2012,7 +2012,7 @@
             }
           ],
           "position": {
-            "x": -7.666,
+            "x": -7.4,
             "y": -2.118,
             "z": 2
           },
@@ -2144,7 +2144,7 @@
             }
           ],
           "position": {
-            "x": -7.713,
+            "x": -7.4,
             "y": -3.288,
             "z": 2
           },
@@ -2305,7 +2305,7 @@
               "config": {
                 "formatVersion": 1,
                 "spriteAssetId": "63",
-                "animationId": "0",
+                "animationId": null,
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
@@ -2364,7 +2364,7 @@
             }
           ],
           "position": {
-            "x": -9.006,
+            "x": -9,
             "y": 1.6,
             "z": 0
           },
@@ -2408,7 +2408,7 @@
             }
           ],
           "position": {
-            "x": -6.509,
+            "x": -6,
             "y": 1.6,
             "z": 0
           },
@@ -2452,8 +2452,8 @@
             }
           ],
           "position": {
-            "x": -4.7861069440841675,
-            "y": 1.7021180093288422,
+            "x": -4.786,
+            "y": 1.8,
             "z": 0
           },
           "orientation": {
@@ -2496,8 +2496,8 @@
             }
           ],
           "position": {
-            "x": -1.5458537340164185,
-            "y": 1.7021178901195526,
+            "x": -1.546,
+            "y": 1.8,
             "z": 0
           },
           "orientation": {
@@ -2540,8 +2540,8 @@
             }
           ],
           "position": {
-            "x": -0.43942587077617645,
-            "y": 1.6546994149684906,
+            "x": -0.439,
+            "y": 1.75,
             "z": 0
           },
           "orientation": {
@@ -2585,7 +2585,7 @@
           ],
           "position": {
             "x": 3.196,
-            "y": 1.65,
+            "y": 1.75,
             "z": 0
           },
           "orientation": {
@@ -2699,7 +2699,7 @@
                 }
               ],
               "position": {
-                "x": -45.5,
+                "x": -45,
                 "y": -3,
                 "z": 2
               },
@@ -2740,7 +2740,7 @@
                 }
               ],
               "position": {
-                "x": -35.665,
+                "x": -34,
                 "y": -3,
                 "z": 2
               },

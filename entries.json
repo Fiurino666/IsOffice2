@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 136,
+  "nextEntryId": 139,
   "nodes": [
     {
       "id": "0",
@@ -384,7 +384,13 @@
           "id": "30",
           "name": "Sprite",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "137",
+              "name": "Video",
+              "type": "sprite"
+            }
+          ]
         },
         {
           "id": "31",
@@ -614,7 +620,7 @@
             },
             {
               "id": "78",
-              "name": "ExtraBold",
+              "name": "BoldItalic",
               "type": "font"
             },
             {
@@ -640,6 +646,28 @@
           ]
         },
         {
+          "id": "138",
+          "name": "Script",
+          "type": null,
+          "children": [
+            {
+              "id": "56",
+              "name": "ScriptGlobal",
+              "type": "script"
+            },
+            {
+              "id": "114",
+              "name": "Button Behavior",
+              "type": "script"
+            },
+            {
+              "id": "115",
+              "name": "Mouse",
+              "type": "script"
+            }
+          ]
+        },
+        {
           "id": "61",
           "name": "Sprite",
           "type": null,
@@ -660,21 +688,6 @@
               "type": "sprite"
             }
           ]
-        },
-        {
-          "id": "56",
-          "name": "ScriptGlobal",
-          "type": "script"
-        },
-        {
-          "id": "114",
-          "name": "Button Behavior",
-          "type": "script"
-        },
-        {
-          "id": "115",
-          "name": "Mouse",
-          "type": "script"
         },
         {
           "id": "126",
