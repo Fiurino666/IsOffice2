@@ -62,7 +62,7 @@ class ScriptInputBehavior extends Sup.Behavior {
           this.cursorActor2.textRenderer.setText("");
           this.cursorActor1.textRenderer.setSize(36);
           this.cursorActor1.setLocalScale(0.2, 0.2, 1);
-          this.cursorActor1.textRenderer.setText("Je suis Henri votre assistant personnel, \n notre entreprise " +societe+"\n fabrique des téléphones portables. \n À vous de gérer maintenant patron ! \n Appuyer sur Entrée ou cliquer pour la suite ...");
+          this.cursorActor1.textRenderer.setText("Je suis Henri votre assistant personnel, \n notre entreprise " +societe+"\n fabrique des téléphones portables. \n À vous de gérer maintenant patron ! \n Cliquez pour continuer ...");
           break;
         }
         case 2:{

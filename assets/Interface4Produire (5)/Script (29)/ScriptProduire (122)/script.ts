@@ -37,7 +37,7 @@ class ScriptProduireBehavior extends Sup.Behavior {
   }
   
   afficheOuvrier(){
-    this.strAffiche1 = "Vous avez "+ nbOuvrier + " "+gereS(nbOuvrier, "ouvrier")+" dans l'entreprise, \n vous pouvez/aurez pu produire au maximum "+ (nbOuvrier*3) +" "+gereS(nbOuvrier, "lot")+".\n Votre stock initial est de "+nbLotFini+" "+gereS(nbLotFini, "lot")+".";
+    this.strAffiche1 = "Vous avez "+ nbOuvrier + " "+gereS(nbOuvrier, "ouvrier")+" dans l'entreprise, \n vous pouvez/aurez pu produire au maximum "+ (nbOuvrier*3) +" "+gereS(nbOuvrier*3, "lot")+".\n Votre stock initial est de "+nbLotFini+" "+gereS(nbLotFini, "lot")+".";
     this.affiche1.textRenderer.setText(this.strAffiche1);
     this.productionFinale(); //C'est ici que l'on ajoute les lots finis ce tour ci au stock precedent pour l'afficher ensuite
     this.strAffiche2 = "Votre production ce tour ci est de "+this.numCalc+" "+gereS(this.numCalc, "lot")+". \n Vous avez donc en stock "+nbLotFini+ " "+gereS(nbLotFini, "lot")+".";
@@ -52,9 +52,10 @@ class ScriptProduireBehavior extends Sup.Behavior {
         nbChassis--;
         nbComposant--;
         Sup.log("Et un lot de fabriquer, un!");
-      }      
+      } 
+      this.numCalc--;
     }
-    this.numCalc--;
+    
   }
   
   productionFinale(){
