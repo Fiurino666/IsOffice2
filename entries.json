@@ -194,12 +194,6 @@
               "type": "sound"
             }
           ]
-        },
-        {
-          "id": "129",
-          "name": "Prefab",
-          "type": null,
-          "children": []
         }
       ]
     },
@@ -556,25 +550,6 @@
           "name": "Sound",
           "type": null,
           "children": []
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "name": "Cycle du jeu",
-      "type": null,
-      "children": [
-        {
-          "id": "44",
-          "name": "Script",
-          "type": null,
-          "children": [
-            {
-              "id": "72",
-              "name": "CycleScript",
-              "type": "script"
-            }
-          ]
         }
       ]
     },

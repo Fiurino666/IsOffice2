@@ -36,6 +36,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   Annuler : Sup.Actor;
   Quitter : Sup.Actor;
 
+  
   EffectifOuvrier : Sup.Actor;
   ValeurEmbOuvrier : Sup.Actor;
   ValeurLicOuvrier : Sup.Actor;

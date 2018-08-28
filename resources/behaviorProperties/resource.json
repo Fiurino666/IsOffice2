@@ -92,12 +92,6 @@
         }
       ]
     },
-    "CycleScriptBehavior": {
-      "scriptId": "72",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": []
-    },
     "PhaseScriptBehavior": {
       "scriptId": "87",
       "line": 0,

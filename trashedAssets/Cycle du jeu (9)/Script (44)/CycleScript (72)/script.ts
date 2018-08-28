@@ -1,4 +1,4 @@
-class CycleScriptBehavior extends Sup.Behavior {
+/*class CycleScriptBehavior extends Sup.Behavior {
   
   menus : Sup.Actor[];
   awake() {
@@ -23,4 +23,4 @@ class CycleScriptBehavior extends Sup.Behavior {
   }
   
 }
-Sup.registerBehavior(CycleScriptBehavior);
+Sup.registerBehavior(CycleScriptBehavior);*/
