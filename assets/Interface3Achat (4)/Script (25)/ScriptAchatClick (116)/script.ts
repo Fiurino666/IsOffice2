@@ -87,6 +87,7 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
       jeuTour = param;
       Sup.log("quitteEcran "+param);
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+      this.timer = 0;
     }
   }
   
@@ -96,6 +97,10 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
       //permet de quitter la partie achat pour passer a production etape 3
       this.quitteEcran(2);
     }
+  }
+  
+  defTimer(timer: number){
+    this.timer = timer;
   }
   
   attribuClique(){

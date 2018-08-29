@@ -576,6 +576,9 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       jeuTour = 2;
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
       //this.camera.getBehavior(ScriptAchatClickBehavior).destroy();
+      /////////////////////////////////////////////////////////////////////////
+      // ScriptAchatClickBehavior.apply.defTimer(0); ////
+      ////////////////////////////////////////////////////////////////////////////
     }
   }
   

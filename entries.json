@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 139,
+  "nextEntryId": 143,
   "nodes": [
     {
       "id": "0",
@@ -415,13 +415,35 @@
           "id": "33",
           "name": "Script",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "139",
+              "name": "ScriptVendre",
+              "type": "script"
+            }
+          ]
         },
         {
           "id": "34",
           "name": "Sprite",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "140",
+              "name": "PropCom",
+              "type": "sprite"
+            },
+            {
+              "id": "141",
+              "name": "True",
+              "type": "sprite"
+            },
+            {
+              "id": "142",
+              "name": "False",
+              "type": "sprite"
+            }
+          ]
         },
         {
           "id": "35",

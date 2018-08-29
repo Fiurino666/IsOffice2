@@ -25,7 +25,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   //le timer permet de ne pas revenir au menu precedent lors de deux clics trop proche
   timer: number = 0;
   
-   //on declare les boutons
+  //on declare les boutons
   EmbaucherOuvrier : Sup.Actor;
   EmbaucherCommercial : Sup.Actor;
   EmbaucherComptable : Sup.Actor;
