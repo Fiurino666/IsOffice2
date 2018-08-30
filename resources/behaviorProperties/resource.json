@@ -324,6 +324,22 @@
         {
           "name": "numPropCom",
           "type": "number"
+        },
+        {
+          "name": "nbLot",
+          "type": "number"
+        },
+        {
+          "name": "prixLot",
+          "type": "number"
+        },
+        {
+          "name": "nbLotTotal",
+          "type": "number"
+        },
+        {
+          "name": "prixLotTotal",
+          "type": "number"
         }
       ]
     }
