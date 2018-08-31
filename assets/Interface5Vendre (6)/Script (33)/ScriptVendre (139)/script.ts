@@ -32,10 +32,6 @@ class ScriptVendreBehavior extends Sup.Behavior {
   
   awake() {
     
-    /************ */
-    nbCommercial = 2;
-    nbLotFini = 7;
-    /* *******/
     jeuTour = 4;
     this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();
     this.PropCommerciale = Sup.getActor("Element").getChild("Bouton").getChild("PropositionCommerciale");

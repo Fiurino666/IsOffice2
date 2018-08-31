@@ -342,6 +342,17 @@
           "type": "number"
         }
       ]
+    },
+    "ScriptCompterBehavior": {
+      "scriptId": "143",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "timer",
+          "type": "number"
+        }
+      ]
     }
   }
 }
