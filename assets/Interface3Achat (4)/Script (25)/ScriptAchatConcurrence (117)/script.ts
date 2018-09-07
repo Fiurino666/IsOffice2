@@ -522,8 +522,8 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
         if (Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0) && this.timer > this.delaiTime)) {
           this.musicPlayer.play();
           this.valeur ++;
+          valAchatMar += this.prixAchat*this.elementAchat;
           solde = solde - this.prixAchat*this.elementAchat;
-          
           //il faut reinitialiser les variables 
           this.deuxiemeFois = false;
           this.troisiemeFois = false;
@@ -538,7 +538,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
         }
       }
     this.qInfo.textRenderer.setText(solde + " E"); //pour mettre a jour le solde a chaque achat
-          
   }
   
   initialise(){
@@ -555,7 +554,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.troisiemeFois = false;
     this.iaTotal = 0;
     this.valeur = 1;
-    this.IAprixAchat = null ; this.IAprixAchat = new Array(3);
+    this.IAprixAchat = null; this.IAprixAchat = new Array(3);
     this.IAlotChoisi = null; this.IAlotChoisi = new Array(3);
     this.IAelementAchat = null; this.IAelementAchat = new Array(3);
     this.iaArray = null; this.iaArray = new Array(3);

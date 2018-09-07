@@ -228,7 +228,8 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         this.SalaireTotOuvrier.textRenderer.setText(valO);
         this.totalCoutOuvrier = valO + this.nbfoislicencierO*this.licencierOuvrier;
         this.TotalOuvrier.textRenderer.setText(this.totalCoutOuvrier);
-        this.MasseSalariale.textRenderer.setText(this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable);
+        valSalaires = this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable
+        this.MasseSalariale.textRenderer.setText(valSalaires);
         break;
         
       case "commercial":

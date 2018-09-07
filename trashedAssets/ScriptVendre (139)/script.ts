@@ -132,6 +132,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
       this.VisibleBool(false);
       if (nbLotFini >= this.nbLot){
         nbLotFini -= this.nbLot;
+        valVentesMar += (this.nbLot * this.prixLot);
         solde += (this.nbLot * this.prixLot);
         this.nbLotTotal += this.nbLot;
         this.prixLotTotal += (this.nbLot * this.prixLot);
@@ -167,6 +168,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
     Sup.log("Vous avez vendu "+ this.nbLotTotal +" "+ gereS(this.nbLotTotal, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
     this.TxtProposition.textRenderer.setText("Vous avez vendu "+ this.nbLotTotal +" "+ gereS(this.nbLotTotal, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
   }
+  
   
   
 }

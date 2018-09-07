@@ -3,11 +3,11 @@
   "maps": [
     "map"
   ],
-  "filtering": "pixelated",
+  "filtering": "smooth",
   "wrapping": "mirroredRepeat",
   "pixelsPerUnit": 100,
-  "framesPerSecond": 10,
-  "opacity": null,
+  "framesPerSecond": 1,
+  "opacity": 1,
   "alphaTest": 0.1,
   "frameOrder": "columns",
   "grid": {

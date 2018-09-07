@@ -130,15 +130,8 @@ function gereS(nb: number, str:string){
 }
 
 class BanqueScript extends Sup.Behavior {
-  awake() {
-
-  }
-
-  update() {
-
-  }
+  
 }
-Sup.registerBehavior(BanqueScriptBehavior);
 
 function Banque(){
   var bs = new BanqueScript();

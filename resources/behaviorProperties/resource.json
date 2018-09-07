@@ -312,37 +312,6 @@
         }
       ]
     },
-    "ScriptVendreBehavior": {
-      "scriptId": "139",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "timer",
-          "type": "number"
-        },
-        {
-          "name": "numPropCom",
-          "type": "number"
-        },
-        {
-          "name": "nbLot",
-          "type": "number"
-        },
-        {
-          "name": "prixLot",
-          "type": "number"
-        },
-        {
-          "name": "nbLotTotal",
-          "type": "number"
-        },
-        {
-          "name": "prixLotTotal",
-          "type": "number"
-        }
-      ]
-    },
     "ScriptCompterBehavior": {
       "scriptId": "143",
       "line": 0,
@@ -353,6 +322,18 @@
           "type": "number"
         }
       ]
+    },
+    "BanqueScriptBehavior": {
+      "scriptId": "146",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "ScriptVendreBehavior": {
+      "scriptId": "147",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

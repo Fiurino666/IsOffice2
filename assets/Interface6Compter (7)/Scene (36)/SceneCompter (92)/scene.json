@@ -68,6 +68,14 @@
             "farClippingPlane": 1000
           },
           "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "ScriptCompterBehavior",
+            "propertyValues": {}
+          },
+          "id": "1"
         }
       ],
       "position": {
@@ -145,9 +153,9 @@
           ],
           "components": [],
           "position": {
-            "x": -0.1132771372795105,
-            "y": -0.24236038327217102,
-            "z": 49
+            "x": -0.113,
+            "y": -0.242,
+            "z": 0
           },
           "orientation": {
             "x": 0,
@@ -165,52 +173,8 @@
           "prefab": null
         },
         {
-          "id": "7",
-          "name": "Bouton",
-          "children": [],
-          "components": [
-            {
-              "type": "SpriteRenderer",
-              "config": {
-                "formatVersion": 1,
-                "spriteAssetId": "62",
-                "animationId": null,
-                "horizontalFlip": false,
-                "verticalFlip": false,
-                "castShadow": false,
-                "receiveShadow": false,
-                "color": "ffffff",
-                "overrideOpacity": false,
-                "opacity": null,
-                "materialType": "basic",
-                "shaderAssetId": null
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": -0.5400421619415283,
-            "y": -4.478398323059082,
-            "z": 49
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 0.8,
-            "y": 0.6,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
           "id": "9",
-          "name": "Var",
+          "name": "ValTexte",
           "children": [
             {
               "id": "10",
@@ -625,9 +589,9 @@
           ],
           "components": [],
           "position": {
-            "x": -0.1132771372795105,
-            "y": -0.24236038327217102,
-            "z": 49
+            "x": -0.113,
+            "y": -0.242,
+            "z": 0
           },
           "orientation": {
             "x": 0,
@@ -694,7 +658,7 @@
           "position": {
             "x": -0.75,
             "y": 4.15,
-            "z": 48
+            "z": 2
           },
           "orientation": {
             "x": 0,
@@ -725,17 +689,24 @@
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 40,
-                "color": null,
+                "color": "000000",
                 "overrideOpacity": false,
                 "opacity": null
               },
               "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "1"
             }
           ],
           "position": {
-            "x": 0.24880044849146543,
-            "y": -40.410958766937256,
-            "z": 48
+            "x": -32.15352762788825,
+            "y": 1.2380990982055664,
+            "z": 3
           },
           "orientation": {
             "x": 0,
