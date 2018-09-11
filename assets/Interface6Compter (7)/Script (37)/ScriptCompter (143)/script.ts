@@ -54,7 +54,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
   
   initialiseBouton(){
     Sup.log(valAchatMar);
-    this.AchatMar.setText("aa");
+    this.AchatMar.setText(valAchatMar);
     this.Salaires.setText(valSalaires);
     this.ChargesFin.setText(valChargesFin);
     this.ChargesExc.setText(valChargesExc);

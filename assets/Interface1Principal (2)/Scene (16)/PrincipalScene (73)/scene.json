@@ -567,14 +567,6 @@
                   "id": "0"
                 },
                 {
-                  "type": "Behavior",
-                  "config": {
-                    "behaviorName": "ButtonBehavior",
-                    "propertyValues": {}
-                  },
-                  "id": "2"
-                },
-                {
                   "type": "fMouseInput",
                   "config": {
                     "cameraActorName": "Camera"

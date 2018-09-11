@@ -24,7 +24,6 @@ class MenuScriptBehavior extends Sup.Behavior {
     this.btnScore = Sup.getActor("Bouton").getChild("btnScore");
     this.btnSiteInternet = Sup.getActor("Bouton").getChild("btnSiteInternet");
     this.btnTutoriel = Sup.getActor("Bouton").getChild("btnTutoriel");
-    
   }
   
   start() {

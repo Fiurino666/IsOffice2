@@ -333,6 +333,37 @@
       "scriptId": "147",
       "line": 0,
       "parentBehavior": null,
+      "properties": [
+        {
+          "name": "timer",
+          "type": "number"
+        },
+        {
+          "name": "numPropCom",
+          "type": "number"
+        },
+        {
+          "name": "nbLot",
+          "type": "number"
+        },
+        {
+          "name": "prixLot",
+          "type": "number"
+        },
+        {
+          "name": "nbLotTotal",
+          "type": "number"
+        },
+        {
+          "name": "prixLotTotal",
+          "type": "number"
+        }
+      ]
+    },
+    "BanqueScript": {
+      "scriptId": "56",
+      "line": 131,
+      "parentBehavior": null,
       "properties": []
     }
   }

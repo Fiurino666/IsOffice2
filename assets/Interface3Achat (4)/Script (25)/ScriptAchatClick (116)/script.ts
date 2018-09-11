@@ -13,8 +13,7 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
   txtComposant : Sup.Actor;
   musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });;
   timer: number;
-  
-  
+    
   awake() {
     musicAwake();
     this.menus1 = Sup.getActor("Vue1").getChild("Element").getChildren();
@@ -26,12 +25,11 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
     this.txtComposant = Sup.getActor("Vue1").getChild("Texte").getChild("TxtComposant");
     this.camera = Sup.getActor("Camera");
     this.quitChoix = Sup.getActor("Vue1").getChild("Texte").getChild("Quit");
-
+    this.initialise();
     //this.menus2 = Sup.getActor("Vue2").getChild("Element").getChildren();
     this.quitElement = Sup.getActor("Vue2").getChild("Texte").getChild("Quit");
     this.timer = 0;
     element = "";
-    this.initialise();
     boolClique = true;
     
   }
@@ -48,11 +46,8 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
     if ((this.timer = 25) && boolClique){
       this.attribuClique();
       boolClique = false;
-    }
-    
-  }
-  
-  
+    }    
+  }  
   
   //rend au demarrage de la fenetre tous les boutons visibles
   initialise(){
@@ -95,7 +90,12 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
     //on teste si on a cliquer sur les trois elements
     if(!boolVisibleEcran && !boolVisibleComposant && !boolVisibleChassis){
       //permet de quitter la partie achat pour passer a production etape 3
-      this.quitteEcran(2);
+      boolVisibleEcran = true;
+      boolVisibleComposant = true;
+      boolVisibleChassis = true;
+      this.initialise();
+      this.camera.getBehavior(ScriptAchatClickBehavior).destroy();
+      this.quitteEcran(2);      
     }
   }
   
@@ -105,38 +105,41 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
   
   attribuClique(){
     this.btnEcran.fMouseInput.emitter.once("leftClickReleased", () => {
-        this.musicPlayer.play();
-        //variable qui permet de savoir quel bouton a ete cliquer
-        element = "ecran";
-        //on deplace la camera vers le haut pour la suite
-        this.camera.moveY(11);
-        //on charge le script qui permet de continuer l'achat selon le choix du joueur
-        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
-      });
-      this.btnChassis.fMouseInput.emitter.once("leftClickReleased", () => { 
-        this.musicPlayer.play();
-        Sup.log(" behChassis");
-        element = "chassis";
-        this.camera.moveY(11);
-        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
-      });
-      this.btnComposant.fMouseInput.emitter.once("leftClickReleased", () => {
-        this.musicPlayer.play();
-        Sup.log(" behaComposant");
-        element = "composant";
-        this.camera.moveY(11);
-        this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
-      });
-      this.quitChoix.fMouseInput.emitter.once("leftClickReleased", () => { 
-        this.musicPlayer.play();
-        this.quitteEcran(1);
-      });
-      this.quitElement.fMouseInput.emitter.on("leftClickReleased", () => { 
-        this.musicPlayer.play();
-        Sup.log(" behaEcran");
-        this.camera.moveY(-11);
-        this.testSortie();
-      });
+      this.elementClique("ecran");
+    });
+    this.btnChassis.fMouseInput.emitter.once("leftClickReleased", () => { 
+      this.elementClique("chassis");
+    });
+    this.btnComposant.fMouseInput.emitter.once("leftClickReleased", () => {
+      this.elementClique("composant");
+    });
+    
+    //on gere le clique sur les textes aussi
+    this.txtEcran.fMouseInput.emitter.once("leftClickReleased", () => {
+     this.elementClique("ecran");
+    });
+    this.txtChassis.fMouseInput.emitter.once("leftClickReleased", () => { 
+      this.elementClique("chassis");
+    });
+    this.txtComposant.fMouseInput.emitter.once("leftClickReleased", () => {
+      this.elementClique("composant");
+    });
+
+    this.quitElement.fMouseInput.emitter.on("leftClickReleased", () => { 
+      this.musicPlayer.play();
+      Sup.log(" behaEcran");
+      this.camera.moveY(-11);
+      this.testSortie();
+    });
+  }
+  
+  elementClique(ele: string){
+    //pour savoir quel element a ete cliquer on le transmet a la variable globale
+    element = ele;
+    //on deplace la camera vers le haut pour la suite
+    this.camera.moveY(11);
+    //on charge le script qui permet de continuer l'achat selon le choix du joueur
+    this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
   }
   
 }

@@ -107,54 +107,6 @@
           "name": "Texte",
           "children": [
             {
-              "id": "4",
-              "name": "Quit",
-              "children": [],
-              "components": [
-                {
-                  "type": "TextRenderer",
-                  "config": {
-                    "formatVersion": 2,
-                    "fontAssetId": "74",
-                    "text": "Revenir à \nla fenêtre\nprécédente",
-                    "alignment": "center",
-                    "verticalAlignment": "center",
-                    "size": null,
-                    "color": "400000",
-                    "overrideOpacity": false,
-                    "opacity": null
-                  },
-                  "id": "0"
-                },
-                {
-                  "type": "fMouseInput",
-                  "config": {
-                    "cameraActorName": "Camera"
-                  },
-                  "id": "1"
-                }
-              ],
-              "position": {
-                "x": -0.047,
-                "y": 0.029,
-                "z": 1
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            },
-            {
               "id": "5",
               "name": "Titre",
               "children": [],
@@ -255,6 +207,13 @@
                     "opacity": null
                   },
                   "id": "0"
+                },
+                {
+                  "type": "fMouseInput",
+                  "config": {
+                    "cameraActorName": "Camera"
+                  },
+                  "id": "1"
                 }
               ],
               "position": {
@@ -273,7 +232,7 @@
                 "y": 1,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             },
@@ -296,6 +255,13 @@
                     "opacity": null
                   },
                   "id": "0"
+                },
+                {
+                  "type": "fMouseInput",
+                  "config": {
+                    "cameraActorName": "Camera"
+                  },
+                  "id": "1"
                 }
               ],
               "position": {
@@ -314,7 +280,7 @@
                 "y": 1,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             },
@@ -337,6 +303,13 @@
                     "opacity": null
                   },
                   "id": "0"
+                },
+                {
+                  "type": "fMouseInput",
+                  "config": {
+                    "cameraActorName": "Camera"
+                  },
+                  "id": "2"
                 }
               ],
               "position": {
@@ -355,7 +328,7 @@
                 "y": 1,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             }
@@ -414,14 +387,6 @@
                     "cameraActorName": "Camera"
                   },
                   "id": "1"
-                },
-                {
-                  "type": "Behavior",
-                  "config": {
-                    "behaviorName": "ButtonBehavior",
-                    "propertyValues": {}
-                  },
-                  "id": "2"
                 }
               ],
               "position": {
@@ -440,7 +405,7 @@
                 "y": 0.5,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             },
@@ -473,14 +438,6 @@
                     "cameraActorName": "Camera"
                   },
                   "id": "1"
-                },
-                {
-                  "type": "Behavior",
-                  "config": {
-                    "behaviorName": "ButtonBehavior",
-                    "propertyValues": {}
-                  },
-                  "id": "2"
                 }
               ],
               "position": {
@@ -499,7 +456,7 @@
                 "y": 2.15,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             },
@@ -532,14 +489,6 @@
                     "cameraActorName": "Camera"
                   },
                   "id": "1"
-                },
-                {
-                  "type": "Behavior",
-                  "config": {
-                    "behaviorName": "ButtonBehavior",
-                    "propertyValues": {}
-                  },
-                  "id": "2"
                 }
               ],
               "position": {
@@ -558,7 +507,7 @@
                 "y": 2,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             }
@@ -747,8 +696,8 @@
                 }
               ],
               "position": {
-                "x": -6.7210001945495605,
-                "y": 10.316617965698242,
+                "x": -6.7849986255168915,
+                "y": 12.749740600585938,
                 "z": 1
               },
               "orientation": {

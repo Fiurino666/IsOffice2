@@ -101,7 +101,56 @@
     {
       "id": "2",
       "name": "Texte",
-      "children": [],
+      "children": [
+        {
+          "id": "4",
+          "name": "Quit",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "80",
+                "text": "Quitter",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 50,
+                "color": "000000",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            },
+            {
+              "type": "fMouseInput",
+              "config": {
+                "cameraActorName": "Camera"
+              },
+              "id": "1"
+            }
+          ],
+          "position": {
+            "x": -6.370999813079834,
+            "y": 3.88100004196167,
+            "z": 1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.18000000715255737,
+            "y": 0.20000000298023224,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
       "components": [],
       "position": {
         "x": 0,
