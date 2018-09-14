@@ -391,7 +391,8 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     var rng = new RNG(String(Math.random()));
     Sup.log("this.lotDivise "+this.lotDivise);
     for (let i = 0; i <3; i++){
-      this.IAprixAchat[i] = (rng.random(0, 15)+1)*50;
+      this.enchereAffine = [300,350,400,450,300,350,400,450,500,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800]; //repeter certaines valeurs permettent d'affiner pour rester dans des variables acceptables
+      this.IAprixAchat[i] = this.enchereAffine[rng.random(0, 23)];
       this.IAlotChoisi[i] = (rng.random(0, this.lotDivise));
       Sup.log("this.IAprixAchat["+i+"] avant tri"+this.IAprixAchat[i]);
       Sup.log("this.IAlotChoisi["+i+"] oOo oOo oOo "+this.IAlotChoisi[i]);
@@ -582,9 +583,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     }
   }
   
-  affineAchatConcurrence(){
-    this.enchereAffine = [ 300, 350, 400, 450, 300, 350, 400, 450, 500, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800 ];
-  }
   
 }
 Sup.registerBehavior(ScriptAchatConcurrenceBehavior);

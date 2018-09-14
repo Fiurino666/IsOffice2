@@ -46,14 +46,14 @@ class ScriptProduireBehavior extends Sup.Behavior {
   
   calcProduction(){
     if(nbOuvrier>0){
-      while(nbEcran>0 && nbChassis>0 && nbComposant>0 && this.numCalc<=(nbOuvrier*3)){
+      while(nbEcran>0 && nbChassis>0 && nbComposant>0 && this.numCalc<(nbOuvrier*3)){
         this.numCalc++;
         nbEcran--;
         nbChassis--;
         nbComposant--;
         Sup.log("Et un lot de fabriqué, un!");
       } 
-      this.numCalc--;
+      
     }
     
   }

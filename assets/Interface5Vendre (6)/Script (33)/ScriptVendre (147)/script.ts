@@ -34,6 +34,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
   awake() {
     
     jeuTour = 4;
+    valVentesMar = 0;// on initialise les valeurs de vente, si aucune vente n est faite a la fin du mois on a le chiffre correct
     this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();
     this.PropCommerciale = Sup.getActor("Element").getChild("Bouton").getChild("PropositionCommerciale");
     this.Realise = Sup.getActor("Element").getChild("Bouton").getChild("Realise");
@@ -89,7 +90,6 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.FinDesVentes.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
       Sup.log("FinDesVentes");
-      valVentesMar = (this.nbLot * this.prixLot);
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
     });
     
@@ -142,6 +142,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
       if (nbLotFini >= this.nbLot){
         nbLotFini -= this.nbLot;
         solde += (this.nbLot * this.prixLot);
+        valVentesMar += (this.nbLot * this.prixLot);
         this.nbLotTotal += this.nbLot;
         this.prixLotTotal += (this.nbLot * this.prixLot);
       }else{
