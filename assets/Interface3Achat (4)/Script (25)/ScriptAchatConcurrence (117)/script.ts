@@ -208,6 +208,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             this.etape4.textRenderer.setColor(255,255,255);
             this.etape5.textRenderer.setColor(242,26,64);
             this.etapeF(this.fab3);
+            
             //this.afficheNBNombre();  
             //Sup.log("valeur "+this.valeur);
             break;
@@ -216,18 +217,18 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             //Sup.log("valeur "+this.valeur);
             switch(element){
               case "ecran":{
-                nbEcran = nbEcran + this.elementAchatTotal;
                 setboolVisibleEcran(false);
+                nbEcran = this.elementAchatTotal;
                 break;
               }
               case "chassis":{
-                nbChassis = nbChassis + this.elementAchatTotal;
                 setboolVisibleChassis(false);
+                nbChassis = this.elementAchatTotal;
                 break;
               }
               case "composant":{
-                nbComposant = nbComposant + this.elementAchatTotal;
                 setboolVisibleComposant(false);
+                nbComposant = this.elementAchatTotal;
                 break;
               }
               default:{
@@ -368,7 +369,6 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       }
     }
     
-    Sup.log("elementAchat 1:  "+this.elementAchat);
     //si le joueur a placer des encheres superieur a l'ordi ou qu'il reste des lots a prendre
     if(lotProvisoire >= this.lotChoisi ){
       lotProvisoire = lotProvisoire - this.lotChoisi;
@@ -377,13 +377,14 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       this.elementAchat = lotProvisoire;
       lotProvisoire = 0;
     }
-    Sup.log("elementAchat 2:  "+this.elementAchat);
+    Sup.log("elementAchat : "+this.elementAchat);
     //je gere l'affichage pour que l'ordi achete les composants aprés le joueur
     Sup.log("lotProvisoire"+lotProvisoire);
     Sup.log("this.IAelementAchat[0] "+this.IAelementAchat[0]);
     Sup.log("this.IAelementAchat[1] "+this.IAelementAchat[1]);
     Sup.log("this.IAelementAchat[2] "+this.IAelementAchat[2]);
     Sup.log("this.elementAchat "+this.elementAchat);
+    
   }
   
   enchereIA(){
@@ -506,7 +507,8 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
           });
         }
         this.troisiemeFois = false;
-      }
+      }    
+    
       if(this.txtAffiche[0].textRenderer.getText() == "Il y a "+this.lotDivise+" lots à acheter"){
         if (Sup.Input.wasKeyJustPressed("RETURN") || (Sup.Input.wasMouseButtonJustPressed(0) && this.timer > this.delaiTime)) {
           this.musicPlayer.play();
@@ -527,6 +529,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
         }
       }
     this.qInfo.textRenderer.setText(solde + " E"); //pour mettre a jour le solde a chaque achat
+    
   }
   
   initialise(){
@@ -581,6 +584,11 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
       // ScriptAchatClickBehavior.apply.defTimer(0); ////
       ////////////////////////////////////////////////////////////////////////////
     }
+  }
+  
+  relanceDefilement(){
+    //permet de relancer l'affichage lorsqu'on achete
+    this.camera.getBehavior(ScriptTextAchatBehavior).relance();
   }
   
   

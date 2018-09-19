@@ -28,7 +28,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
   
   nbLot : number;
   prixLot : number;
-  nbLotTotal : number;
+  
   prixLotTotal : number;
   
   awake() {
@@ -56,7 +56,6 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.cliqueBouton();
     updateMenu(this.menus);
     //this.visibleProp();
-    this.nbLotTotal = 0;
     this.prixLotTotal = 0;
     
   }
@@ -97,16 +96,21 @@ class ScriptVendreBehavior extends Sup.Behavior {
       this.musicPlayer.play();
       Sup.log("Accepte");
       this.ValideProp();
-      this.PropCommerciale.setVisible(true);
-      this.TxtduBoutonPropCom.setVisible(true);
+      if (this.numPropCom>0){
+        this.PropCommerciale.setVisible(true);
+        this.TxtduBoutonPropCom.setVisible(true);
+      }
+      
     });
     
     this.Refuse.fMouseInput.emitter.on("leftClickReleased", () => {
       this.musicPlayer.play();
       Sup.log("Refuse");
       this.RefuseProp();
-      this.PropCommerciale.setVisible(true);
-      this.TxtduBoutonPropCom.setVisible(true);
+      if (this.numPropCom>0){
+        this.PropCommerciale.setVisible(true);
+        this.TxtduBoutonPropCom.setVisible(true);
+      }
     });
   }
   
@@ -143,7 +147,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
         nbLotFini -= this.nbLot;
         solde += (this.nbLot * this.prixLot);
         valVentesMar += (this.nbLot * this.prixLot);
-        this.nbLotTotal += this.nbLot;
+        nbLotTotalVendu += this.nbLot;
         this.prixLotTotal += (this.nbLot * this.prixLot);
       }else{
         this.TabletteGrande.setVisible(true);
@@ -174,8 +178,8 @@ class ScriptVendreBehavior extends Sup.Behavior {
   RealiseFunc(){
     this.TabletteGrande.setVisible(true);
     this.TxtProposition.setVisible(true);
-    Sup.log("Vous avez vendu "+ this.nbLotTotal +" "+ gereS(this.nbLotTotal, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
-    this.TxtProposition.textRenderer.setText("Vous avez vendu "+ this.nbLotTotal +" "+ gereS(this.nbLotTotal, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
+    Sup.log("Vous avez vendu "+ nbLotTotalVendu +" "+ gereS(nbLotTotalVendu, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
+    this.TxtProposition.textRenderer.setText("Vous avez vendu "+ nbLotTotalVendu +" "+ gereS(nbLotTotalVendu, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
   }
   
   

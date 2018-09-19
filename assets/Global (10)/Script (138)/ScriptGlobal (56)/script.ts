@@ -12,7 +12,10 @@ var nbComptable: number = 0;
 var nbEcran: number = 0;
 var nbChassis: number = 0;
 var nbComposant: number = 0;
-var nbLotFini: number = 0;
+var nbElementM: number = 0; //sert a aditionner le nombre d'element acheter le mois precedent pour Compter
+var nbLotFini: number = 0; //nombre de lot construit ce tour ci
+var nbLotFiniM: number = 0; //nombre de lot construit le mois precedent
+var nbLotTotalVendu : number = 0; // lot de telephone portable on a vendu ce tour ci, sert dans vendre et dans compter
 
 var solde: number = 20000;
 
@@ -21,8 +24,16 @@ var valSalaires: number = 0; //les charges salariales.
 var valChargesFin: number = 0; //les charges financieres présente les intérêts des emprunts en cours
 var valChargesExc: number = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
 var valVentesMar: number = 0; //les ventes de marchandises
-var valProduitsFin: number = 0; //les produits financiers lorsque l'on fait un emprunt
+var valProduitsFini: number = 0; //les produits financiers lorsque l'on fait un emprunt
 var valProduitsExc: number = 0; //évènements aléatoires impactant positivement notre solde
+
+var valAchatMarM: number = 0; //Les achats de marchandises M-1
+var valSalairesM: number = 0; //les charges salariales M-1
+var valChargesFinM: number = 0; //les charges financieres présente les intérêts des emprunts en cours M-1
+var valChargesExcM: number = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur M-1
+var valVentesMarM: number = 0; //les ventes de marchandises M-1
+var valProduitsFinM: number = 0; //les produits financiers lorsque l'on fait un emprunt M-1
+var valProduitsExcM: number = 0; //évènements aléatoires impactant positivement notre solde M-1
 
 ///////////                            \\\\\\\\\\\\\\
 

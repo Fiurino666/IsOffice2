@@ -115,7 +115,7 @@
                   "type": "SpriteRenderer",
                   "config": {
                     "formatVersion": 1,
-                    "spriteAssetId": "144",
+                    "spriteAssetId": "150",
                     "animationId": null,
                     "horizontalFlip": false,
                     "verticalFlip": false,
@@ -131,8 +131,8 @@
                 }
               ],
               "position": {
-                "x": -0.0632244348526001,
-                "y": -0.17386716604232788,
+                "x": 0.96,
+                "y": -0.47,
                 "z": 0
               },
               "orientation": {
@@ -142,8 +142,8 @@
                 "w": 1
               },
               "scale": {
-                "x": 1.7999999523162842,
-                "y": 1.7999999523162842,
+                "x": 1.8,
+                "y": 1.8,
                 "z": 1
               },
               "visible": true,
@@ -199,8 +199,49 @@
               ],
               "position": {
                 "x": -13,
-                "y": 4.552,
-                "z": 0
+                "y": 5.8,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "20",
+              "name": "VarStoPi",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -13.01,
+                "y": 2.3,
+                "z": 1
               },
               "orientation": {
                 "x": 0,
@@ -240,8 +281,8 @@
               ],
               "position": {
                 "x": -13,
-                "y": 0.917,
-                "z": 0
+                "y": -2,
+                "z": 1
               },
               "orientation": {
                 "x": 0,
@@ -281,8 +322,8 @@
               ],
               "position": {
                 "x": -13,
-                "y": -2.877,
-                "z": 0
+                "y": -5.5,
+                "z": 1
               },
               "orientation": {
                 "x": 0,
@@ -322,8 +363,8 @@
               ],
               "position": {
                 "x": -13,
-                "y": -7.223,
-                "z": 0
+                "y": -10,
+                "z": 1
               },
               "orientation": {
                 "x": 0,
@@ -363,8 +404,8 @@
               ],
               "position": {
                 "x": -13,
-                "y": -11,
-                "z": 0
+                "y": -13.4,
+                "z": 1
               },
               "orientation": {
                 "x": 0,
@@ -404,49 +445,8 @@
               ],
               "position": {
                 "x": -13,
-                "y": -13.845,
-                "z": 0
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
+                "y": -16.5,
                 "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            },
-            {
-              "id": "16",
-              "name": "ProduitsTot",
-              "children": [],
-              "components": [
-                {
-                  "type": "TextRenderer",
-                  "config": {
-                    "formatVersion": 2,
-                    "fontAssetId": "80",
-                    "text": "10 000",
-                    "alignment": "center",
-                    "verticalAlignment": "center",
-                    "size": 40,
-                    "color": "000000",
-                    "overrideOpacity": false,
-                    "opacity": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": 26.5,
-                "y": -13.608,
-                "z": 0
               },
               "orientation": {
                 "x": 0,
@@ -486,8 +486,8 @@
               ],
               "position": {
                 "x": 26.5,
-                "y": 4.569,
-                "z": 0
+                "y": 5.8,
+                "z": 1
               },
               "orientation": {
                 "x": 0,
@@ -506,7 +506,7 @@
             },
             {
               "id": "18",
-              "name": "ProduitsFin",
+              "name": "ProduitsFini",
               "children": [],
               "components": [
                 {
@@ -514,7 +514,7 @@
                   "config": {
                     "formatVersion": 2,
                     "fontAssetId": "80",
-                    "text": "10 000",
+                    "text": "0 000",
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 40,
@@ -527,8 +527,8 @@
               ],
               "position": {
                 "x": 26.5,
-                "y": -1.042,
-                "z": 0
+                "y": -1.471,
+                "z": 1
               },
               "orientation": {
                 "x": 0,
@@ -568,8 +568,526 @@
               ],
               "position": {
                 "x": 26.5,
-                "y": -7.127,
-                "z": 0
+                "y": -10,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "16",
+              "name": "ProduitsTot",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 26.5,
+                "y": -16.5,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            }
+          ],
+          "components": [],
+          "position": {
+            "x": -0.113,
+            "y": -0.242,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.18,
+            "y": 0.2,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "22",
+          "name": "ValTexteM-1",
+          "children": [
+            {
+              "id": "23",
+              "name": "AchatMarM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -2,
+                "y": 5.8,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "24",
+              "name": "VarStoPiM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -2,
+                "y": 2.3,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "25",
+              "name": "SalairesM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -2,
+                "y": -2,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "26",
+              "name": "ChargesFinM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -2,
+                "y": -5.5,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "27",
+              "name": "ChargesExcM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -2,
+                "y": -10,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "28",
+              "name": "ResultatM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -2,
+                "y": -13.4,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "29",
+              "name": "ChargesTotM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -2,
+                "y": -16.5,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "30",
+              "name": "VentesMarM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 38,
+                "y": 5.8,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "31",
+              "name": "ProduitsFinM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 38,
+                "y": -1.471,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "32",
+              "name": "ProduitsExcM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 38,
+                "y": -10,
+                "z": 1
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "33",
+              "name": "ProduitsTotM-1",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "80",
+                    "text": "10 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 40,
+                    "color": "000000",
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": 38,
+                "y": -16.5,
+                "z": 1
               },
               "orientation": {
                 "x": 0,

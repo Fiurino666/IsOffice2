@@ -10,11 +10,11 @@ class ScriptProduireBehavior extends Sup.Behavior {
   awake() {
     ////////////////////////////// 
     /*
-    nbOuvrier = 4;
-    nbEcran = 3;
-    nbChassis = 4;
-    nbComposant = 5;
-    nbLotFini = 1; 
+    nbOuvrier = 1;
+    nbEcran = 9;
+    nbChassis = 8;
+    nbComposant = 8;
+    nbLotFini = 0; 
     */
     /////////////////////////////////
     this.quit = Sup.getActor("Texte").getChild("Quit");

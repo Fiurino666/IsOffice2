@@ -281,34 +281,6 @@
         {
           "name": "strDefile",
           "type": "string"
-        },
-        {
-          "name": "strEcran",
-          "type": "string"
-        },
-        {
-          "name": "strChassis",
-          "type": "string"
-        },
-        {
-          "name": "strComposant",
-          "type": "string"
-        },
-        {
-          "name": "strOuvrier",
-          "type": "string"
-        },
-        {
-          "name": "strCommercial",
-          "type": "string"
-        },
-        {
-          "name": "strComptable",
-          "type": "string"
-        },
-        {
-          "name": "strFini",
-          "type": "string"
         }
       ]
     },
@@ -319,6 +291,10 @@
       "properties": [
         {
           "name": "timer",
+          "type": "number"
+        },
+        {
+          "name": "valVarStock",
           "type": "number"
         }
       ]
@@ -351,10 +327,6 @@
           "type": "number"
         },
         {
-          "name": "nbLotTotal",
-          "type": "number"
-        },
-        {
           "name": "prixLotTotal",
           "type": "number"
         }
@@ -362,9 +334,28 @@
     },
     "BanqueScript": {
       "scriptId": "56",
-      "line": 131,
+      "line": 142,
       "parentBehavior": null,
       "properties": []
+    },
+    "ScriptTextAchatBehavior": {
+      "scriptId": "149",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "timer",
+          "type": "number"
+        },
+        {
+          "name": "textProgress",
+          "type": "number"
+        },
+        {
+          "name": "strDefile",
+          "type": "string"
+        }
+      ]
     }
   }
 }

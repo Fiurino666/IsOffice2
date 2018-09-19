@@ -94,7 +94,6 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
       boolVisibleComposant = true;
       boolVisibleChassis = true;
       this.initialise();
-      this.camera.getBehavior(ScriptAchatClickBehavior).destroy();
       this.quitteEcran(2);      
     }
   }
@@ -140,6 +139,8 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
     this.camera.moveY(11);
     //on charge le script qui permet de continuer l'achat selon le choix du joueur
     this.camera.addBehavior(ScriptAchatConcurrenceBehavior);
+    //on charge le script pour faire defiler le texte
+    this.camera.addBehavior(ScriptTextAchatBehavior);
   }
   
 }

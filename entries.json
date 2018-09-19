@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 148,
+  "nextEntryId": 151,
   "nodes": [
     {
       "id": "0",
@@ -317,6 +317,11 @@
               "id": "117",
               "name": "ScriptAchatConcurrence",
               "type": "script"
+            },
+            {
+              "id": "149",
+              "name": "ScriptTextAchat",
+              "type": "script"
             }
           ]
         },
@@ -442,11 +447,6 @@
               "id": "142",
               "name": "False",
               "type": "sprite"
-            },
-            {
-              "id": "144",
-              "name": "CDR",
-              "type": "sprite"
             }
           ]
         },
@@ -491,7 +491,13 @@
           "id": "38",
           "name": "Sprite",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "150",
+              "name": "compteresultat",
+              "type": "sprite"
+            }
+          ]
         },
         {
           "id": "39",
