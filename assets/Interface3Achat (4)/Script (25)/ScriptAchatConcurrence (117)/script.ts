@@ -218,17 +218,17 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             switch(element){
               case "ecran":{
                 setboolVisibleEcran(false);
-                nbEcran = this.elementAchatTotal;
+                nbEcran += this.elementAchatTotal;
                 break;
               }
               case "chassis":{
                 setboolVisibleChassis(false);
-                nbChassis = this.elementAchatTotal;
+                nbChassis += this.elementAchatTotal;
                 break;
               }
               case "composant":{
                 setboolVisibleComposant(false);
-                nbComposant = this.elementAchatTotal;
+                nbComposant += this.elementAchatTotal;
                 break;
               }
               default:{
@@ -503,6 +503,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
             }
             this.timer = 0;
             Sup.log("Il y a "+this.lotDivise+" lots à acheter");
+            nbLotTotalAcheter += this.elementAchat;
             Sup.log("Vous avez acheté "+this.elementAchat+" lots à "+this.prixAchat+" €");
           });
         }

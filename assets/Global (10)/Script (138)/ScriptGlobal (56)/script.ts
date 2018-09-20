@@ -15,6 +15,7 @@ var nbComposant: number = 0;
 var nbElementM: number = 0; //sert a aditionner le nombre d'element acheter le mois precedent pour Compter
 var nbLotFini: number = 0; //nombre de lot construit ce tour ci
 var nbLotFiniM: number = 0; //nombre de lot construit le mois precedent
+var nbLotTotalAcheter : number = 0; // lot de telephone portable on a acheter ce tour ci, sert dans compter pour calculer la moyenne
 var nbLotTotalVendu : number = 0; // lot de telephone portable on a vendu ce tour ci, sert dans vendre et dans compter
 
 var solde: number = 20000;
@@ -34,6 +35,8 @@ var valChargesExcM: number = 0; //les charges exceptionnelles est utile lors des
 var valVentesMarM: number = 0; //les ventes de marchandises M-1
 var valProduitsFinM: number = 0; //les produits financiers lorsque l'on fait un emprunt M-1
 var valProduitsExcM: number = 0; //évènements aléatoires impactant positivement notre solde M-1
+var valVarStoPiM: number = 0; //stocke le nombre de piece en stock du mois dernier
+var valResultatM: number = 0; //stocke le resultat du mois dernier
 
 ///////////                            \\\\\\\\\\\\\\
 

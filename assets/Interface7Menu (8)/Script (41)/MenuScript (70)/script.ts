@@ -32,6 +32,7 @@ class MenuScriptBehavior extends Sup.Behavior {
       this.musicPlayer.play();
       Sup.log(" btnNouvellePartie");
       clicVisuel(this.btnNouvellePartie);
+       Sup.loadScene("Interface0Personnalisation/Scene/ScenePerso");
       });
     this.btnCharger.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();

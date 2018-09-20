@@ -35,6 +35,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
   ProduitsExcM : Sup.TextRenderer;
   
   valVarStock : number;
+  valResultat : number;
   
   awake() {
     jeuTour=0;
@@ -85,7 +86,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
       valChargesExcM = valChargesExc; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
       valVentesMarM = valVentesMar; //les ventes de marchandises
       valProduitsFinM = valProduitsFini; //les produits financiers lorsque l'on fait un emprunt
-      valProduitsExcM = valProduitsExc;
+      valProduitsExcM = valProduitsExc; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
             
       valAchatMar = 0; //Les achats de marchandises.
       valSalaires = 0; //les charges salariales.
@@ -93,7 +94,9 @@ class ScriptCompterBehavior extends Sup.Behavior {
       valChargesExc = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
       valVentesMar = 0; //les ventes de marchandises
       valProduitsFini = 0; //les produits financiers lorsque l'on fait un emprunt
-      valProduitsExc = 0;
+      valProduitsExc = 0; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
+      valVarStoPiM = this.valVarStock;
+      valResultatM = this.valResultat;
     });
   }
   
@@ -102,31 +105,28 @@ class ScriptCompterBehavior extends Sup.Behavior {
     this.AchatMar.setText(valAchatMar);
     if(valAchatMar!=0){
       this.calculVarStockPiece();
-      
       this.VarStoPi.setText(this.valVarStock);
-        
     }else{
       this.VarStoPi.setText(0);
     }    
     this.Salaires.setText(valSalaires);
     this.ChargesFin.setText(valChargesFin);
     this.ChargesExc.setText(valChargesExc);
-    let valChargesTot = valAchatMar-this.valVarStock+valSalaires+valChargesFin+valChargesExc;
+    let valChargesTot = valAchatMar+this.valVarStock+valSalaires+valChargesFin+valChargesExc;
     this.VentesMar.setText(valVentesMar);
     this.ProduitsFini.setText(valProduitsFini);
     this.ProduitsExc.setText(valProduitsExc);
     let valProduitTot = valVentesMar+valProduitsFini+valProduitsExc;
     this.ProduitsTot.setText(valProduitTot);
-    let valResultat = valProduitTot-valChargesTot;
-    this.Resultat.setText(valResultat);
+    this.valResultat = valProduitTot-valChargesTot;
+    this.Resultat.setText(this.valResultat);
     
-    this.ChargesTot.setText(valChargesTot + valResultat);
+    this.ChargesTot.setText(valChargesTot + this.valResultat);
   }
   
   calculVarStockPiece(){
-    let valMoyenneAchatElement = (valAchatMar/(nbEcran+nbChassis+nbComposant+(nbLotFini*3)));
-    Sup.log("valMoyenneAchatElement " + valMoyenneAchatElement);
-    this.valVarStock = Math.round((nbElementM - (nbEcran+nbChassis+nbComposant)) * valMoyenneAchatElement);
+    this.valVarStock = Math.round(valAchatMar/nbLotTotalAcheter * (nbEcran+nbChassis+nbComposant));
+    this.valVarStock = -this.valVarStock;
   }
   
   premierMois(){
@@ -142,6 +142,18 @@ class ScriptCompterBehavior extends Sup.Behavior {
       this.VentesMarM.setText(0);
       this.ProduitsFinM.setText(0);
       this.ProduitsExcM.setText(0);
+    }else{
+      this.AchatMarM.setText(valAchatMarM);
+      this.VarStoPiM.setText(valVarStoPiM);
+      this.SalairesM.setText(valSalairesM);
+      this.ChargesFinM.setText(valChargesFinM);
+      this.ChargesExcM.setText(valChargesExcM);
+      this.ResultatM.setText(valResultatM);
+      this.ChargesTotM.setText(valAchatMarM+valVarStoPiM+valSalairesM+valChargesFinM+valChargesExcM);
+      this.ProduitsTotM.setText(valVentesMarM+valProduitsFinM+valProduitsExcM);
+      this.VentesMarM.setText(valVentesMarM);
+      this.ProduitsFinM.setText(valProduitsFinM);
+      this.ProduitsExcM.setText(valProduitsExcM);
     }
   }  
   

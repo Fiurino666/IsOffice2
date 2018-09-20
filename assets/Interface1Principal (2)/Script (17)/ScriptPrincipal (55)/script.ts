@@ -5,7 +5,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   ray = new Sup.Math.Ray();
   isHover: boolean = false;
   lblSolde : Sup.Actor;
-  
+  timer: number;
   ouvrierPersonne : Sup.Actor;
   ouvrierMeuble : Sup.Actor;
   commercialPersonne : Sup.Actor;
@@ -17,7 +17,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     //On recupere tous les elements contenus dans Menu
     this.phases = Sup.getActor("Phase").getChildren();
     this.updatePhase();
-
+    this.timer = 0;
     this.lblSolde = Sup.getActor("Element").getChild("Fixe").getChild("Solde");
     this.afficheSolde();
     
@@ -35,6 +35,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     this.keyNavigation();
     this.mouseNavigation();
     this.afficheDynamique();
+    this.timer ++;
   }
   
   keyNavigation(){
@@ -79,9 +80,6 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
         this.isHover = false;
       }
     }
-    
-    //un clique gauche appel la fonction
-    
   }
   
   updatePhase(){
@@ -118,8 +116,6 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
         Sup.log("error 0257");
         break;
       }
-        
-        
     }
   }
   
@@ -147,15 +143,11 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     else{
       this.commercialPersonne.setVisible(false);
     }
-    
-   
   }
   
   afficheSolde(){
     this.lblSolde.textRenderer.setText(solde.toString().replace(/(\d)(?=(\d{3})+\b)/g,'$1 ')+" €");
   }
-    
-  
   
 }
 Sup.registerBehavior(ScriptPrincipalBehavior);

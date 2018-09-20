@@ -12,6 +12,10 @@
         {
           "name": "isHover",
           "type": "boolean"
+        },
+        {
+          "name": "timer",
+          "type": "number"
         }
       ]
     },
@@ -296,6 +300,10 @@
         {
           "name": "valVarStock",
           "type": "number"
+        },
+        {
+          "name": "valResultat",
+          "type": "number"
         }
       ]
     },
@@ -334,7 +342,7 @@
     },
     "BanqueScript": {
       "scriptId": "56",
-      "line": 142,
+      "line": 145,
       "parentBehavior": null,
       "properties": []
     },

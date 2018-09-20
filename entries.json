@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 151,
+  "nextEntryId": 152,
   "nodes": [
     {
       "id": "0",
@@ -60,6 +60,11 @@
             {
               "id": "119",
               "name": "Input",
+              "type": "sprite"
+            },
+            {
+              "id": "151",
+              "name": "Sprite",
               "type": "sprite"
             }
           ]

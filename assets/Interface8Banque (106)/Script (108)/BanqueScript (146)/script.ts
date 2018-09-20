@@ -16,6 +16,7 @@ class BanqueScriptBehavior extends Sup.Behavior {
       this.musicPlayer.play();
       Sup.log(" Quit");
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+      
       });
   }
 
