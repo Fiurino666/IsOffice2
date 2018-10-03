@@ -32,6 +32,7 @@ class MenuScriptBehavior extends Sup.Behavior {
       this.musicPlayer.play();
       Sup.log(" btnNouvellePartie");
       clicVisuel(this.btnNouvellePartie);
+      this.reinitialise();
        Sup.loadScene("Interface0Personnalisation/Scene/ScenePerso");
       });
     this.btnCharger.fMouseInput.emitter.on("leftClickReleased", () => { 
@@ -82,6 +83,42 @@ class MenuScriptBehavior extends Sup.Behavior {
     musicUpdate();
     updateMenu(this.menus);
     noclic(this.menus);
+  }
+  
+  reinitialise(){
+     jeuTour = 0;
+     jeuMois = 0;
+     nbOuvrier = 0;
+     nbCommercial = 0;
+     nbComptable = 0;
+     nbEcran = 0;
+     nbChassis = 0;
+     nbComposant = 0;
+     nbElementM = 0; 
+     nbLotFini = 0;
+     nbLotFiniM = 0; 
+     nbLotTotalAcheter  = 0; 
+     nbLotTotalVendu  = 0; 
+
+     solde = 20000;
+
+     valAchatMar = 0; //Les achats de marchandises.
+     valSalaires = 0; //les charges salariales.
+     valChargesFin = 0; //les charges financieres présente les intérêts des emprunts en cours
+     valChargesExc = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
+     valVentesMar = 0; //les ventes de marchandises
+     valProduitsFini = 0; //les produits financiers lorsque l'on fait un emprunt
+     valProduitsExc = 0; //évènements aléatoires impactant positivement notre solde
+
+     valAchatMarM = 0; //Les achats de marchandises M-1
+     valSalairesM = 0; //les charges salariales M-1
+     valChargesFinM = 0; //les charges financieres présente les intérêts des emprunts en cours M-1
+     valChargesExcM = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur M-1
+     valVentesMarM = 0; //les ventes de marchandises M-1
+     valProduitsFinM = 0; //les produits financiers lorsque l'on fait un emprunt M-1
+     valProduitsExcM = 0; //évènements aléatoires impactant positivement notre solde M-1
+     valVarStoPiM = 0; //stocke le nombre de piece en stock du mois dernier
+     valResultatM = 0;
   }
 
 }

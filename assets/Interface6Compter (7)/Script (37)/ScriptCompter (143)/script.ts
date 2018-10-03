@@ -34,8 +34,8 @@ class ScriptCompterBehavior extends Sup.Behavior {
   ProduitsFinM : Sup.TextRenderer;
   ProduitsExcM : Sup.TextRenderer;
   
-  valVarStock : number;
-  valResultat : number;
+  valVarStock : number = 0;
+  valResultat : number = 0;
   
   awake() {
     jeuTour=0;

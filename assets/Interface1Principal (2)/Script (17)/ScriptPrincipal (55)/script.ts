@@ -13,6 +13,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   comptablePersonne : Sup.Actor;
   
   awake() {
+    
     musicAwake();
     //On recupere tous les elements contenus dans Menu
     this.phases = Sup.getActor("Phase").getChildren();
@@ -27,7 +28,6 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
     this.commercialPersonne = Sup.getActor("Element").getChild("Dynamique").getChild("CommercialPersonne");
     this.comptableMeuble = Sup.getActor("Element").getChild("Dynamique").getChild("ComptableMeuble");
     this.comptablePersonne = Sup.getActor("Element").getChild("Dynamique").getChild("ComptablePersonne");
-    Banque();//pour créer un appel sur le bouton banque on passe dans la fonction globale banque
   }
 
   update() {

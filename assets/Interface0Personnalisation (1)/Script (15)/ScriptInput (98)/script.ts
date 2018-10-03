@@ -22,24 +22,30 @@ class ScriptInputBehavior extends Sup.Behavior {
   TxtValider: Sup.Actor;
   
   awake() {
-    this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();
-    this.cursorActor1 = Sup.getActor("Element").getChild("InputNom");
-    this.font = Sup.getActor("Element").getChild("InputNom").textRenderer.getFont();
-    this.cursorActor2 = Sup.getActor("Element").getChild("InputSociete");
-    this.imgInput1 = Sup.getActor("Element").getChild("ImgInput1");
-    this.imgInput2 = Sup.getActor("Element").getChild("ImgInput2");
-    animeAssistant(Sup.getActor("Element").getChild("Assistant").spriteRenderer, true);
-    this.GenererNom = Sup.getActor("Element").getChild("Bouton").getChild("GenererNom");
-    this.GenererEntreprise = Sup.getActor("Element").getChild("Bouton").getChild("GenererEntreprise");
-    this.Valider = Sup.getActor("Element").getChild("Bouton").getChild("Valider");
-    this.TxtGenererNom = Sup.getActor("Texte").getChild("LabelGenNom");
-    this.TxtGenererEntreprise = Sup.getActor("Texte").getChild("LabelGenEntreprise");
-    this.TxtValider = Sup.getActor("Texte").getChild("LabelValider");
-    this.LabelSociete = Sup.getActor("Texte").getChild("LabelSociete");
-    this.LabelNom = Sup.getActor("Texte").getChild("LabelNom");
-    Sup.log(this.valeur);
-    musicAwake();
-    this.initialiseBouton();
+    lirebdd();
+    if (solde == 20000){
+      this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();
+      this.cursorActor1 = Sup.getActor("Element").getChild("InputNom");
+      this.font = Sup.getActor("Element").getChild("InputNom").textRenderer.getFont();
+      this.cursorActor2 = Sup.getActor("Element").getChild("InputSociete");
+      this.imgInput1 = Sup.getActor("Element").getChild("ImgInput1");
+      this.imgInput2 = Sup.getActor("Element").getChild("ImgInput2");
+      animeAssistant(Sup.getActor("Element").getChild("Assistant").spriteRenderer, true);
+      this.GenererNom = Sup.getActor("Element").getChild("Bouton").getChild("GenererNom");
+      this.GenererEntreprise = Sup.getActor("Element").getChild("Bouton").getChild("GenererEntreprise");
+      this.Valider = Sup.getActor("Element").getChild("Bouton").getChild("Valider");
+      this.TxtGenererNom = Sup.getActor("Texte").getChild("LabelGenNom");
+      this.TxtGenererEntreprise = Sup.getActor("Texte").getChild("LabelGenEntreprise");
+      this.TxtValider = Sup.getActor("Texte").getChild("LabelValider");
+      this.LabelSociete = Sup.getActor("Texte").getChild("LabelSociete");
+      this.LabelNom = Sup.getActor("Texte").getChild("LabelNom");
+      Sup.log(this.valeur);
+      musicAwake();
+      this.initialiseBouton();
+    }else{
+      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+    }
+    
   }
 
   update() {

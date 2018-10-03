@@ -340,12 +340,6 @@
         }
       ]
     },
-    "BanqueScript": {
-      "scriptId": "56",
-      "line": 145,
-      "parentBehavior": null,
-      "properties": []
-    },
     "ScriptTextAchatBehavior": {
       "scriptId": "149",
       "line": 0,
