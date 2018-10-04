@@ -13,7 +13,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   comptablePersonne : Sup.Actor;
   
   awake() {
-    
+    api();
     musicAwake();
     //On recupere tous les elements contenus dans Menu
     this.phases = Sup.getActor("Phase").getChildren();

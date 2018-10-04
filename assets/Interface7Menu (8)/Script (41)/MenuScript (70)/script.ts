@@ -97,8 +97,8 @@ class MenuScriptBehavior extends Sup.Behavior {
      nbElementM = 0; 
      nbLotFini = 0;
      nbLotFiniM = 0; 
-     nbLotTotalAcheter  = 0; 
-     nbLotTotalVendu  = 0; 
+     nbLotTotalAcheter = 0; 
+     nbLotTotalVendu = 0; 
 
      solde = 20000;
 
