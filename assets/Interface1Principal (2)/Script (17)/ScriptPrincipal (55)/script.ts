@@ -13,7 +13,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   comptablePersonne : Sup.Actor;
   
   awake() {
-    api();
+    
     musicAwake();
     //On recupere tous les elements contenus dans Menu
     this.phases = Sup.getActor("Phase").getChildren();
@@ -91,6 +91,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   
   phaseAction(){
     //pour avancer dans le menu
+    Sup.log("jeuTour : "+jeuTour);
     switch(jeuTour){
       case 0:{
         Sup.loadScene("Interface2Personnel/Scene/PersonnelScene");

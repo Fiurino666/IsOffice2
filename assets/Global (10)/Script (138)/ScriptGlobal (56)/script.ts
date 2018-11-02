@@ -1,5 +1,6 @@
 /////////// A sauvegarder dans la base \\\\\\\\\\\\\\
 //Pour savoir a quel tour de jeu nous en sommes
+//var jeuTour: number = 0;
 var jeuTour: number = Sup.Storage.getJSON("jeuTour", 0);
 //Une fois tous les tour de jeu effectué nous avons finis un mois
 var jeuMois: number = Sup.Storage.getJSON("jeuMois", 0);
@@ -12,10 +13,10 @@ var nbComptable: number = Sup.Storage.getJSON("nbComptable", 0);
 var nbEcran: number = Sup.Storage.getJSON("nbEcran", 0);
 var nbChassis: number = Sup.Storage.getJSON("nbChassis", 0);
 var nbComposant: number = Sup.Storage.getJSON("nbComposant", 0);
-var nbElementM: number = Sup.Storage.getJSON("nbElementM", 0); //sert a aditionner le nombre d'element acheter le mois precedent pour Compter
+var nbElementM: number = Sup.Storage.getJSON("nbElementM", 0); //sert a ajouter le nombre d'element acheter le mois precedent pour Compter
 var nbLotFini: number = Sup.Storage.getJSON("nbLotFini", 0); //nombre de lot construit ce tour ci
 var nbLotFiniM: number = Sup.Storage.getJSON("nbLotFiniM", 0); //nombre de lot construit le mois precedent
-var nbLotTotalAcheter : number = Sup.Storage.getJSON("nbLotTotalAcheter", 0); // lot de telephone portable on a acheter ce tour ci, sert dans compter pour calculer la moyenne
+var nbLotTotalAcheter : number = Sup.Storage.getJSON("nbLotTotalAcheter", 0); // lot de telephone portable qu on a acheter ce tour ci, sert dans compter pour calculer la moyenne
 var nbLotTotalVendu : number = Sup.Storage.getJSON("nbLotTotalVendu", 0); // lot de telephone portable on a vendu ce tour ci, sert dans vendre et dans compter
 
 var solde: number = Sup.Storage.getJSON("solde", 20000);

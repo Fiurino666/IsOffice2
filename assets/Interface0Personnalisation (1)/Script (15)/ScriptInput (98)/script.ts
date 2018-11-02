@@ -22,7 +22,6 @@ class ScriptInputBehavior extends Sup.Behavior {
   TxtValider: Sup.Actor;
   
   awake() {
-    api();
     lirebdd();
     if (solde == 20000){
       this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();
@@ -89,6 +88,7 @@ class ScriptInputBehavior extends Sup.Behavior {
          break;
         }
         case 2:{
+          apiLire();
           Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
           break;
         }

@@ -39,11 +39,13 @@ class MenuScriptBehavior extends Sup.Behavior {
       this.musicPlayer.play();
       Sup.log(" btnCharger");
       clicVisuel(this.btnCharger);
+      apiLire();
     });
     this.btnSauvegarder.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
       Sup.log(" btnSauvegarder");
       clicVisuel(this.btnSauvegarder);
+      apiSauve();
     });
     this.btnFermerMenu.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
