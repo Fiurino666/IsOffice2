@@ -4,27 +4,61 @@ var myArr = JSON;
 
 function myF(arr) {
   if(arr.length == 0){
-    Sup.log("Aucun enregistrement n'a ete trouver");
+    Sup.log("Aucun enregistrement n'a ete trouvé");
+    jeuTour = 0;
+    jeuMois = 0 ;
+    nbOuvrier = 0 ;
+    nbCommercial = 0 ;
+    nbComptable = 0 ;
+
+    nbLotTotalAcheter = 0 ;
+    nbLotTotalVendu = 0;
+    valAchatMar = 0 ;
+    valSalaires = 0 ;
+    valChargesFin = 0 ;
+    valChargesExc = 0;
+    valVentesMar = 0;
+    valProduitsFini = 0 ;
+    valProduitsExc = 0;
+
+    valAchatMarM = 0;
+    valSalairesM = 0 ;
+    valChargesFinM = 0 ;
+    valChargesExcM = 0 ;
+    valVentesMarM = 0 ;
+    valProduitsFinM = 0 ;
+    valProduitsExcM = 0 ;
+
+    nbElementM = 0;
+    nbLotFiniM = 0;
+    valVarStoPiM = 0 ;
+    valResultatM = 0 ;
   }else{
      apiRecupere();
   }
-    
 } 
 
-
 function apiLire(){
+  var obj, dbParam, xmlhttp;
+  
+  obj = { "nom": nom, "societe": societe};
+  dbParam = JSON.stringify(obj);//encode pour éviter les caractères interdits dans une URL
+  Sup.log(dbParam);
   
   xmlhttp = new XMLHttpRequest();
-  var url = "http://localhost/apiphp/Vue/charge.php?nom="+nom+"&societe="+societe;
-  
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        myArr = JSON.parse(this.responseText);
-        myF(myArr);
+    
+  xmlhttp.open("POST", "http://localhost/apiphp/Vue/charge.php");
+  xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xmlhttp.onreadystatechange = function () {
+    if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+      console.log(xmlhttp.responseText);
+      myArr = JSON.parse(xmlhttp.responseText);
+      myF(myArr);
     }
   };
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send();
+  xmlhttp.send("data="+dbParam);
+  xmlhttp.addEventListener("load", Sup.log("charge BDD réalisé"), false);
+  
 }
 
 function apiRecupere(){
@@ -63,58 +97,16 @@ function apiRecupere(){
   
 }
 
-function apiEnregistre(){
-  var myJSON = { "nomJoueur": nom, "mdpJoueur": nom+"2"};
-  
-  var myString;
-  
-
-/*
-  myArr[0].nomSociete = societe;
-  myArr[0].solde = solde;
-  myArr[0].nomJoueur = nom;
-  myArr[0].tourJeux = jeuTour;
-  myArr[0].moisJeux = jeuMois;
-  myArr[0].nbOuvrierJeux = nbOuvrier;
-  myArr[0].nbCommercialJeux = nbCommercial;
-  myArr[0].nbComptableJeux = nbComptable;
-  
-  myArr[0].nbLotTotalAcheterJeux = nbLotTotalAcheter;
-  myArr[0].nbLotTotalVenduJeux = nbLotTotalVendu;
-  myArr[0].valAchatMarBilan = valAchatMar;
-  myArr[0].valSalairesBilan = valSalaires;
-  myArr[0].valChargesFinBilan = valChargesFin;
-  myArr[0].valChargesExcBilan = valChargesExc;
-  myArr[0].valVentesMarBilan = valVentesMar;
-  myArr[0].valProduitsFiniBilan = valProduitsFini;
-  myArr[0].valProduitsExcBilan = valProduitsExc;
-  
-  myArr[1].valAchatMarBilan = valAchatMarM;
-  myArr[1].valSalairesBilan = valSalairesM;
-  myArr[1].valChargesFinBilan = valChargesFinM;
-  myArr[1].valChargesExcBilan = valChargesExcM;
-  myArr[1].valVentesMarBilan = valVentesMarM;
-  myArr[1].valProduitsFiniBilan = valProduitsFinM;
-  myArr[1].valProduitsExcBilan = valProduitsExcM;
-  
-  myArr[1].nbElementMJeux = nbElementM;
-  myArr[1].nbLotFiniMJeux = nbLotFiniM;
-  myArr[1].valVarStoPiMBilan = valVarStoPiM;
-  myArr[1].valResultatMBilan = valResultatM;
-
-   */
-}
-
 function apiSauve(){
   var obj, dbParam, xmlhttp;
   
   obj = { "nomJoueur": nom, "mdpJoueur": nom+"2"};
-  dbParam = JSON.stringify(obj);//encode pourafin d'éviter caractères interdits dans une URL
+  dbParam = JSON.stringify(obj);//encode pour éviter les caractères interdits dans une URL
   Sup.log(dbParam);
   xmlhttp = new XMLHttpRequest();
   xmlhttp.open("POST", "http://localhost/apiphp/Vue/sauve.php");
   xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xmlhttp.send("data="+dbParam);
-  xmlhttp.addEventListener("load", Sup.log("sauvegarder"), false);
+  xmlhttp.addEventListener("load", Sup.log("sauvegarde BDD réalisé"), false);
   }
 

@@ -134,7 +134,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
     nomEntreprise = this.list[Math.floor((Math.random() * 9) + 0)]
     this.nbLot = Math.floor((Math.random() * 4) + 1);
     Sup.log(this.nbLot);
-    this.prixLot = 300 * Math.floor((Math.random() * 10) + 5);
+    this.prixLot = 200 * Math.floor((Math.random() * 10) + 5);
     Sup.log(this.prixLot);
     this.TxtProposition.textRenderer.setText("L'entreprise " + nomEntreprise +" vous propose à l'achat \n "+ this.nbLot +" "+ gereS(this.nbLot, "lot") + " de téléphones portables \n au prix de "+ this.prixLot* this.nbLot +" €. \n Soit un prix unitaire de "+ this.prixLot +" €. \n Voulez-vous accepter ?");
     

@@ -61,9 +61,11 @@ var boolVisibleChassis : boolean = true;
 var boolVisibleComposant : boolean = true;
 var boolClique: boolean;
 
+/*
 Sup.Input.on("exit", () => {
   lirebdd();
 });
+*/
 
 function mouseOnHover(camera: Sup.Camera, boutons: Sup.Actor[]){
   let ray = new Sup.Math.Ray();
