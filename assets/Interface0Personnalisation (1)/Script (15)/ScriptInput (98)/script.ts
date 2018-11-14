@@ -20,9 +20,17 @@ class ScriptInputBehavior extends Sup.Behavior {
   TxtGenererNom: Sup.Actor;
   TxtGenererEntreprise: Sup.Actor;
   TxtValider: Sup.Actor;
+  txtPres: string = "Vous venez d'investir toutes vos économies \n pour fonder votre société : " +societe+" \n \
+  de fabrication de téléphone portable. \n \
+  J'espère pouvoir vous être utile comme assistant. \n \
+  Je m’occupe de votre comptabilité pendant les six premiers mois, \n \
+  c’est dans mes fonctions d’assistant. \n \
+  Ensuite ce sera à vous de gérer patron. \n \
+  Appuyer sur Entrée pour continuer ...";
   
   awake() {
     lirebdd();
+    musicAwake();
     if (solde == 20000){
       this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();
       this.cursorActor1 = Sup.getActor("Element").getChild("InputNom");
@@ -40,7 +48,6 @@ class ScriptInputBehavior extends Sup.Behavior {
       this.LabelSociete = Sup.getActor("Texte").getChild("LabelSociete");
       this.LabelNom = Sup.getActor("Texte").getChild("LabelNom");
       Sup.log(this.valeur);
-      musicAwake();
       this.initialiseBouton();
     }else{
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
@@ -166,6 +173,7 @@ class ScriptInputBehavior extends Sup.Behavior {
   }
   
   presentation(){
+    
     this.visibleGenNom(false);
     this.visibleGenEntreprise(false);
     this.imgInput1.setVisible(false);
@@ -174,7 +182,8 @@ class ScriptInputBehavior extends Sup.Behavior {
     this.cursorActor2.textRenderer.setText("");
     this.cursorActor1.textRenderer.setSize(36);
     this.cursorActor1.setLocalScale(0.2, 0.2, 1);
-    this.cursorActor1.textRenderer.setText("Je suis Henri votre assistant personnel, \n notre entreprise " +societe+"\n fabrique des téléphones portables. \n Vous devez commencer par embaucher du personnel, patron ! \n Cliquez pour continuer ...");
+    this.cursorActor1.textRenderer.setText(this.txtPres);
+    this.cursorActor1.textRenderer.setSize(42);
     
   }
   

@@ -123,6 +123,10 @@
         {
           "name": "column",
           "type": "number"
+        },
+        {
+          "name": "txtPres",
+          "type": "string"
         }
       ]
     },
@@ -298,6 +302,10 @@
           "type": "number"
         },
         {
+          "name": "boolMusicPlayBefore",
+          "type": "boolean"
+        },
+        {
           "name": "valVarStock",
           "type": "number"
         },
@@ -356,6 +364,17 @@
         {
           "name": "strDefile",
           "type": "string"
+        }
+      ]
+    },
+    "AssistantCompterBehavior": {
+      "scriptId": "157",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "estVisible",
+          "type": "boolean"
         }
       ]
     }

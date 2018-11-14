@@ -65,6 +65,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
     updateMenu(this.menus);
     noclic(this.menus);
     this.timer++;
+    musicUpdate();
   }
   
   cliqueBouton(){

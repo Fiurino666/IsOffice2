@@ -3,7 +3,8 @@ class ScriptCompterBehavior extends Sup.Behavior {
   musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });
   //le timer permet de ne pas revenir au menu precedent lors de deux clics trop proche
   timer: number = 0;
-  
+  boolMusicPlayBefore : boolean;
+  camera : Sup.Actor;
   //on declare les boutons
   Suivant : Sup.Actor;
   
@@ -52,6 +53,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
     this.VentesMar = Sup.getActor("Element").getChild("ValTexte").getChild("VentesMar").textRenderer;
     this.ProduitsFini = Sup.getActor("Element").getChild("ValTexte").getChild("ProduitsFini").textRenderer;
     this.ProduitsExc = Sup.getActor("Element").getChild("ValTexte").getChild("ProduitsExc").textRenderer;
+    this.camera = Sup.getActor("Camera");
     
     this.AchatMarM = Sup.getActor("Element").getChild("ValTexteM-1").getChild("AchatMarM-1").textRenderer;
     this.VarStoPiM = Sup.getActor("Element").getChild("ValTexteM-1").getChild("VarStoPiM-1").textRenderer;
@@ -67,18 +69,19 @@ class ScriptCompterBehavior extends Sup.Behavior {
     this.premierMois();
     this.initialiseBouton();
     this.cliqueBouton();
+    this.applauseOrNot();
+    this.gestionMois();
   }
 
   update() {
-    
+    musicUpdate();
   }
   
   cliqueBouton(){
     this.Suivant.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
-      Sup.log("FinDuMois");
-      jeuMois++;
-      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+      Sup.log("Evenement special");
+      
       
       valAchatMarM = valAchatMar; //Les achats de marchandises.
       valSalairesM = valSalaires; //les charges salariales.
@@ -97,6 +100,9 @@ class ScriptCompterBehavior extends Sup.Behavior {
       valProduitsExc = 0; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
       valVarStoPiM = this.valVarStock;
       valResultatM = this.valResultat;
+      musicMuted =  this.boolMusicPlayBefore;
+      
+      this.camera.moveY(11);
     });
   }
   
@@ -155,7 +161,37 @@ class ScriptCompterBehavior extends Sup.Behavior {
       this.ProduitsFinM.setText(valProduitsFinM);
       this.ProduitsExcM.setText(valProduitsExcM);
     }
-  }  
+  } 
+  
+  gestionMois(){
+    jeuMois++;
+    if(jeuMois == 13){
+      jeuMois = 1;
+      jeuAnnee ++;
+    }
+  }
+  
+  applauseOrNot(){
+     //pour la musique d'applaudissement ou de cri
+    if (musicMuted = false){   
+        this.boolMusicPlayBefore = true;
+    }else{
+        this.boolMusicPlayBefore = false;
+    }
+    musicMuted = true;
+    musicAwake();
+    if(this.valResultat >0){
+      var musicPlayer = Sup.Audio.playSound("Interface6Compter/Sound/Applause", 0.1, { loop: false });;
+      musicPlayer.play();
+    }else{
+      var musicPlayer1 = Sup.Audio.playSound("Interface6Compter/Sound/Coeur", 0.1, { loop: false });;
+      var musicPlayer2 = Sup.Audio.playSound("Interface6Compter/Sound/Souffle", 0.1, { loop: false });;
+      var musicPlayer3 = Sup.Audio.playSound("Interface6Compter/Sound/Cri", 0.1, { loop: false });;
+      musicPlayer1.play();
+      musicPlayer2.play();
+      musicPlayer3.play();
+    }
+  }
   
 }
 Sup.registerBehavior(ScriptCompterBehavior);

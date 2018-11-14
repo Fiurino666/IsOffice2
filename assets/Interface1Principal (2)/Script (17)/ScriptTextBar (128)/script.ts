@@ -10,7 +10,8 @@ class ScriptTextBarBehavior extends Sup.Behavior {
 
   update() {
     this.time++;
-    this.strDefile = "           Votre entreprise "+societe+" a : "+nbEcran+" "+gereS(nbEcran,"lot")+" "+gereS(nbEcran,"d'écran")+", "+nbChassis+" "+gereS(nbChassis,"lot")+
+    this.strDefile = "           Année : "+jeuAnnee+", mois : "+ moisDeLannee() +", votre entreprise "+societe+" a : "+nbEcran+" "+gereS(nbEcran,"lot")+
+      " "+gereS(nbEcran,"d'écran")+", "+nbChassis+" "+gereS(nbChassis,"lot")+
       " de chassis"+", "+nbComposant+" "+gereS(nbComposant,"lot")+" de "+gereS(nbComposant,"composant")+", "+nbLotFini+" "+gereS(nbLotFini,"lot")+
       " de téléphones portables à vendre, et "+nbOuvrier+" "+gereS(nbOuvrier,"ouvrier")+
       ", "+nbCommercial+" "+gereS(nbCommercial,"commercial")+", "+nbComptable+" "+gereS(nbComptable,"comptable")+" sont engagés dans la société.";

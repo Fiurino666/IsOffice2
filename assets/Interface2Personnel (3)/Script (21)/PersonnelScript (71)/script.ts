@@ -10,16 +10,16 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   totalCoutCommercial : number;
   totalCoutComptable : number;
 
-  salaireOuvrier : number = 600;
-  licencierOuvrier: number = 450;
+  salaireOuvrier : number = 1100;
+  licencierOuvrier: number = 750;
   nbfoislicencierO: number = 0;
   
-  salaireCommercial : number = 1000;
-  licencierCommercial: number = 650;
+  salaireCommercial : number = 1600;
+  licencierCommercial: number = 950;
   nbfoislicencierC: number = 0;
   
-  salaireComptable : number = 800;
-  licencierComptable: number = 550;
+  salaireComptable : number = 1950;
+  licencierComptable: number = 1150;
   nbfoislicencierCC: number = 0;
   
   //le timer permet de ne pas revenir au menu precedent lors de deux clics trop proche
@@ -57,9 +57,8 @@ class PersonnelScriptBehavior extends Sup.Behavior {
 
   MasseSalariale : Sup.Actor;
   
-  start(){
-    
-  }
+  txtEmbCompta : Sup.Actor;
+  txtLicCompta : Sup.Actor;
   
   awake() {
     jeuTour = 1;
@@ -94,10 +93,12 @@ class PersonnelScriptBehavior extends Sup.Behavior {
     this.TotalComptable = Sup.getActor("Variable").getChild("Comptable").getChild("TotCC");
 
     this.MasseSalariale = Sup.getActor("Variable").getChild("Masse").getChild("MasseSalariale");
-    
+    this.txtEmbCompta = Sup.getActor("Texte").getChild("EmbaucherComptable");
+    this.txtLicCompta = Sup.getActor("Texte").getChild("LicencierComptable");
     //Sup.log(`menus: ${this.menus.length}`);
     this.cliqueBouton();
     updateMenu(this.menus);
+    this.comptaDesactive6Mois();
   }
 
   update() {
@@ -108,6 +109,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
     //pour le curseur quand il est dessus change l opacite a 0.7
     //mouseNavigation();
     this.timer++;
+    musicUpdate();
   }
   
   cliqueBouton(){
@@ -278,6 +280,20 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         
       default:
         break;
+    }
+  }
+  
+  comptaDesactive6Mois(){
+    if (jeuMois <= 6 && jeuAnnee == 1997){
+      this.EmbaucherComptable.setVisible(false);
+      this.LicencierComptable.setVisible(false);
+      this.txtEmbCompta.setVisible(false);
+      this.txtLicCompta.setVisible(false);
+    } else{
+      this.EmbaucherComptable.setVisible(true);
+      this.LicencierComptable.setVisible(true);
+      this.txtEmbCompta.setVisible(true);
+      this.txtLicCompta.setVisible(true);
     }
   }
   

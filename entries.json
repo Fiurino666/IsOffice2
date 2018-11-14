@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 153,
+  "nextEntryId": 158,
   "nodes": [
     {
       "id": "0",
@@ -489,6 +489,11 @@
               "id": "143",
               "name": "ScriptCompter",
               "type": "script"
+            },
+            {
+              "id": "157",
+              "name": "AssistantCompter",
+              "type": "script"
             }
           ]
         },
@@ -508,7 +513,28 @@
           "id": "39",
           "name": "Sound",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "153",
+              "name": "Applause",
+              "type": "sound"
+            },
+            {
+              "id": "154",
+              "name": "Coeur",
+              "type": "sound"
+            },
+            {
+              "id": "155",
+              "name": "Cri",
+              "type": "sound"
+            },
+            {
+              "id": "156",
+              "name": "Souffle",
+              "type": "sound"
+            }
+          ]
         }
       ]
     },

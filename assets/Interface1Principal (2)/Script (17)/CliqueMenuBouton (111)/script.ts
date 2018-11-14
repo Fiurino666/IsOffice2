@@ -9,7 +9,6 @@ class CliqueMenuBoutonBehavior extends Sup.Behavior {
   musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });;
   
   awake() {
-    musicAwake();
     this.btnMenu = Sup.getActor("Element").getChild("Fixe").getChild("MenuFond");
     
     this.btnMenu.fMouseInput.emitter.on("leftClickReleased", () => {       
@@ -28,7 +27,6 @@ class CliqueMenuBoutonBehavior extends Sup.Behavior {
   }
 
   update() {
-    musicUpdate();
     Mouse.update(this.actor.camera);
     
     // FIXME: Temporary debug

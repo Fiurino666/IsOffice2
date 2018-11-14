@@ -3,7 +3,8 @@
 //var jeuTour: number = 0;
 var jeuTour: number = Sup.Storage.getJSON("jeuTour", 0);
 //Une fois tous les tour de jeu effectué nous avons finis un mois
-var jeuMois: number = Sup.Storage.getJSON("jeuMois", 0);
+var jeuMois: number = Sup.Storage.getJSON("jeuMois", 1);
+var jeuAnnee: number = Sup.Storage.getJSON("jeuAnnee", 1997);
 //je définis les noms des entreprises concurrentes
 var entrepriseConc = new Array("Appel", "Tomorola", "Xiamio");
 //les variables globales necessaires au fonctionnement de l'entreprise
@@ -188,4 +189,32 @@ function lirebdd(){
   Sup.Storage.setJSON("valVarStoPiM", valVarStoPiM);
   Sup.Storage.setJSON("valResultatM", valResultatM);
   
+}
+
+function moisDeLannee(){
+  if(jeuMois==1){
+    return "janvier";
+  } else if (jeuMois==2){
+    return "février"; 
+    } else if (jeuMois==3){
+      return "mars"; 
+        } else if (jeuMois==4){
+        return "avril"; 
+          }else if (jeuMois==5){
+          return "mai"; 
+            }else if (jeuMois==6){
+              return "juin"; 
+              }else if (jeuMois==7){
+              return "juillet"; 
+                }else if (jeuMois==8){
+                return "aout"; 
+                  }else if (jeuMois==9){
+                  return "septembre"; 
+                    }else if (jeuMois==10){
+                    return "octobre"; 
+                      }else if (jeuMois==11){
+                      return "novembre"; 
+                        }else{
+                        return "décembre"; 
+                        }
 }

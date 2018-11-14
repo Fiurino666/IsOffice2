@@ -35,7 +35,7 @@ class ScriptAchatClickBehavior extends Sup.Behavior {
   }
   
   update() {
-    musicUpdate;
+    musicUpdate();
     this.timer ++;
     updateMenu(this.menus1);
     noclic(this.menus1);
