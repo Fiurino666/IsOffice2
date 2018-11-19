@@ -20,13 +20,7 @@ class ScriptInputBehavior extends Sup.Behavior {
   TxtGenererNom: Sup.Actor;
   TxtGenererEntreprise: Sup.Actor;
   TxtValider: Sup.Actor;
-  txtPres: string = "Vous venez d'investir toutes vos économies \n pour fonder votre société : " +societe+" \n \
-  de fabrication de téléphone portable. \n \
-  J'espère pouvoir vous être utile comme assistant. \n \
-  Je m’occupe de votre comptabilité pendant les six premiers mois, \n \
-  c’est dans mes fonctions d’assistant. \n \
-  Ensuite ce sera à vous de gérer patron. \n \
-  Appuyer sur Entrée pour continuer ...";
+  txtPres: string;
   
   awake() {
     lirebdd();
@@ -76,6 +70,13 @@ class ScriptInputBehavior extends Sup.Behavior {
     if(this.valeur == 1){
       societe = this.suppr(societe);
       this.cursorActor2.textRenderer.setText(""+societe);
+      this.txtPres = "Vous venez d'investir toutes vos économies \n pour fonder votre société : " +societe+" \n \
+  de fabrication de téléphone portable. \n \
+  J'espère pouvoir vous être utile comme assistant. \n \
+  Je m’occupe de votre comptabilité pendant les six premiers mois, \n \
+  c’est dans mes fonctions d’assistant. \n \
+  Ensuite ce sera à vous de gérer patron. \n \
+  Appuyer sur Entrée pour continuer ...";
       this.visibleGenNom(false);
       this.visibleGenEntreprise(true);
       this.imgInput1.setVisible(false);
@@ -105,7 +106,6 @@ class ScriptInputBehavior extends Sup.Behavior {
   }
   
   suppr(text:string):string{
-    //supprimer caractere ne marche pas
    if (Sup.Input.wasKeyJustPressed("BACK_SPACE", { autoRepeat: true })) {
       this.column = text.length+1;
       this.column --;
@@ -180,7 +180,7 @@ class ScriptInputBehavior extends Sup.Behavior {
     this.imgInput2.setVisible(false);
     this.LabelSociete.setVisible(false);
     this.cursorActor2.textRenderer.setText("");
-    this.cursorActor1.textRenderer.setSize(36);
+    this.cursorActor1.textRenderer.setSize(30);
     this.cursorActor1.setLocalScale(0.2, 0.2, 1);
     this.cursorActor1.textRenderer.setText(this.txtPres);
     this.cursorActor1.textRenderer.setSize(42);

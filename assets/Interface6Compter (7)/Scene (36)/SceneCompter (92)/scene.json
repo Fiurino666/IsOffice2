@@ -1344,8 +1344,8 @@
             }
           ],
           "position": {
-            "x": -8.079,
-            "y": 6.101,
+            "x": -7.7914842665195465,
+            "y": 6.069020748138428,
             "z": 2
           },
           "orientation": {
@@ -1610,8 +1610,8 @@
                 "w": 1
               },
               "scale": {
-                "x": 1,
-                "y": 0.7,
+                "x": 0.8,
+                "y": 0.6,
                 "z": 1
               },
               "visible": true,
@@ -1653,7 +1653,7 @@
                 "text": "Fin du mois",
                 "alignment": "center",
                 "verticalAlignment": "center",
-                "size": 25,
+                "size": 20,
                 "color": null,
                 "overrideOpacity": false,
                 "opacity": null
@@ -1680,12 +1680,56 @@
           "visible": false,
           "layer": 0,
           "prefab": null
+        },
+        {
+          "id": "46",
+          "name": "Ennemi",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "158",
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 6.953,
+            "y": 6.024,
+            "z": 1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0.03655488132105409,
+            "w": 0.9993316532918903
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": false,
+          "layer": 0,
+          "prefab": null
         }
       ],
       "components": [],
       "position": {
-        "x": 0.387,
-        "y": 4.329,
+        "x": 0.13152256608009338,
+        "y": 4.328999996185303,
         "z": 0
       },
       "orientation": {

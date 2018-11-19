@@ -52,6 +52,9 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.Contrat = Sup.getActor("Element").getChild("Image").getChild("Contrat");
     
     this.numPropCom = nbCommercial*3;
+    if(jeuMois==3 && jeuAnnee==2000){ //pour respecter le scenario
+      this.numPropCom --;
+    }
     this.initialiseBouton();
     this.cliqueBouton();
     updateMenu(this.menus);
@@ -146,7 +149,9 @@ class ScriptVendreBehavior extends Sup.Behavior {
       this.VisibleBool(false);
       if (nbLotFini >= this.nbLot){
         nbLotFini -= this.nbLot;
-        solde += (this.nbLot * this.prixLot);
+        this.decaleGain();
+        this.calculGainCompte();
+        
         valVentesMar += (this.nbLot * this.prixLot);
         nbLotTotalVendu += this.nbLot;
         this.prixLotTotal += (this.nbLot * this.prixLot);
@@ -181,6 +186,27 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.TxtProposition.setVisible(true);
     Sup.log("Vous avez vendu "+ nbLotTotalVendu +" "+ gereS(nbLotTotalVendu, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
     this.TxtProposition.textRenderer.setText("Vous avez vendu "+ nbLotTotalVendu +" "+ gereS(nbLotTotalVendu, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
+  }
+  
+  decaleGain(){
+    if ( nbComptable >= 1){
+    venteEnAttenteM0 = venteEnAttenteM1;
+    venteEnAttenteM1 = venteEnAttenteM2;
+    venteEnAttenteM2 = venteEnAttenteM3;
+    venteEnAttenteM3 = venteEnAttenteMx;
+    }
+  }
+  
+  calculGainCompte(){
+    if ( (jeuMois <= 6 && jeuAnnee == 2000) || nbComptable == 3){//cas particulier on commence le jeu et l assistant remplace trois comptables
+      venteEnAttenteM1 += (this.nbLot * this.prixLot);
+    }else if(nbComptable == 2){
+      venteEnAttenteM2 += (this.nbLot * this.prixLot);
+      }else if(nbComptable == 1){
+        venteEnAttenteM3 += (this.nbLot * this.prixLot);
+        }else{
+          venteEnAttenteMx += (this.nbLot * this.prixLot); 
+        }
   }
   
   

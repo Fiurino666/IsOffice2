@@ -4,9 +4,9 @@
 var jeuTour: number = Sup.Storage.getJSON("jeuTour", 0);
 //Une fois tous les tour de jeu effectué nous avons finis un mois
 var jeuMois: number = Sup.Storage.getJSON("jeuMois", 1);
-var jeuAnnee: number = Sup.Storage.getJSON("jeuAnnee", 1997);
+var jeuAnnee: number = Sup.Storage.getJSON("jeuAnnee", 2000);
 //je définis les noms des entreprises concurrentes
-var entrepriseConc = new Array("Appel", "Tomorola", "Xiamio");
+var entrepriseConc = new Array("Appel", "Mokia", "Xiamio");
 //les variables globales necessaires au fonctionnement de l'entreprise
 var nbOuvrier: number = Sup.Storage.getJSON("nbOuvrier", 0);
 var nbCommercial: number = Sup.Storage.getJSON("nbCommercial", 0);
@@ -19,7 +19,11 @@ var nbLotFini: number = Sup.Storage.getJSON("nbLotFini", 0); //nombre de lot con
 var nbLotFiniM: number = Sup.Storage.getJSON("nbLotFiniM", 0); //nombre de lot construit le mois precedent
 var nbLotTotalAcheter : number = Sup.Storage.getJSON("nbLotTotalAcheter", 0); // lot de telephone portable qu on a acheter ce tour ci, sert dans compter pour calculer la moyenne
 var nbLotTotalVendu : number = Sup.Storage.getJSON("nbLotTotalVendu", 0); // lot de telephone portable on a vendu ce tour ci, sert dans vendre et dans compter
-
+var venteEnAttenteM0: number = Sup.Storage.getJSON("venteEnAttenteM0", 0); //sert entre Vendre et Compter, totalise ce que le comptable va donner du mois derniers
+var venteEnAttenteM1: number = Sup.Storage.getJSON("venteEnAttenteM1", 0); //lorsque l'on vend et que l'on est payé dans un mois cela apparait ici
+var venteEnAttenteM2: number = Sup.Storage.getJSON("venteEnAttenteM2", 0); //vente paye dans deux mois
+var venteEnAttenteM3: number = Sup.Storage.getJSON("venteEnAttenteM3", 0); // trois mois
+var venteEnAttenteMx: number = Sup.Storage.getJSON("venteEnAttenteMx", 0); //pas de comptable, on vend mais on ne reçoit pas l'argent, il faut engagé un comptable
 var solde: number = Sup.Storage.getJSON("solde", 20000);
 
 var valAchatMar: number = Sup.Storage.getJSON("valAchatMar", 0); //Les achats de marchandises.
@@ -153,6 +157,11 @@ function gereS(nb: number, str:string){
 
 function lirebdd(){
   Sup.Storage.setJSON("solde", solde);
+  Sup.Storage.setJSON("venteEnAttenteM0", venteEnAttenteM0);
+  Sup.Storage.setJSON("venteEnAttenteM1", venteEnAttenteM1);
+  Sup.Storage.setJSON("venteEnAttenteM2", venteEnAttenteM2);
+  Sup.Storage.setJSON("venteEnAttenteM3", venteEnAttenteM3);
+  Sup.Storage.setJSON("venteEnAttenteMx", venteEnAttenteMx);
   Sup.Storage.setJSON("jeuTour", jeuTour);
   Sup.Storage.setJSON("jeuMois", jeuMois);
   Sup.Storage.setJSON("nbOuvrier", nbOuvrier);

@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 158,
+  "nextEntryId": 159,
   "nodes": [
     {
       "id": "0",
@@ -505,6 +505,11 @@
             {
               "id": "150",
               "name": "compteresultat",
+              "type": "sprite"
+            },
+            {
+              "id": "158",
+              "name": "Stef Mobs",
               "type": "sprite"
             }
           ]

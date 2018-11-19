@@ -72,6 +72,13 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.timer ++;
     updateMenu(this.enchereSprite);
     noclic(this.enchereSprite);
+    if (Sup.Input.isKeyDown("NUMPAD0")) {
+      boolVisibleEcran = false;
+      boolVisibleComposant = false;
+      boolVisibleChassis = false;
+      Sup.log("Astuce");
+      this.quitteEcran();
+    }
   }
   
   //crée des valeurs random pour simuler la concurrence
@@ -235,7 +242,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
                 Sup.log("test 007");
               }
             }
-            this.camera.moveY(-11);
+            
             this.valeur = 1;
             //Sup.getActor("SceneAcheter").getBehavior(ScriptAchatClickBehavior).timer = 0;
             Sup.log("JE DETRUIS CE BEHAVIOR");
@@ -572,6 +579,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   }
   
   quitteEcran(){
+    this.camera.moveY(-11);
     if(!boolVisibleEcran && !boolVisibleComposant && !boolVisibleChassis){
       //permet de quitter la partie achat pour passer a production etape 3
       Sup.log("DESTRUCTION COME BACK");

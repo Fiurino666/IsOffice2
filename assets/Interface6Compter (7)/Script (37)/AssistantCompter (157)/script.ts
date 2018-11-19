@@ -9,6 +9,8 @@ class AssistantCompterBehavior extends Sup.Behavior {
   menus : Sup.Actor[];
   estVisible : boolean;
   iaArray = new Array(3);
+  Assistant : Sup.Actor;
+  Ennemi : Sup.Actor;
   
   musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });
   
@@ -20,15 +22,29 @@ class AssistantCompterBehavior extends Sup.Behavior {
     this.Bouton = Sup.getActor("Vue2").getChild("Bouton");
     this.menus = Sup.getActor("Vue2").getChild("Bouton").getChildren();
     this.TexteBouton = Sup.getActor("Vue2").getChild("TexteBouton");
-    this.Titre.setText("Mois : "+moisDeLannee()+" de l'année "+ jeuAnnee);
+    this.Assistant = Sup.getActor("Vue2").getChild("Assistant");
+    this.Ennemi = Sup.getActor("Vue2").getChild("Ennemi");
     this.scenario();
     this.cliqueBouton();
     this.cliqueFin();
+    this.Titre.setText("Mois : "+moisDeLannee()+" de l'année "+ jeuAnnee);
+    this.gestionMois();
+    //ScriptTextAchatBehavior.caller("this.update");
   }
 
   update() {
     musicUpdate();
     if(this.estVisible){updateMenu(this.menus);}
+  }
+  
+  gestionMois(){
+    jeuMois++;
+    jeuTour=0;
+    if(jeuMois == 13){
+      jeuMois = 1;
+      jeuAnnee ++;
+    }
+    Sup.log("jeuMois : "+jeuMois);
   }
   
   cliqueBouton(){
@@ -38,8 +54,9 @@ class AssistantCompterBehavior extends Sup.Behavior {
       this.Suivant.setVisible(false);
       this.musicPlayer.play();
       this.estVisible = true;
+      
     });
-  }
+  }  
   
    cliqueFin(){
     this.Bouton.getChild("Ok").fMouseInput.emitter.on("leftClickReleased", () => { 
@@ -52,7 +69,7 @@ class AssistantCompterBehavior extends Sup.Behavior {
   }                                    
   
   scenario(){
-    if (jeuMois == 7){
+    if (jeuMois == 7 && jeuAnnee == 2000){
       this.Texte.setText("Je ne peux malheureusement plus assurer  \n \
       mes fonctions de comptable, les six mois sont finis.  \n \
        Vous devez maintenant engager un comtpable qualifié, \n \
@@ -60,20 +77,52 @@ class AssistantCompterBehavior extends Sup.Behavior {
       d'être payé en 3 mois, 2 comptables en 2 mois,  \n \
       et 3 comptables en un mois comme actuellement.");
     }else{
-      this.evenement();
+      if (jeuMois == 3 && jeuAnnee == 2000){
+        this.Texte.setText("Oh non, la concurrence sort un nouveau produit  \n \
+        ils ont décidé de l'appeler 3310  \n \
+         Et c'est Mokia qui le lance. \n \
+        Pensez vous que ça va marcher? \n \
+        De toute façon je crois en vous  \n \
+        Grace à la puissance de la grenouille  \n \
+        notre animal totem. \n \
+        Vous avez un contrat commercial en moins ce tour.");
+      }
+      else{
+        if (jeuMois == 1 && jeuAnnee == 2001){
+          this.Texte.setText("Bonjour à toi ver de terre  \n \
+        je suis stef Mobs patron d'Appel, \n \
+        il parait que vous chercher à vous faire  \n \
+        une place dans le secteur. \n \
+        Il n'y a que le design qui compte  \n \
+        et nos clients sont maitre de leur destin.  \n \
+        Attendez vous à des soucis à l'avenir.");
+        this.Assistant.setVisible(false);
+        this.Ennemi.setVisible(true);
+        }else{
+          this.Assistant.setVisible(true);
+          this.Ennemi.setVisible(false);
+          this.evenement();
+        }
+        
+      }
+      
     }
   }
   
   evenement(){
-    if(valResultatM <0){
+    if(valResultatM <= 0){
       this.iaArray[0] = "engagé assez de commerciaux";
       this.iaArray[1] = "engagé assez d'ouvrier'";
       this.iaArray[2] = "acheté assez de composant";
       var rng = new RNG(String(Math.random()));
-      this.Texte.setText("Votre résultat est négatif, il va falloir s'améliorer. Avez vous "+this.iaArray[rng.random(0, 2)] +"?");
+      this.Texte.setText("Votre résultat est négatif,\n \
+      il va falloir s'améliorer. Avez vous \n \
+      "+this.iaArray[rng.random(0, 2)] +"?");
     }else {
       this.Texte.setText("Votre résultat est positif");
     }
   }
+  
+  
 }
 Sup.registerBehavior(AssistantCompterBehavior);

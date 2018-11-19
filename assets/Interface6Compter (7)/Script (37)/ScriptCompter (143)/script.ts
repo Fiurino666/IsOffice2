@@ -39,8 +39,9 @@ class ScriptCompterBehavior extends Sup.Behavior {
   valResultat : number = 0;
   
   awake() {
-    jeuTour=0;
-
+    
+    solde += venteEnAttenteM0;
+    venteEnAttenteM0 = 0;
     this.Suivant = Sup.getActor("Texte").getChild("Suivant");
     this.AchatMar = Sup.getActor("Element").getChild("ValTexte").getChild("AchatMar").textRenderer;
     this.VarStoPi = Sup.getActor("Element").getChild("ValTexte").getChild("VarStoPi").textRenderer;
@@ -70,7 +71,6 @@ class ScriptCompterBehavior extends Sup.Behavior {
     this.initialiseBouton();
     this.cliqueBouton();
     this.applauseOrNot();
-    this.gestionMois();
   }
 
   update() {
@@ -82,7 +82,6 @@ class ScriptCompterBehavior extends Sup.Behavior {
       this.musicPlayer.play();
       Sup.log("Evenement special");
       
-      
       valAchatMarM = valAchatMar; //Les achats de marchandises.
       valSalairesM = valSalaires; //les charges salariales.
       valChargesFinM = valChargesFin; //les charges financieres présente les intérêts des emprunts en cours
@@ -90,7 +89,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
       valVentesMarM = valVentesMar; //les ventes de marchandises
       valProduitsFinM = valProduitsFini; //les produits financiers lorsque l'on fait un emprunt
       valProduitsExcM = valProduitsExc; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
-            
+      
       valAchatMar = 0; //Les achats de marchandises.
       valSalaires = 0; //les charges salariales.
       valChargesFin = 0; //les charges financieres présente les intérêts des emprunts en cours
@@ -114,7 +113,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
       this.VarStoPi.setText(this.valVarStock);
     }else{
       this.VarStoPi.setText(0);
-    }    
+    }
     this.Salaires.setText(valSalaires);
     this.ChargesFin.setText(valChargesFin);
     this.ChargesExc.setText(valChargesExc);
@@ -136,7 +135,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
   }
   
   premierMois(){
-    if(jeuMois==0){
+    if(jeuMois==0 && jeuAnnee==2000){
       this.AchatMarM.setText(0);
       this.VarStoPiM.setText(0);
       this.SalairesM.setText(0);
@@ -163,13 +162,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
     }
   } 
   
-  gestionMois(){
-    jeuMois++;
-    if(jeuMois == 13){
-      jeuMois = 1;
-      jeuAnnee ++;
-    }
-  }
+  
   
   applauseOrNot(){
      //pour la musique d'applaudissement ou de cri
