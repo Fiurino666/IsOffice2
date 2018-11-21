@@ -46,7 +46,6 @@ class ScriptInputBehavior extends Sup.Behavior {
     }else{
       Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
     }
-    
   }
 
   update() {
@@ -64,8 +63,7 @@ class ScriptInputBehavior extends Sup.Behavior {
     if(this.valeur == 0){
       nom = this.suppr(nom);
       this.cursorActor1.textRenderer.setText(nom);
-    }    
-    
+    }
     //si on a deja appuyer une fois sur entree
     if(this.valeur == 1){
       societe = this.suppr(societe);
@@ -83,16 +81,18 @@ class ScriptInputBehavior extends Sup.Behavior {
       this.imgInput2.setVisible(true);
     }
     
-    if (Sup.Input.wasKeyJustPressed("RETURN")) {
+    if (Sup.Input.wasKeyJustPressed("RETURN") && nom  != "") {
       switch (this.valeur){
-          //on appuie deux fois sur entree
-        case 0:{
+        case 0:{  //on appuie une fois sur entrée
           this.tresBien();
           break;
         }          
-          //troisieme fois que nous avons appuyer sur entree
-        case 1:{
-          this.presentation();
+        case 1:{ //deux fois que nous avons appuyer sur entrée
+          if (societe != ""){
+            this.presentation();
+          }else{
+            this.valeur--; //on diminue la valeur pour relire le nom de société
+          }
          break;
         }
         case 2:{
@@ -106,7 +106,7 @@ class ScriptInputBehavior extends Sup.Behavior {
   }
   
   suppr(text:string):string{
-   if (Sup.Input.wasKeyJustPressed("BACK_SPACE", { autoRepeat: true })) {
+   if (Sup.Input.wasKeyJustPressed("BACK_SPACE", { autoRepeat: true })) { //efface un caractere lorsque l'on appuie sur supprime
       this.column = text.length+1;
       this.column --;
       text = text.substring(0, this.column - 1) + text.substring(this.column);
@@ -114,9 +114,8 @@ class ScriptInputBehavior extends Sup.Behavior {
     }
     else{
       if (text.length < 19){
-        text = text + Sup.Input.getTextEntered();
+        text = text + Sup.Input.getTextEntered(); //C'est ici que nous ajoutons du texte lorsque l'utilisateur tape
       }
-      
     }
     return text;
   }
@@ -169,11 +168,9 @@ class ScriptInputBehavior extends Sup.Behavior {
     this.LabelSociete.setVisible(true);
     this.visibleGenNom(false);
     this.cursorActor1.textRenderer.setText("Très bien, allons y "+nom);
-    
   }
   
   presentation(){
-    
     this.visibleGenNom(false);
     this.visibleGenEntreprise(false);
     this.imgInput1.setVisible(false);
@@ -184,9 +181,7 @@ class ScriptInputBehavior extends Sup.Behavior {
     this.cursorActor1.setLocalScale(0.2, 0.2, 1);
     this.cursorActor1.textRenderer.setText(this.txtPres);
     this.cursorActor1.textRenderer.setSize(42);
-    
   }
-  
   
 }
 Sup.registerBehavior(ScriptInputBehavior);

@@ -78,6 +78,7 @@ function mouseOnHover(camera: Sup.Camera, boutons: Sup.Actor[]){
   let hits = this.ray.intersectActors(boutons);
   if(hits.length > 0){
     updateMenu(boutons);
+    updateMenuTouched(boutons);
   }
 }
 
@@ -87,10 +88,18 @@ function updateMenu(boutons: Sup.Actor[]){
       if(boutons[i].fMouseInput.isMouseOver){
         //Sup.log(`mouse over true `); 
         boutons[i].spriteRenderer.setOpacity(0.7);
+     }else{
+       boutons[i].spriteRenderer.setOpacity(1);
      }
-     if(!boutons[i].fMouseInput.isMouseOver){
-      boutons[i].spriteRenderer.setOpacity(1);
-     }
+  }
+}
+
+function updateMenuTouched(boutons: Sup.Actor[]){
+  for(let i = 0; i<boutons.length;i++){
+      //Sup.log(`Nombre d i ${i}`); 
+      boutons[i].fMouseInput.emitter.on("touchend", () => {
+        boutons[i].spriteRenderer.setOpacity(0.7);
+        });
   }
 }
   

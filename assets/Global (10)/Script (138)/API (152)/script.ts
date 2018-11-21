@@ -2,6 +2,44 @@ var xmlhttp;
 var loader;
 var myArr = JSON;
 
+var tabA = JSON.stringify({
+    nomSociete: societe,
+    solde: solde,
+    nomJoueur: nom,
+    mdpJoueur: nom+"2",
+    tourJeux: jeuTour,
+    moisJeux: jeuMois,
+    nbOuvrierJeux: nbOuvrier,
+    nbCommercialJeux: nbCommercial,
+    nbComptableJeux: nbComptable,
+    nbElementMJeux: nbElementM,
+    nbLotFiniMJeux: nbLotFiniM,
+    nbLotTotalAcheterJeux: nbLotTotalAcheter,
+    nbLotTotalVenduJeux: nbLotTotalVendu,
+    
+    ceMoisBilan: 1,
+    valAchatMarBilan: valAchatMar,
+    valSalairesBilan: valSalaires,
+    valChargesFinBilan: valChargesFin,
+    valChargesExcBilan: valChargesExc,
+    valVentesMarBilan: valVentesMar,
+    valProduitsFiniBilan: valProduitsFini,
+    valProduitsExcBilan: valProduitsExc
+    });
+  
+  var tabB = JSON.stringify({
+    ceMoisBilan: 0,
+    valAchatMarBilan: valAchatMarM,
+    valSalairesBilan: valSalairesM,
+    valChargesFinBilan: valChargesFinM,
+    valChargesExcBilan: valChargesExcM,
+    valVentesMarBilan: valVentesMarM,
+    valProduitsFiniBilan: valProduitsFinM,
+    valProduitsExcBilan: valProduitsExcM,
+    valVarStoPiMBilan: valVarStoPiM,
+    valResultatMBilan: valResultatM
+  });
+
 function myF(arr) {
   if(arr.length == 0){
     Sup.log("Aucun enregistrement n'a ete trouvé");
@@ -97,119 +135,43 @@ function apiRecupere(){
   
 }
 
-function apiEnregistre(){
-  
-  
-
-}
 
 function apiSauve(){
-  var obj, xmlhttp, xmlhttp2, xmlhttp3, xmlhttp4, xmlhttp5;
-  
-  var tabA = JSON.stringify({
-    nomSociete: societe,
-    solde: solde,
-    nomJoueur: nom,
-    mdpJoueur: nom+"2",
-    tourJeux: jeuTour,
-    moisJeux: jeuMois,
-    nbOuvrierJeux: nbOuvrier,
-    nbCommercialJeux: nbCommercial,
-    nbComptableJeux: nbComptable,
-    nbElementMJeux: nbElementM,
-    nbLotFiniMJeux: nbLotFiniM,
-    nbLotTotalAcheterJeux: nbLotTotalAcheter,
-    nbLotTotalVenduJeux: nbLotTotalVendu,
-    
-    ceMoisBilan: 1,
-    valAchatMarBilan: valAchatMar,
-    valSalairesBilan: valSalaires,
-    valChargesFinBilan: valChargesFin,
-    valChargesExcBilan: valChargesExc,
-    valVentesMarBilan: valVentesMar,
-    valProduitsFiniBilan: valProduitsFini,
-    valProduitsExcBilan: valProduitsExc
-    });
-  
-  var tabB = JSON.stringify({
-    ceMoisBilan: 0,
-    valAchatMarBilan: valAchatMarM,
-    valSalairesBilan: valSalairesM,
-    valChargesFinBilan: valChargesFinM,
-    valChargesExcBilan: valChargesExcM,
-    valVentesMarBilan: valVentesMarM,
-    valProduitsFiniBilan: valProduitsFinM,
-    valProduitsExcBilan: valProduitsExcM,
-    valVarStoPiMBilan: valVarStoPiM,
-    valResultatMBilan: valResultatM
-  });
   
   Sup.log("a"+tabA);
   Sup.log("b"+tabB);
   
+  sauveQuelBase("Societe");
+   Sup.log("sauvegarde totale réalisée")
+}
+
+function sauveQuelBase(nomBase : string){
   xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "http://localhost/apiphp/Vue/sauveSociete.php");
+  xmlhttp.open("POST", "http://localhost/apiphp/Vue/sauve"+nomBase+".php");
   xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   
   xmlhttp.onreadystatechange = function () {
     if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
       let myJ = JSON.parse(tabA);
-      myJ.idSociete = xmlhttp.responseText;
+      if (nomBase == "Societe"){
+        myJ.idSociete = xmlhttp.responseText;
+        sauveQuelBase("Joueur");
+      }
+      if (nomBase == "Joueur"){
+        myJ.idJoueur = xmlhttp.responseText;
+        sauveQuelBase("Jeux");
+      }
+      if (nomBase == "Jeux"){
+        myJ.idJeux = xmlhttp.responseText;
+        sauveQuelBase("Possede");
+      }
+      if (nomBase == "Possede"){
+        sauveQuelBase("Bilan");
+      }
       tabA = JSON.stringify(myJ);
+      xmlhttp.addEventListener("load", Sup.log("sauvegarde "+nomBase+" réalisé"), false);
     }
   };
-  
   xmlhttp.send("data="+encodeURI(tabA));
-  xmlhttp.addEventListener("load", Sup.log("sauvegarde societe réalisé"), false);
-  
-  
-  xmlhttp2 = new XMLHttpRequest();
-  xmlhttp2.open("POST", "http://localhost/apiphp/Vue/sauveJoueur.php");
-  xmlhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xmlhttp2.onreadystatechange = function () {
-    if(xmlhttp2.readyState === 4 && xmlhttp2.status === 200) {
-      let myJ = JSON.parse(tabA);
-      myJ.idJoueur = xmlhttp2.responseText;
-      tabA = JSON.stringify(myJ);
-    }
-  };
-  xmlhttp2.send("data="+encodeURI(tabA));
-  xmlhttp2.addEventListener("load", Sup.log("sauvegarde joueur réalisé"), false);
-  
-  xmlhttp3 = new XMLHttpRequest();
-  xmlhttp3.open("POST", "http://localhost/apiphp/Vue/sauveJeux.php");
-  xmlhttp3.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xmlhttp3.onreadystatechange = function () {
-    if(xmlhttp3.readyState === 4 && xmlhttp3.status === 200) {
-      let myJ = JSON.parse(tabA);
-      myJ.idJeux = xmlhttp3.responseText;
-      tabA = JSON.stringify(myJ);
-    }
-  };
-  xmlhttp3.send("data="+encodeURI(tabA));
-  xmlhttp3.addEventListener("load", Sup.log("sauvegarde jeux réalisé"), false);
-  
-  xmlhttp4 = new XMLHttpRequest();
-  xmlhttp4.open("POST", "http://localhost/apiphp/Vue/sauvePossede.php");
-  xmlhttp4.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  
-  xmlhttp4.onreadystatechange = function () {
-    if(xmlhttp4.readyState === 4 && xmlhttp4.status === 200) {
-      let myJ = JSON.parse(tabA);
-      myJ.idJeux = xmlhttp4.responseText;
-      tabA = JSON.stringify(myJ);
-    }
-  };
-  
-  xmlhttp4.send("data="+encodeURI(tabA));
-  xmlhttp4.addEventListener("load", Sup.log("sauvegarde possede réalisé"), false);
-  
-  xmlhttp5 = new XMLHttpRequest();
-  xmlhttp5.open("POST", "http://localhost/apiphp/Vue/sauveBilan.php");
-  xmlhttp5.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xmlhttp5.send("data="+encodeURI(tabA));
-  xmlhttp5.addEventListener("load", Sup.log("sauvegarde bilan réalisé"), false);
 }
-
-
   
