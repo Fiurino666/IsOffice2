@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 159,
+  "nextEntryId": 160,
   "nodes": [
     {
       "id": "0",
@@ -630,7 +630,13 @@
           "id": "109",
           "name": "Sprite",
           "type": null,
-          "children": []
+          "children": [
+            {
+              "id": "159",
+              "name": "Banquier",
+              "type": "sprite"
+            }
+          ]
         },
         {
           "id": "110",
