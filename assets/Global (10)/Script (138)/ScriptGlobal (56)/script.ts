@@ -1,10 +1,16 @@
+//Sup.Storage.clear(); //Activer le clear si changement dans le fichier
+var anneeDepart : number = 2000;
 /////////// A sauvegarder dans la base \\\\\\\\\\\\\\
-//Pour savoir a quel tour de jeu nous en sommes
-//var jeuTour: number = 0;
+
+//variables personnalisés par le joueur sur l'interface 0
+
+var nom: string  = Sup.Storage.getJSON("nom", "");
+var societe: string  = Sup.Storage.getJSON("societe", "");
+
 var jeuTour: number = Sup.Storage.getJSON("jeuTour", 0);
 //Une fois tous les tour de jeu effectué nous avons finis un mois
 var jeuMois: number = Sup.Storage.getJSON("jeuMois", 1);
-var jeuAnnee: number = Sup.Storage.getJSON("jeuAnnee", 2000);
+var jeuAnnee: number = Sup.Storage.getJSON("jeuAnnee", anneeDepart);
 //je définis les noms des entreprises concurrentes
 var entrepriseConc = new Array("Appel", "Mokia", "Xiamio");
 //les variables globales necessaires au fonctionnement de l'entreprise
@@ -31,7 +37,7 @@ var valSalaires: number = Sup.Storage.getJSON("valSalaires", 0); //les charges s
 var valChargesFin: number = Sup.Storage.getJSON("valChargesFin", 0); //les charges financieres présente les intérêts des emprunts en cours
 var valChargesExc: number = Sup.Storage.getJSON("valChargesExc", 0); //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
 var valVentesMar: number = Sup.Storage.getJSON("valVentesMar", 0); //les ventes de marchandises
-var valProduitsFini: number = Sup.Storage.getJSON("valProduitsFini", 0); //les produits financiers lorsque l'on fait un emprunt
+var valProduitsFin: number = Sup.Storage.getJSON("valProduitsFin", 0); //les produits financiers lorsque l'on fait un emprunt
 var valProduitsExc: number = Sup.Storage.getJSON("valProduitsExc", 0); //évènements aléatoires impactant positivement notre solde
 
 var valAchatMarM: number = Sup.Storage.getJSON("valAchatMarM", 0); //Les achats de marchandises M-1
@@ -44,11 +50,10 @@ var valProduitsExcM: number = Sup.Storage.getJSON("valProduitsExcM", 0); //évè
 var valVarStoPiM: number = Sup.Storage.getJSON("valVarStoPiM", 0); //stocke le nombre de piece en stock du mois dernier
 var valResultatM: number = Sup.Storage.getJSON("valResultatM", 0); //stocke le resultat du mois dernier
 
-//variables personnalisés par le joueur sur l'interface 0
-var nom: string  = Sup.Storage.getJSON("nom", "");
-var societe: string  = Sup.Storage.getJSON("societe", "");
+
 
 ///////////                            \\\\\\\\\\\\\\
+
 
 //pour la musique
 var musicMuted = false;
@@ -66,11 +71,11 @@ var boolVisibleChassis : boolean = true;
 var boolVisibleComposant : boolean = true;
 var boolClique: boolean;
 
-/*
+
 Sup.Input.on("exit", () => {
-  lirebdd();
+  ecrireFichier();
 });
-*/
+
 
 function mouseOnHover(camera: Sup.Camera, boutons: Sup.Actor[]){
   let ray = new Sup.Math.Ray();
@@ -78,7 +83,6 @@ function mouseOnHover(camera: Sup.Camera, boutons: Sup.Actor[]){
   let hits = this.ray.intersectActors(boutons);
   if(hits.length > 0){
     updateMenu(boutons);
-    updateMenuTouched(boutons);
   }
 }
 
@@ -91,15 +95,6 @@ function updateMenu(boutons: Sup.Actor[]){
      }else{
        boutons[i].spriteRenderer.setOpacity(1);
      }
-  }
-}
-
-function updateMenuTouched(boutons: Sup.Actor[]){
-  for(let i = 0; i<boutons.length;i++){
-      //Sup.log(`Nombre d i ${i}`); 
-      boutons[i].fMouseInput.emitter.on("touchend", () => {
-        boutons[i].spriteRenderer.setOpacity(0.7);
-        });
   }
 }
   
@@ -164,7 +159,8 @@ function gereS(nb: number, str:string){
   return str;
 }
 
-function lirebdd(){
+function ecrireFichier(){
+  
   Sup.Storage.setJSON("solde", solde);
   Sup.Storage.setJSON("venteEnAttenteM0", venteEnAttenteM0);
   Sup.Storage.setJSON("venteEnAttenteM1", venteEnAttenteM1);
@@ -194,7 +190,7 @@ function lirebdd(){
   Sup.Storage.setJSON("valChargesFin", valChargesFin);
   Sup.Storage.setJSON("valChargesExc", valChargesExc);
   Sup.Storage.setJSON("valVentesMar", valVentesMar);
-  Sup.Storage.setJSON("valProduitsFini", valProduitsFini);
+  Sup.Storage.setJSON("valProduitsFin", valProduitsFin);
   Sup.Storage.setJSON("valProduitsExc", valProduitsExc);
   
   Sup.Storage.setJSON("valAchatMarM", valAchatMarM);

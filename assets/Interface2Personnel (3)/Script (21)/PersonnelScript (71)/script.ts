@@ -284,7 +284,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   }
   
   comptaDesactive6Mois(){
-    if (jeuMois <= 6 && jeuAnnee == 1997){
+    if (jeuMois <= 7 && jeuAnnee == anneeDepart){
       this.EmbaucherComptable.setVisible(false);
       this.LicencierComptable.setVisible(false);
       this.txtEmbCompta.setVisible(false);

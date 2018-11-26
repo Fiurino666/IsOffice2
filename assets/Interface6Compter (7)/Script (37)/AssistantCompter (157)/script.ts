@@ -54,7 +54,7 @@ class AssistantCompterBehavior extends Sup.Behavior {
       this.Suivant.setVisible(false);
       this.musicPlayer.play();
       this.estVisible = true;
-      
+      this.Suivant.setVisible(false);
     });
   }  
   
@@ -69,26 +69,27 @@ class AssistantCompterBehavior extends Sup.Behavior {
   }                                    
   
   scenario(){
-    if (jeuMois == 7 && jeuAnnee == 2000){
-      this.Texte.setText("Je ne peux malheureusement plus assurer  \n \
-      mes fonctions de comptable, les six mois sont finis.  \n \
-       Vous devez maintenant engager un comtpable qualifié, \n \
-      mais n'oubliez pas qu'un comptable seul vous permet \n \
-      d'être payé en 3 mois, 2 comptables en 2 mois,  \n \
-      et 3 comptables en un mois comme actuellement.");
-    }else{
-      if (jeuMois == 3 && jeuAnnee == 2000){
-        this.Texte.setText("Oh non, la concurrence sort un nouveau produit  \n \
+    if (jeuMois == 3 && jeuAnnee == anneeDepart){
+       this.Texte.setText("Oh non, la concurrence sort un nouveau produit  \n \
         ils ont décidé de l'appeler 3310  \n \
-         Et c'est Mokia qui le lance. \n \
+        Et c'est Mokia qui le lance. \n \
         Pensez vous que ça va marcher? \n \
         De toute façon je crois en vous  \n \
         Grace à la puissance de la grenouille  \n \
         notre animal totem. \n \
         Vous avez un contrat commercial en moins ce tour.");
+      
+    }else{
+      if (jeuMois == 7 && jeuAnnee == anneeDepart){
+        this.Texte.setText("Je ne peux malheureusement plus assurer  \n \
+        mes fonctions de comptable, les six mois sont finis.  \n \
+         Vous devez maintenant engager un comptable qualifié, \n \
+        mais n'oubliez pas qu'un comptable seul vous permet \n \
+        d'être payé en 3 mois, 2 comptables en 2 mois,  \n \
+        et 3 comptables en un mois comme actuellement.");
       }
       else{
-        if (jeuMois == 1 && jeuAnnee == 2001){
+        if (jeuMois == 1 && jeuAnnee == anneeDepart+1){
           this.Texte.setText("Bonjour à toi ver de terre  \n \
         je suis stef Mobs patron d'Appel, \n \
         il parait que vous chercher à vous faire  \n \
@@ -114,10 +115,11 @@ class AssistantCompterBehavior extends Sup.Behavior {
       this.iaArray[0] = "engagé assez de commerciaux";
       this.iaArray[1] = "engagé assez d'ouvrier'";
       this.iaArray[2] = "acheté assez de composant";
+      this.iaArray[3] = "mis des enchères assez hautes";
       var rng = new RNG(String(Math.random()));
       this.Texte.setText("Votre résultat est négatif,\n \
       il va falloir s'améliorer. Avez vous \n \
-      "+this.iaArray[rng.random(0, 2)] +"?");
+      "+this.iaArray[rng.random(0, 3)] +"?");
     }else {
       this.Texte.setText("Votre résultat est positif");
     }

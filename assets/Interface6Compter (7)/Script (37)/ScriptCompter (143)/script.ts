@@ -87,7 +87,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
       valChargesFinM = valChargesFin; //les charges financieres présente les intérêts des emprunts en cours
       valChargesExcM = valChargesExc; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
       valVentesMarM = valVentesMar; //les ventes de marchandises
-      valProduitsFinM = valProduitsFini; //les produits financiers lorsque l'on fait un emprunt
+      valProduitsFinM = valProduitsFin; //les produits financiers lorsque l'on fait un emprunt
       valProduitsExcM = valProduitsExc; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
       
       valAchatMar = 0; //Les achats de marchandises.
@@ -95,12 +95,13 @@ class ScriptCompterBehavior extends Sup.Behavior {
       valChargesFin = 0; //les charges financieres présente les intérêts des emprunts en cours
       valChargesExc = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
       valVentesMar = 0; //les ventes de marchandises
-      valProduitsFini = 0; //les produits financiers lorsque l'on fait un emprunt
+      valProduitsFin = 0; //les produits financiers lorsque l'on fait un emprunt
       valProduitsExc = 0; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
       valVarStoPiM = this.valVarStock;
       valResultatM = this.valResultat;
       musicMuted =  this.boolMusicPlayBefore;
-      
+      this.decaleGain();
+      nbLotTotalVendu = 0;
       this.camera.moveY(11);
     });
   }
@@ -119,9 +120,9 @@ class ScriptCompterBehavior extends Sup.Behavior {
     this.ChargesExc.setText(valChargesExc);
     let valChargesTot = valAchatMar+this.valVarStock+valSalaires+valChargesFin+valChargesExc;
     this.VentesMar.setText(valVentesMar);
-    this.ProduitsFini.setText(valProduitsFini);
+    this.ProduitsFini.setText(valProduitsFin);
     this.ProduitsExc.setText(valProduitsExc);
-    let valProduitTot = valVentesMar+valProduitsFini+valProduitsExc;
+    let valProduitTot = valVentesMar+valProduitsFin+valProduitsExc;
     this.ProduitsTot.setText(valProduitTot);
     this.valResultat = valProduitTot-valChargesTot;
     this.Resultat.setText(this.valResultat);
@@ -135,7 +136,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
   }
   
   premierMois(){
-    if(jeuMois==0 && jeuAnnee==2000){
+    if(jeuMois==0 && jeuAnnee==anneeDepart){
       this.AchatMarM.setText(0);
       this.VarStoPiM.setText(0);
       this.SalairesM.setText(0);
@@ -160,9 +161,7 @@ class ScriptCompterBehavior extends Sup.Behavior {
       this.ProduitsFinM.setText(valProduitsFinM);
       this.ProduitsExcM.setText(valProduitsExcM);
     }
-  } 
-  
-  
+  }   
   
   applauseOrNot(){
      //pour la musique d'applaudissement ou de cri
@@ -183,6 +182,16 @@ class ScriptCompterBehavior extends Sup.Behavior {
       musicPlayer1.play();
       musicPlayer2.play();
       musicPlayer3.play();
+    }
+  }
+  
+  decaleGain(){
+    if(nbComptable >= 1 || (jeuMois <= 7 && jeuAnnee == anneeDepart)){
+    venteEnAttenteM0 = venteEnAttenteM1;
+    venteEnAttenteM1 = venteEnAttenteM2;
+    venteEnAttenteM2 = venteEnAttenteM3;
+    venteEnAttenteM3 = venteEnAttenteMx;
+    solde += venteEnAttenteM0;
     }
   }
   

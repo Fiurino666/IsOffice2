@@ -204,7 +204,7 @@
                 "y": 1,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             },
@@ -967,7 +967,7 @@
         },
         {
           "id": "12",
-          "name": "Btn Réalisé",
+          "name": "Btn Realise",
           "children": [],
           "components": [
             {
@@ -1002,7 +1002,7 @@
             "y": 1,
             "z": 1
           },
-          "visible": true,
+          "visible": false,
           "layer": 0,
           "prefab": null
         },

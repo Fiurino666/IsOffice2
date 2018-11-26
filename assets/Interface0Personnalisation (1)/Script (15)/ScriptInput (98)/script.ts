@@ -23,7 +23,7 @@ class ScriptInputBehavior extends Sup.Behavior {
   txtPres: string;
   
   awake() {
-    lirebdd();
+    //lirebdd();
     musicAwake();
     if (solde == 20000){
       this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();

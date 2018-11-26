@@ -23,6 +23,8 @@ class ScriptVendreBehavior extends Sup.Behavior {
   TabletteGrande : Sup.Actor;
   Contrat  : Sup.Actor;  
   
+  TxtBtnRealise : Sup.Actor;
+  
   numPropCom : number;
   list: string[] = ["Fnoc","Dorty","Belanger","Chemin De Vente","Tazamon","PetitBill","Lodl","Coforada","Tub","Phoneo"];
   
@@ -38,6 +40,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.menus = Sup.getActor("Element").getChild("Bouton").getChildren();
     this.PropCommerciale = Sup.getActor("Element").getChild("Bouton").getChild("PropositionCommerciale");
     this.Realise = Sup.getActor("Element").getChild("Bouton").getChild("Realise");
+    this.TxtBtnRealise = Sup.getActor("Texte").getChild("Btn Realise");
     this.FinDesVentes = Sup.getActor("Element").getChild("Bouton").getChild("FinVente");
     this.Accepte = Sup.getActor("Element").getChild("Bouton").getChild("Accepte");
     this.Refuse = Sup.getActor("Element").getChild("Bouton").getChild("Refuse");
@@ -51,8 +54,11 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.TabletteGrande = Sup.getActor("Element").getChild("Image").getChild("TabletteGrande");
     this.Contrat = Sup.getActor("Element").getChild("Image").getChild("Contrat");
     
+    this.Realise = Sup.getActor("Element").getChild("Bouton").getChild("Realise");
+    this.TxtBtnRealise = Sup.getActor("Texte").getChild("Btn Realise");
+    
     this.numPropCom = nbCommercial*3;
-    if(jeuMois==3 && jeuAnnee==2000){ //pour respecter le scenario
+    if(jeuMois==3 && jeuAnnee==anneeDepart){ //pour respecter le scenario
       this.numPropCom --;
     }
     this.initialiseBouton();
@@ -141,7 +147,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.prixLot = 200 * Math.floor((Math.random() * 10) + 5);
     Sup.log(this.prixLot);
     this.TxtProposition.textRenderer.setText("L'entreprise " + nomEntreprise +" vous propose à l'achat \n "+ this.nbLot +" "+ gereS(this.nbLot, "lot") + " de téléphones portables \n au prix de "+ this.prixLot* this.nbLot +" €. \n Soit un prix unitaire de "+ this.prixLot +" €. \n Voulez-vous accepter ?");
-    
+    this.RealiseVisible(false);
   }
   
   ValideProp(){ //fonction qui est appeler lors du clic sur le bouton valider
@@ -149,8 +155,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
       this.VisibleBool(false);
       if (nbLotFini >= this.nbLot){
         nbLotFini -= this.nbLot;
-        this.decaleGain();
-        this.calculGainCompte();
+        this.calculGainCompte(); //selon le nombre de comptable engagé on est payé plus ou moins vite
         
         valVentesMar += (this.nbLot * this.prixLot);
         nbLotTotalVendu += this.nbLot;
@@ -166,11 +171,13 @@ class ScriptVendreBehavior extends Sup.Behavior {
       //Sup.getActor("Texte").getChild("Btn Prop Commerciale").setVisible(false);
     }
     this.numPropCom --;
+    this.RealiseVisible(true);
   }
   
   RefuseProp(){
     this.VisibleBool(false);
     this.numPropCom --;
+    this.RealiseVisible(true);
   }
   
   VisibleBool(bool: boolean){ //le boolean permet de savoir si les elements sont visibles
@@ -188,14 +195,12 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.TxtProposition.textRenderer.setText("Vous avez vendu "+ nbLotTotalVendu +" "+ gereS(nbLotTotalVendu, "lot") + " de téléphones portables \n au prix de "+ this.prixLotTotal +" €. \n");
   }
   
-  decaleGain(){
-    if ( nbComptable >= 1){
-    venteEnAttenteM0 = venteEnAttenteM1;
-    venteEnAttenteM1 = venteEnAttenteM2;
-    venteEnAttenteM2 = venteEnAttenteM3;
-    venteEnAttenteM3 = venteEnAttenteMx;
-    }
+  RealiseVisible(bool: boolean){
+    this.Realise.setVisible(bool);
+    this.TxtBtnRealise.setVisible(bool);
   }
+  
+  
   
   calculGainCompte(){
     if ( (jeuMois <= 6 && jeuAnnee == 2000) || nbComptable == 3){//cas particulier on commence le jeu et l assistant remplace trois comptables

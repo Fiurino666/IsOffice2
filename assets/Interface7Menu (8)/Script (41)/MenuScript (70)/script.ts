@@ -109,7 +109,7 @@ class MenuScriptBehavior extends Sup.Behavior {
      valChargesFin = 0; //les charges financieres présente les intérêts des emprunts en cours
      valChargesExc = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
      valVentesMar = 0; //les ventes de marchandises
-     valProduitsFini = 0; //les produits financiers lorsque l'on fait un emprunt
+     valProduitsFin = 0; //les produits financiers lorsque l'on fait un emprunt
      valProduitsExc = 0; //évènements aléatoires impactant positivement notre solde
 
      valAchatMarM = 0; //Les achats de marchandises M-1

@@ -16,26 +16,22 @@ var tabA = JSON.stringify({
     nbLotFiniMJeux: nbLotFiniM,
     nbLotTotalAcheterJeux: nbLotTotalAcheter,
     nbLotTotalVenduJeux: nbLotTotalVendu,
-    
-    ceMoisBilan: 1,
+
     valAchatMarBilan: valAchatMar,
     valSalairesBilan: valSalaires,
     valChargesFinBilan: valChargesFin,
     valChargesExcBilan: valChargesExc,
     valVentesMarBilan: valVentesMar,
-    valProduitsFiniBilan: valProduitsFini,
-    valProduitsExcBilan: valProduitsExc
-    });
+    valProduitsFinBilan: valProduitsFin,
+    valProduitsExcBilan: valProduitsExc,
   
-  var tabB = JSON.stringify({
-    ceMoisBilan: 0,
-    valAchatMarBilan: valAchatMarM,
-    valSalairesBilan: valSalairesM,
-    valChargesFinBilan: valChargesFinM,
-    valChargesExcBilan: valChargesExcM,
-    valVentesMarBilan: valVentesMarM,
-    valProduitsFiniBilan: valProduitsFinM,
-    valProduitsExcBilan: valProduitsExcM,
+    valAchatMarMBilan: valAchatMarM,
+    valSalairesMBilan: valSalairesM,
+    valChargesFinMBilan: valChargesFinM,
+    valChargesExcMBilan: valChargesExcM,
+    valVentesMarMBilan: valVentesMarM,
+    valProduitsFinMBilan: valProduitsFinM,
+    valProduitsExcMBilan: valProduitsExcM,
     valVarStoPiMBilan: valVarStoPiM,
     valResultatMBilan: valResultatM
   });
@@ -56,7 +52,7 @@ function myF(arr) {
     valChargesFin = 0;
     valChargesExc = 0;
     valVentesMar = 0;
-    valProduitsFini = 0;
+    valProduitsFin = 0;
     valProduitsExc = 0;
 
     valAchatMarM = 0;
@@ -81,7 +77,7 @@ function apiLire(){
   
   obj = { "nom": nom, "societe": societe};
   dbParam = JSON.stringify(obj);//encode pour éviter les caractères interdits dans une URL
-  Sup.log(dbParam);
+  Sup.log("parametre envoyé à l'api "+dbParam);
   
   xmlhttp = new XMLHttpRequest();
     
@@ -89,7 +85,7 @@ function apiLire(){
   xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xmlhttp.onreadystatechange = function () {
     if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      console.log(xmlhttp.responseText);
+      console.log("réponse de l'api "+xmlhttp.responseText);
       myArr = JSON.parse(xmlhttp.responseText);
       myF(myArr);
     }
@@ -102,13 +98,18 @@ function apiLire(){
 function apiRecupere(){
   societe = myArr[0].nomSociete;
   solde = myArr[0].solde;
+  
   nom = myArr[0].nomJoueur;
   jeuTour = myArr[0].tourJeux;
   jeuMois = myArr[0].moisJeux;
   nbOuvrier = myArr[0].nbOuvrierJeux;
   nbCommercial = myArr[0].nbCommercialJeux;
   nbComptable = myArr[0].nbComptableJeux;
-  
+  venteEnAttenteM0 = myArr[0].venteEnAttenteM0;
+  venteEnAttenteM1 = myArr[0].venteEnAttenteM1;
+  venteEnAttenteM2 = myArr[0].venteEnAttenteM2;
+  venteEnAttenteM3 = myArr[0].venteEnAttenteM3;
+  venteEnAttenteMx = myArr[0].venteEnAttenteMx;
   nbLotTotalAcheter = myArr[0].nbLotTotalAcheterJeux;
   nbLotTotalVendu = myArr[0].nbLotTotalVenduJeux;
   valAchatMar = myArr[0].valAchatMarBilan;
@@ -116,22 +117,21 @@ function apiRecupere(){
   valChargesFin = myArr[0].valChargesFinBilan;
   valChargesExc = myArr[0].valChargesExcBilan;
   valVentesMar = myArr[0].valVentesMarBilan;
-  valProduitsFini = myArr[0].valProduitsFiniBilan;
+  valProduitsFin = myArr[0].valProduitsFinBilan;
   valProduitsExc = myArr[0].valProduitsExcBilan;
   
-  valAchatMarM = myArr[1].valAchatMarBilan;
-  valSalairesM = myArr[1].valSalairesBilan;
-  valChargesFinM = myArr[1].valChargesFinBilan;
-  valChargesExcM = myArr[1].valChargesExcBilan;
-  valVentesMarM = myArr[1].valVentesMarBilan;
-  valProduitsFinM = myArr[1].valProduitsFiniBilan;
-  valProduitsExcM = myArr[1].valProduitsExcBilan;
+  valAchatMarM = myArr[0].valAchatMarMBilan;
+  valSalairesM = myArr[0].valSalairesMBilan;
+  valChargesFinM = myArr[0].valChargesFinMBilan;
+  valChargesExcM = myArr[0].valChargesExcMBilan;
+  valVentesMarM = myArr[0].valVentesMarMBilan;
+  valProduitsFinM = myArr[0].valProduitsFiniMBilan;
+  valProduitsExcM = myArr[0].valProduitsExcMBilan;
   
-  nbElementM = myArr[1].nbElementMJeux;
-  nbLotFiniM = myArr[1].nbLotFiniMJeux;
-  valVarStoPiM = myArr[1].valVarStoPiMBilan;
-  valResultatM = myArr[1].valResultatMBilan;
-
+  nbElementM = myArr[0].nbElementMJeux;
+  nbLotFiniM = myArr[0].nbLotFiniMJeux;
+  valVarStoPiM = myArr[0].valVarStoPiMBilan;
+  valResultatM = myArr[0].valResultatMBilan;
   
 }
 
@@ -139,10 +139,9 @@ function apiRecupere(){
 function apiSauve(){
   
   Sup.log("a"+tabA);
-  Sup.log("b"+tabB);
   
   sauveQuelBase("Societe");
-   Sup.log("sauvegarde totale réalisée")
+  Sup.log("sauvegarde totale réalisée");
 }
 
 function sauveQuelBase(nomBase : string){
