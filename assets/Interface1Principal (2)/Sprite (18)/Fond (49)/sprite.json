@@ -3,7 +3,7 @@
   "maps": [
     "map"
   ],
-  "filtering": "pixelated",
+  "filtering": "smooth",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 100,
   "framesPerSecond": 1,

@@ -58,7 +58,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
     this.TxtBtnRealise = Sup.getActor("Texte").getChild("Btn Realise");
     
     this.numPropCom = nbCommercial*3;
-    if(jeuMois==3 && jeuAnnee==anneeDepart){ //pour respecter le scenario
+    if(jeuMois==4 && jeuAnnee==anneeDepart){ //pour respecter le scenario
       this.numPropCom --;
     }
     this.initialiseBouton();
@@ -203,7 +203,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
   
   
   calculGainCompte(){
-    if ( (jeuMois <= 6 && jeuAnnee == 2000) || nbComptable == 3){//cas particulier on commence le jeu et l assistant remplace trois comptables
+    if ( (jeuMois <= 6 && jeuAnnee == anneeDepart) || nbComptable == 3){//cas particulier on commence le jeu et l assistant remplace trois comptables
       venteEnAttenteM1 += (this.nbLot * this.prixLot);
     }else if(nbComptable == 2){
       venteEnAttenteM2 += (this.nbLot * this.prixLot);
