@@ -1,4 +1,4 @@
-class ButtonBehavior extends Sup.Behavior {
+class aButtonBehavior extends Sup.Behavior {
   private textRndr: Sup.TextRenderer;
   private textColor = new Sup.Color(0x00de6e);
   private hitbox: Sup.Actor;

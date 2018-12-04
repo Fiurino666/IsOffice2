@@ -1,6 +1,6 @@
 class ScriptInputBehavior extends Sup.Behavior {
   
-  timer:number=0;
+  timer: number = 0;
   cursorActor1: Sup.Actor;
   cursorActor2: Sup.Actor;
   imgInput1: Sup.Actor;

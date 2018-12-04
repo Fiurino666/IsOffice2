@@ -426,7 +426,7 @@
             "y": 0.30000001192092896,
             "z": 1
           },
-          "visible": true,
+          "visible": false,
           "layer": 0,
           "prefab": null
         },
@@ -562,14 +562,6 @@
               "id": "0"
             },
             {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
-            },
-            {
               "type": "fMouseInput",
               "config": {
                 "cameraActorName": "Camera"
@@ -619,14 +611,6 @@
                 "shaderAssetId": null
               },
               "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
             },
             {
               "type": "fMouseInput",
@@ -680,14 +664,6 @@
               "id": "0"
             },
             {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
-            },
-            {
               "type": "fMouseInput",
               "config": {
                 "cameraActorName": "Camera"
@@ -737,14 +713,6 @@
                 "shaderAssetId": null
               },
               "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
             },
             {
               "type": "fMouseInput",
@@ -798,14 +766,6 @@
               "id": "0"
             },
             {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
-            },
-            {
               "type": "fMouseInput",
               "config": {
                 "cameraActorName": "Camera"
@@ -855,14 +815,6 @@
                 "shaderAssetId": null
               },
               "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
             },
             {
               "type": "fMouseInput",
@@ -916,14 +868,6 @@
               "id": "0"
             },
             {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
-            },
-            {
               "type": "fMouseInput",
               "config": {
                 "cameraActorName": "Camera"
@@ -947,7 +891,7 @@
             "y": 0.6000000238418579,
             "z": 1
           },
-          "visible": true,
+          "visible": false,
           "layer": 0,
           "prefab": null
         },
@@ -973,14 +917,6 @@
                 "shaderAssetId": null
               },
               "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
             },
             {
               "type": "fMouseInput",
@@ -1032,14 +968,6 @@
                 "shaderAssetId": null
               },
               "id": "0"
-            },
-            {
-              "type": "Behavior",
-              "config": {
-                "behaviorName": "ButtonBehavior",
-                "propertyValues": {}
-              },
-              "id": "2"
             },
             {
               "type": "fMouseInput",

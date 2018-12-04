@@ -724,16 +724,6 @@
               "type": "script"
             },
             {
-              "id": "114",
-              "name": "Button Behavior",
-              "type": "script"
-            },
-            {
-              "id": "115",
-              "name": "Mouse",
-              "type": "script"
-            },
-            {
               "id": "152",
               "name": "API",
               "type": "script"

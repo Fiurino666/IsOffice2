@@ -39,7 +39,6 @@ class ScriptCompterBehavior extends Sup.Behavior {
   valResultat : number = 0;
   
   awake() {
-    
     solde += venteEnAttenteM0;
     venteEnAttenteM0 = 0;
     this.Suivant = Sup.getActor("Texte").getChild("Suivant");
@@ -67,10 +66,11 @@ class ScriptCompterBehavior extends Sup.Behavior {
     this.VentesMarM = Sup.getActor("Element").getChild("ValTexteM-1").getChild("VentesMarM-1").textRenderer;
     this.ProduitsFinM = Sup.getActor("Element").getChild("ValTexteM-1").getChild("ProduitsFinM-1").textRenderer;
     this.ProduitsExcM = Sup.getActor("Element").getChild("ValTexteM-1").getChild("ProduitsExcM-1").textRenderer;
-    this.premierMois();
+    this.affecteMois();
     this.initialiseBouton();
     this.cliqueBouton();
     this.applauseOrNot();
+    gererEmprunt();
   }
 
   update() {
@@ -90,15 +90,19 @@ class ScriptCompterBehavior extends Sup.Behavior {
       valProduitsFinM = valProduitsFin; //les produits financiers lorsque l'on fait un emprunt
       valProduitsExcM = valProduitsExc; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
       
+      
       valAchatMar = 0; //Les achats de marchandises.
       valSalaires = 0; //les charges salariales.
-      valChargesFin = 0; //les charges financieres présente les intérêts des emprunts en cours
+      //valChargesFin = 0; //les charges financieres présente les intérêts des emprunts en cours //desactiver pour ne pas reinitialiser l emprunt en cours
       valChargesExc = 0; //les charges exceptionnelles est utile lors des évènements aléatoires qui peuvent survenir en notre défaveur
       valVentesMar = 0; //les ventes de marchandises
       valProduitsFin = 0; //les produits financiers lorsque l'on fait un emprunt
       valProduitsExc = 0; //les produits exceptionnels servent aux evenements aleatoire lorsqu'on reçoit de l'argent
+      
       valVarStoPiM = this.valVarStock;
       valResultatM = this.valResultat;
+      this.valVarStock=0;
+      this.valResultat=0;
       musicMuted =  this.boolMusicPlayBefore;
       this.decaleGain();
       nbLotTotalVendu = 0;
@@ -107,27 +111,32 @@ class ScriptCompterBehavior extends Sup.Behavior {
   }
   
   initialiseBouton(){
+    gererEmprunt();
     Sup.log("valAchatMar "+valAchatMar);
-    this.AchatMar.setText(valAchatMar);
+    this.AchatMar.setText(valAchatMar.toLocaleString());
     if(valAchatMar!=0){
       this.calculVarStockPiece();
       this.VarStoPi.setText(this.valVarStock);
     }else{
       this.VarStoPi.setText(0);
     }
-    this.Salaires.setText(valSalaires);
-    this.ChargesFin.setText(valChargesFin);
-    this.ChargesExc.setText(valChargesExc);
+    this.Salaires.setText(valSalaires.toLocaleString());
+    this.ChargesFin.setText(valChargesFin.toLocaleString());
+    this.ChargesExc.setText(valChargesExc.toLocaleString());
     let valChargesTot = valAchatMar+this.valVarStock+valSalaires+valChargesFin+valChargesExc;
-    this.VentesMar.setText(valVentesMar);
-    this.ProduitsFini.setText(valProduitsFin);
-    this.ProduitsExc.setText(valProduitsExc);
+    this.VentesMar.setText(valVentesMar.toLocaleString());
+    this.ProduitsFini.setText(valProduitsFin.toLocaleString());
+    this.ProduitsExc.setText(valProduitsExc.toLocaleString());
     let valProduitTot = valVentesMar+valProduitsFin+valProduitsExc;
-    this.ProduitsTot.setText(valProduitTot);
+    this.ProduitsTot.setText(valProduitTot.toLocaleString());
     this.valResultat = valProduitTot-valChargesTot;
-    this.Resultat.setText(this.valResultat);
+    this.Resultat.setText(this.valResultat.toLocaleString());
+    if (!empruntCeMois){ //on teste si ce n'est pas le premier mois qu'on emprunte
+      valProduitsFin = 0;
+    }
+    let varAff = valChargesTot + this.valResultat;
+    this.ChargesTot.setText(varAff.toLocaleString());
     
-    this.ChargesTot.setText(valChargesTot + this.valResultat);
   }
   
   calculVarStockPiece(){
@@ -135,33 +144,21 @@ class ScriptCompterBehavior extends Sup.Behavior {
     this.valVarStock = -this.valVarStock;
   }
   
-  premierMois(){
-    if(jeuMois==0 && jeuAnnee==anneeDepart){
-      this.AchatMarM.setText(0);
-      this.VarStoPiM.setText(0);
-      this.SalairesM.setText(0);
-      this.ChargesFinM.setText(0);
-      this.ChargesExcM.setText(0);
-      this.ResultatM.setText(0);
-      this.ChargesTotM.setText(0);
-      this.ProduitsTotM.setText(0);
-      this.VentesMarM.setText(0);
-      this.ProduitsFinM.setText(0);
-      this.ProduitsExcM.setText(0);
-    }else{
-      this.AchatMarM.setText(valAchatMarM);
-      this.VarStoPiM.setText(valVarStoPiM);
-      this.SalairesM.setText(valSalairesM);
-      this.ChargesFinM.setText(valChargesFinM);
-      this.ChargesExcM.setText(valChargesExcM);
-      this.ResultatM.setText(valResultatM);
-      this.ChargesTotM.setText(valAchatMarM+valVarStoPiM+valSalairesM+valChargesFinM+valChargesExcM);
-      this.ProduitsTotM.setText(valVentesMarM+valProduitsFinM+valProduitsExcM);
-      this.VentesMarM.setText(valVentesMarM);
-      this.ProduitsFinM.setText(valProduitsFinM);
-      this.ProduitsExcM.setText(valProduitsExcM);
-    }
-  }   
+  affecteMois(){
+      this.AchatMarM.setText(valAchatMarM.toLocaleString());
+      this.VarStoPiM.setText(valVarStoPiM.toLocaleString());
+      this.SalairesM.setText(valSalairesM.toLocaleString());
+      this.ChargesFinM.setText(valChargesFinM.toLocaleString());
+      this.ChargesExcM.setText(valChargesExcM.toLocaleString());
+      this.ResultatM.setText(valResultatM.toLocaleString());
+      let varAff1 = valAchatMarM+valVarStoPiM+valSalairesM+valChargesFinM+valChargesExcM+valResultatM;
+      this.ChargesTotM.setText(varAff1.toLocaleString());
+      let varAff2 = valVentesMarM+valProduitsFinM+valProduitsExcM
+      this.ProduitsTotM.setText(varAff2.toLocaleString());
+      this.VentesMarM.setText(valVentesMarM.toLocaleString());
+       this.ProduitsFinM.setText(valProduitsFinM.toLocaleString());
+      this.ProduitsExcM.setText(valProduitsExcM.toLocaleString());
+  }
   
   applauseOrNot(){
      //pour la musique d'applaudissement ou de cri
@@ -173,12 +170,12 @@ class ScriptCompterBehavior extends Sup.Behavior {
     musicMuted = true;
     musicAwake();
     if(this.valResultat >0){
-      var musicPlayer = Sup.Audio.playSound("Interface6Compter/Sound/Applause", 0.1, { loop: false });;
+      var musicPlayer = Sup.Audio.playSound("Interface6Compter/Sound/Applause", 0.1, { loop: false });
       musicPlayer.play();
     }else{
-      var musicPlayer1 = Sup.Audio.playSound("Interface6Compter/Sound/Coeur", 0.1, { loop: false });;
-      var musicPlayer2 = Sup.Audio.playSound("Interface6Compter/Sound/Souffle", 0.1, { loop: false });;
-      var musicPlayer3 = Sup.Audio.playSound("Interface6Compter/Sound/Cri", 0.1, { loop: false });;
+      var musicPlayer1 = Sup.Audio.playSound("Interface6Compter/Sound/Coeur", 0.1, { loop: false });
+      var musicPlayer2 = Sup.Audio.playSound("Interface6Compter/Sound/Souffle", 0.1, { loop: false });
+      var musicPlayer3 = Sup.Audio.playSound("Interface6Compter/Sound/Cri", 0.1, { loop: false });
       musicPlayer1.play();
       musicPlayer2.play();
       musicPlayer3.play();

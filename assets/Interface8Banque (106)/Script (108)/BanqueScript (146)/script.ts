@@ -1,7 +1,7 @@
 class BanqueScriptBehavior extends Sup.Behavior {
   
   menus : Sup.Actor[];
-  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });;
+  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });
   btnFermerBanque : Sup.Actor;
   btnMontant1 : Sup.Actor;
   btnMontant2 : Sup.Actor;
@@ -14,10 +14,16 @@ class BanqueScriptBehavior extends Sup.Behavior {
   affMontant3 : Sup.Actor;
   affDur12 : Sup.Actor;
   affDur24 : Sup.Actor;
+  affMois : Sup.Actor;
+  
   txtMontant: Sup.Actor;
   txtDuree: Sup.Actor;
   txtLoyer: Sup.Actor;
   txtMois: Sup.Actor;
+  affValide : Sup.Actor;
+  varMontant: number = 25000;
+  varDuree: number = 12;
+  
   
   awake() {
     musicAwake();
@@ -34,12 +40,15 @@ class BanqueScriptBehavior extends Sup.Behavior {
     this.affMontant2 = Sup.getActor("Texte").getChild("AffMontant2");
     this.affMontant3 = Sup.getActor("Texte").getChild("AffMontant3");
     this.affDur12 = Sup.getActor("Texte").getChild("AffDur12");
-    this.affDur24 = Sup.getActor("Texte").getChild("AffDur24");
+    this.affDur24 = Sup.getActor("Texte").getChild("AffDur24");    
+    this.affValide = Sup.getActor("Texte").getChild("AffValide");  
+    this.affMois = Sup.getActor("Texte").getChild("Mois");
     
     this.txtMontant = Sup.getActor("Variable").getChild("txtMontant");
     this.txtDuree = Sup.getActor("Variable").getChild("txtDuree");
     this.txtLoyer = Sup.getActor("Variable").getChild("txtLoyer");
     this.txtMois = Sup.getActor("Variable").getChild("txtMois");
+    this.calculEmprunt();
   }
   
   start() {
@@ -52,26 +61,31 @@ class BanqueScriptBehavior extends Sup.Behavior {
     
     this.btnMontant1.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
-       this.calculEmprunt();
+      this.varMontant = 25000;
+      this.calculEmprunt();
       });
     this.btnMontant2.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
-       this.calculEmprunt();
+      this.varMontant = 50000;
+      this.calculEmprunt();
       
       });
     this.btnMontant3.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
-       this.calculEmprunt();
+      this.varMontant = 75000;
+      this.calculEmprunt();
       
       });
     this.btnMois12.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
-       this.calculEmprunt();
+      this.varDuree = 12;
+      this.calculEmprunt();
       
       });
     this.btnMois24.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
-       this.calculEmprunt();
+      this.varDuree = 24;
+      this.calculEmprunt();
       
       });
     this.btnValider.fMouseInput.emitter.on("leftClickReleased", () => { 
@@ -89,15 +103,62 @@ class BanqueScriptBehavior extends Sup.Behavior {
   }
   
   calculEmprunt(){ //affichage de l'emprunt
-    
+    this.txtMontant.textRenderer.setText(this.varMontant.toLocaleString()+" €");
+    this.txtDuree.textRenderer.setText(this.varDuree+" mois");
+    let varAff = Math.round(this.varMontant/this.varDuree);
+    this.txtLoyer.textRenderer.setText(varAff.toLocaleString()+" €");
+    this.txtMois.textRenderer.setText(varMoisREmp+" mois");
   }
   
   valideEmprunt(){ //pour envoyer la demande d'emprunt en cours
-    
+    empruntDC = true;
+    empruntCeMois = true;
+    solde += this.varMontant;
+    varMoisREmp = this.varDuree;
+    varMoisFinEmp = this.varDuree + jeuMois;
+    if (varMoisFinEmp <25){
+      varMoisFinEmp -= 12;
+      varAnFinEmp = jeuAnnee+1;
+    }else{
+      varMoisFinEmp -= 24;
+      varAnFinEmp = jeuAnnee+2;
+    }
+    valChargesFin = Math.round(this.varMontant/this.varDuree);
+    valProduitsFin = this.varMontant;
   }
   
   empruntDejaCommencer(){ //affiche les boutons seulement si l'emprunt est possible
-    
+    if (empruntDC){
+        this.btnMontant1.setVisible(false);
+        this.btnMontant2.setVisible(false);
+        this.btnMontant3.setVisible(false);
+        this.btnMois12.setVisible(false);
+        this.btnMois24.setVisible(false);
+        this.btnValider.setVisible(false);
+
+        this.affMontant1.setVisible(false);
+        this.affMontant2.setVisible(false);
+        this.affMontant3.setVisible(false);
+        this.affDur12.setVisible(false);
+        this.affDur24.setVisible(false);
+        this.affValide.setVisible(false);
+        this.affMois.setVisible(false);
+    }else{
+      this.btnMontant1.setVisible(true);
+      this.btnMontant2.setVisible(true);
+      this.btnMontant3.setVisible(true);
+      this.btnMois12.setVisible(true);
+      this.btnMois24.setVisible(true);
+      this.btnValider.setVisible(true);
+
+      this.affMontant1.setVisible(true);
+      this.affMontant2.setVisible(true);
+      this.affMontant3.setVisible(true);
+      this.affDur12.setVisible(true);
+      this.affDur24.setVisible(true);
+      this.affValide.setVisible(true);
+      this.affMois.setVisible(true);
+    }
   }
 }
 Sup.registerBehavior(BanqueScriptBehavior);

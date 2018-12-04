@@ -1,14 +1,14 @@
 class PersonnelScriptBehavior extends Sup.Behavior {
 
   menus : Sup.Actor[];
-  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });;
+  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });
   //on initialise les variables locales, necessaires pour le bouton annuler
   localnbOuvrier: number = nbOuvrier.valueOf();
   localnbCommercial: number = nbCommercial.valueOf();
   localnbComptable: number = nbComptable.valueOf();
-  totalCoutOuvrier : number;
-  totalCoutCommercial : number;
-  totalCoutComptable : number;
+  totalCoutOuvrier : number = 0;
+  totalCoutCommercial : number = 0;
+  totalCoutComptable : number = 0;
 
   salaireOuvrier : number = 1100;
   licencierOuvrier: number = 750;
@@ -178,34 +178,34 @@ class PersonnelScriptBehavior extends Sup.Behavior {
   }
   
   initialiseBouton(){
-    this.EffectifOuvrier.textRenderer.setText(this.localnbOuvrier);
-    this.EffectifCommercial.textRenderer.setText(this.localnbCommercial);
-    this.EffectifComptable.textRenderer.setText(this.localnbComptable);
+    this.EffectifOuvrier.textRenderer.setText(this.localnbOuvrier.toLocaleString());
+    this.EffectifCommercial.textRenderer.setText(this.localnbCommercial.toLocaleString());
+    this.EffectifComptable.textRenderer.setText(this.localnbComptable.toLocaleString());
     
     let valO = this.localnbOuvrier*this.salaireOuvrier;
-    this.SalaireTotOuvrier.textRenderer.setText(valO);
+    this.SalaireTotOuvrier.textRenderer.setText(valO.toLocaleString());
     this.totalCoutOuvrier = valO + this.nbfoislicencierO*this.licencierOuvrier;
     this.TotalOuvrier.textRenderer.setText(this.totalCoutOuvrier);
     
     let valC = this.localnbCommercial*this.salaireCommercial;
-    this.SalaireTotCommercial.textRenderer.setText(valC);
+    this.SalaireTotCommercial.textRenderer.setText(valC.toLocaleString());
     this.totalCoutCommercial = valC + this.nbfoislicencierC*this.licencierCommercial;
     this.TotalCommercial.textRenderer.setText(this.totalCoutCommercial);
     
     let valCC = this.localnbComptable*this.salaireComptable;
-    this.SalaireTotComptable.textRenderer.setText(valCC);
+    this.SalaireTotComptable.textRenderer.setText(valCC.toLocaleString());
     this.totalCoutComptable = valCC + this.nbfoislicencierCC*this.licencierComptable;
     this.TotalComptable.textRenderer.setText(this.totalCoutComptable);
     
-    this.ValeurEmbOuvrier.textRenderer.setText(this.salaireOuvrier);
-    this.ValeurEmbCommercial.textRenderer.setText(this.salaireCommercial);
-    this.ValeurEmbComptable.textRenderer.setText(this.salaireComptable);
+    this.ValeurEmbOuvrier.textRenderer.setText(this.salaireOuvrier.toLocaleString());
+    this.ValeurEmbCommercial.textRenderer.setText(this.salaireCommercial.toLocaleString());
+    this.ValeurEmbComptable.textRenderer.setText(this.salaireComptable.toLocaleString());
     
     this.ValeurLicOuvrier.textRenderer.setText(this.licencierOuvrier);
     this.ValeurLicCommercial.textRenderer.setText(this.licencierCommercial);
-    this.ValeurLicComptable.textRenderer.setText(this.licencierComptable);
-    
-    this.MasseSalariale.textRenderer.setText(this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable);
+    this.ValeurLicComptable.textRenderer.setText(this.licencierComptable.toLocaleString());
+    let varFre = this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable;
+    this.MasseSalariale.textRenderer.setText(varFre.toLocaleString());
   }
   
   calculClick(employe, operation){
@@ -218,7 +218,6 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         }
         else{
           this.totalCoutOuvrier = this.totalCoutOuvrier - this.licencierOuvrier;
-          
           if(this.localnbOuvrier > 0){
             this.localnbOuvrier -= 1;
             this.nbfoislicencierO ++;
@@ -227,10 +226,10 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         }
         this.EffectifOuvrier.textRenderer.setText(this.localnbOuvrier);
         let valO = this.localnbOuvrier*this.salaireOuvrier;
-        this.SalaireTotOuvrier.textRenderer.setText(valO);
+        this.SalaireTotOuvrier.textRenderer.setText(valO.toLocaleString());
         this.totalCoutOuvrier = valO + this.nbfoislicencierO*this.licencierOuvrier;
         this.TotalOuvrier.textRenderer.setText(this.totalCoutOuvrier);
-        valSalaires = this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable
+       
         this.MasseSalariale.textRenderer.setText(valSalaires);
         break;
         
@@ -250,7 +249,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         }
         this.EffectifCommercial.textRenderer.setText(this.localnbCommercial);
         let valC = this.localnbCommercial*this.salaireCommercial;
-        this.SalaireTotCommercial.textRenderer.setText(valC);
+        this.SalaireTotCommercial.textRenderer.setText(valC.toLocaleString());
         this.totalCoutCommercial = valC + this.nbfoislicencierC*this.licencierCommercial;
         this.TotalCommercial.textRenderer.setText(this.totalCoutCommercial);
         this.MasseSalariale.textRenderer.setText(this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable);
@@ -272,7 +271,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         }
         this.EffectifComptable.textRenderer.setText(this.localnbComptable);
         let valCC = this.localnbComptable*this.salaireComptable;
-        this.SalaireTotComptable.textRenderer.setText(valCC);
+        this.SalaireTotComptable.textRenderer.setText(valCC.toLocaleString());
         this.totalCoutComptable = valCC + this.nbfoislicencierCC*this.licencierComptable;
         this.TotalComptable.textRenderer.setText(this.totalCoutComptable);
         this.MasseSalariale.textRenderer.setText(this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable);
@@ -281,6 +280,8 @@ class PersonnelScriptBehavior extends Sup.Behavior {
       default:
         break;
     }
+    valSalaires = this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable;
+    Sup.log(valSalaires);
   }
   
   comptaDesactive6Mois(){

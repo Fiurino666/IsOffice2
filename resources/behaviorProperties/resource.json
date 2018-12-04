@@ -145,21 +145,6 @@
         }
       ]
     },
-    "ButtonBehavior": {
-      "scriptId": "114",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "disabled",
-          "type": "boolean"
-        },
-        {
-          "name": "interactive",
-          "type": "boolean"
-        }
-      ]
-    },
     "ScriptAchatClickBehavior": {
       "scriptId": "116",
       "line": 0,
@@ -319,7 +304,16 @@
       "scriptId": "146",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "varMontant",
+          "type": "number"
+        },
+        {
+          "name": "varDuree",
+          "type": "number"
+        }
+      ]
     },
     "ScriptVendreBehavior": {
       "scriptId": "147",

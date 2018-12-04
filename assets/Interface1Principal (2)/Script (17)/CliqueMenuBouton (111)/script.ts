@@ -27,7 +27,6 @@ class CliqueMenuBoutonBehavior extends Sup.Behavior {
   }
 
   update() {
-    Mouse.update(this.actor.camera);
     
     // FIXME: Temporary debug
     if (Sup.Input.wasKeyJustPressed("SPACE")) {

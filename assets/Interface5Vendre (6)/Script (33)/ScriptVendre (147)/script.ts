@@ -1,7 +1,7 @@
 class ScriptVendreBehavior extends Sup.Behavior {
   
   menus : Sup.Actor[];
-  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });;
+  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });
   //le timer permet de ne pas revenir au menu precedent lors de deux clics trop proche
   timer: number = 0;
   
@@ -127,7 +127,7 @@ class ScriptVendreBehavior extends Sup.Behavior {
   initialiseBouton(){
     this.TxtNBFini.setText(nbLotFini);
     this.TxtNBProp.setText(this.numPropCom);
-    this.TxtSolde.setText("Solde : " + solde +" €");
+    this.TxtSolde.setText("Solde : " + solde.toLocaleString() +" €");
   }
   
   visibleProp(){ //rend visible l'affichage de chaque proposition commerciale
@@ -141,12 +141,13 @@ class ScriptVendreBehavior extends Sup.Behavior {
     //this.PropCommerciale.setVisible(false);
     //Sup.getActor("Texte").getChild("Btn Prop Commerciale").setVisible(false);
     let nomEntreprise : string;
-    nomEntreprise = this.list[Math.floor((Math.random() * 9) + 0)]
+    nomEntreprise = this.list[Math.floor((Math.random() * 9) + 0)];
     this.nbLot = Math.floor((Math.random() * 4) + 1);
     Sup.log(this.nbLot);
     this.prixLot = 200 * Math.floor((Math.random() * 10) + 5);
     Sup.log(this.prixLot);
-    this.TxtProposition.textRenderer.setText("L'entreprise " + nomEntreprise +" vous propose à l'achat \n "+ this.nbLot +" "+ gereS(this.nbLot, "lot") + " de téléphones portables \n au prix de "+ this.prixLot* this.nbLot +" €. \n Soit un prix unitaire de "+ this.prixLot +" €. \n Voulez-vous accepter ?");
+    let varAff = this.prixLot* this.nbLot;
+    this.TxtProposition.textRenderer.setText("L'entreprise " + nomEntreprise +" vous propose à l'achat \n "+ this.nbLot +" "+ gereS(this.nbLot, "lot") + " de téléphones portables \n au prix de "+  varAff.toLocaleString()+" €. \n Soit un prix unitaire de "+ this.prixLot.toLocaleString() +" €. \n Voulez-vous accepter ?");
     this.RealiseVisible(false);
   }
   

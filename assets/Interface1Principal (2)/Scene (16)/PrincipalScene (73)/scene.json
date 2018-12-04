@@ -475,7 +475,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 30,
-                    "color": "400000",
+                    "color": "19e1e8",
                     "overrideOpacity": false,
                     "opacity": null
                   },
@@ -483,8 +483,8 @@
                 }
               ],
               "position": {
-                "x": 4.644,
-                "y": 0.85,
+                "x": 4.643999934196472,
+                "y": 0.8216070532798767,
                 "z": 1
               },
               "orientation": {
@@ -516,7 +516,7 @@
                     "alignment": "center",
                     "verticalAlignment": "center",
                     "size": 30,
-                    "color": "400000",
+                    "color": "19e1e8",
                     "overrideOpacity": false,
                     "opacity": null
                   },

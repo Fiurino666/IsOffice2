@@ -41,6 +41,12 @@ function myF(arr) {
     venteEnAttenteM3 = 0;
     venteEnAttenteMx = 0;
     
+    varMoisREmp = 0; 
+    varMoisFinEmp = 0;
+    varAnFinEmp = 0; 
+    empruntDC = false;
+    empruntCeMois= false;
+    
   }else{
      apiRecupere();
   }
@@ -71,46 +77,72 @@ function apiLire(){
 
 function apiRecupere(){
   societe = myArr[0].nomSociete;
-  solde = myArr[0].solde;
+  solde = +myArr[0].solde;
   
   nom = myArr[0].nomJoueur;
-  jeuTour = myArr[0].tourJeux;
-  jeuMois = myArr[0].moisJeux;
-  nbOuvrier = myArr[0].nbOuvrierJeux;
-  nbCommercial = myArr[0].nbCommercialJeux;
-  nbComptable = myArr[0].nbComptableJeux;
-  venteEnAttenteM0 = myArr[0].venteEnAttenteM0;
-  venteEnAttenteM1 = myArr[0].venteEnAttenteM1;
-  venteEnAttenteM2 = myArr[0].venteEnAttenteM2;
-  venteEnAttenteM3 = myArr[0].venteEnAttenteM3;
-  venteEnAttenteMx = myArr[0].venteEnAttenteMx;
-  nbLotTotalAcheter = myArr[0].nbLotTotalAcheterJeux;
-  nbLotTotalVendu = myArr[0].nbLotTotalVenduJeux;
-  valAchatMar = myArr[0].valAchatMarBilan;
-  valSalaires = myArr[0].valSalairesBilan;
-  valChargesFin = myArr[0].valChargesFinBilan;
-  valChargesExc = myArr[0].valChargesExcBilan;
-  valVentesMar = myArr[0].valVentesMarBilan;
-  valProduitsFin = myArr[0].valProduitsFinBilan;
-  valProduitsExc = myArr[0].valProduitsExcBilan;
+  jeuTour = +(myArr[0].tourJeux);
+  jeuMois = +myArr[0].moisJeux;
+  nbOuvrier = +myArr[0].nbOuvrierJeux;
+  nbCommercial = +myArr[0].nbCommercialJeux;
+  nbComptable = +myArr[0].nbComptableJeux;
+  venteEnAttenteM0 = +myArr[0].venteEnAttenteM0;
+  venteEnAttenteM1 = +myArr[0].venteEnAttenteM1;
+  venteEnAttenteM2 = +myArr[0].venteEnAttenteM2;
+  venteEnAttenteM3 = +myArr[0].venteEnAttenteM3;
+  venteEnAttenteMx = +myArr[0].venteEnAttenteMx;
+  nbLotTotalAcheter = +myArr[0].nbLotTotalAcheterJeux;
+  nbLotTotalVendu = +myArr[0].nbLotTotalVenduJeux;
+  valAchatMar = +myArr[0].valAchatMarBilan;
+  valSalaires = +myArr[0].valSalairesBilan;
+  valChargesFin = +myArr[0].valChargesFinBilan;
+  valChargesExc = +myArr[0].valChargesExcBilan;
+  valVentesMar = +myArr[0].valVentesMarBilan;
+  valProduitsFin = +myArr[0].valProduitsFinBilan;
+  valProduitsExc = +myArr[0].valProduitsExcBilan;
   
-  valAchatMarM = myArr[0].valAchatMarMBilan;
-  valSalairesM = myArr[0].valSalairesMBilan;
-  valChargesFinM = myArr[0].valChargesFinMBilan;
-  valChargesExcM = myArr[0].valChargesExcMBilan;
-  valVentesMarM = myArr[0].valVentesMarMBilan;
-  valProduitsFinM = myArr[0].valProduitsFiniMBilan;
-  valProduitsExcM = myArr[0].valProduitsExcMBilan;
+  valAchatMarM = +myArr[0].valAchatMarMBilan;
+  valSalairesM = +myArr[0].valSalairesMBilan;
+  valChargesFinM = +myArr[0].valChargesFinMBilan;
+  valChargesExcM = +myArr[0].valChargesExcMBilan;
+  valVentesMarM = +myArr[0].valVentesMarMBilan;
+  valProduitsFinM = +myArr[0].valProduitsFinMBilan;
+  valProduitsExcM = +myArr[0].valProduitsExcMBilan;
   
-  nbElementM = myArr[0].nbElementMJeux;
-  nbLotFiniM = myArr[0].nbLotFiniMJeux;
-  valVarStoPiM = myArr[0].valVarStoPiMBilan;
-  valResultatM = myArr[0].valResultatMBilan;
+  nbElementM = +myArr[0].nbElementMJeux;
+  nbLotFiniM = +myArr[0].nbLotFiniMJeux;
+  valVarStoPiM = +myArr[0].valVarStoPiMBilan;
+  valResultatM = +myArr[0].valResultatMBilan;
+  
+  varMoisREmp  = +myArr[0].varMoisREmp;
+  varMoisFinEmp  = +myArr[0].varMoisFinEmp;
+  varAnFinEmp  = +myArr[0].varAnFinEmp;
+  if(myArr[0].empruntDC == 1){
+    empruntDC = true;
+  }else{
+    empruntDC = false;
+  }
+  if(myArr[0].empruntCeMois == 1){
+    empruntCeMois = true;
+  }else{
+    empruntCeMois = false;
+  }
   
 }
 
 
 function apiSauve(){
+  let varEmpruntDC : number;
+  if(empruntDC){
+    varEmpruntDC = 1;
+  }else{
+    varEmpruntDC = 0;
+  }
+  let varEmpruntCeMois: number;
+  if(empruntCeMois){
+    varEmpruntCeMois = 1;
+  }else{
+    varEmpruntCeMois = 0;
+  }
   tabA = JSON.stringify({
     nomSociete: societe,
     nomJoueur: nom,
@@ -148,7 +180,12 @@ function apiSauve(){
     venteEnAttenteM1: venteEnAttenteM1,
     venteEnAttenteM2: venteEnAttenteM2,
     venteEnAttenteM3: venteEnAttenteM3,
-    venteEnAttenteMx: venteEnAttenteMx
+    venteEnAttenteMx: venteEnAttenteMx,
+    varMoisREmp: varMoisREmp,
+    varMoisFinEmp: varMoisFinEmp,
+    varAnFinEmp : varAnFinEmp,
+    empruntDC : varEmpruntDC,
+    empruntCeMois: varEmpruntCeMois
   });
   Sup.log("Tableau associatif "+tabA);
   

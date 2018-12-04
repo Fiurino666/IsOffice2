@@ -34,7 +34,9 @@ class AssistantCompterBehavior extends Sup.Behavior {
 
   update() {
     musicUpdate();
-    if(this.estVisible){updateMenu(this.menus);}
+    if(this.estVisible){
+      updateMenu(this.menus);
+    }
   }
   
   gestionMois(){
@@ -104,14 +106,12 @@ class AssistantCompterBehavior extends Sup.Behavior {
           this.Ennemi.setVisible(false);
           this.evenement();
         }
-        
       }
-      
     }
   }
   
   evenement(){
-    if(valResultatM <= 0){
+    if(this.camera.getBehavior(ScriptCompterBehavior).valResultat <= 0){
       this.iaArray[0] = "engagé assez de commerciaux";
       this.iaArray[1] = "engagé assez d'ouvrier'";
       this.iaArray[2] = "acheté assez de composant";

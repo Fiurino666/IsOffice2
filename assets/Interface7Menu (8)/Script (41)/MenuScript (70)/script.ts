@@ -1,7 +1,7 @@
 class MenuScriptBehavior extends Sup.Behavior {
   
   menus : Sup.Actor[];
-  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });;
+  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });
   btnNouvellePartie : Sup.Actor;
   btnCharger : Sup.Actor;
   btnSauvegarder : Sup.Actor;
@@ -40,6 +40,7 @@ class MenuScriptBehavior extends Sup.Behavior {
       Sup.log(" btnCharger");
       clicVisuel(this.btnCharger);
       apiLire();
+      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
     });
     this.btnSauvegarder.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();

@@ -70,8 +70,9 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
       }
       this.phaseIndex = this.phases.indexOf(hits[0].actor);
       this.updatePhase();
-      if(Sup.Input.wasMouseButtonJustPressed(0))
+      if(Sup.Input.wasMouseButtonJustPressed(0)){
         this.phaseAction();
+      }
     }
     //ne pas oublier de desactiver le hover lorsqu'on sort
     else{
@@ -146,7 +147,7 @@ class ScriptPrincipalBehavior extends Sup.Behavior {
   }
   
   afficheSolde(){
-    this.lblSolde.textRenderer.setText(solde.toString().replace(/(\d)(?=(\d{3})+\b)/g,'$1 ')+" €");
+    this.lblSolde.textRenderer.setText(solde.toLocaleString()+" €");
   }
   
 }

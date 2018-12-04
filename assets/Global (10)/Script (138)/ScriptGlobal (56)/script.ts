@@ -50,14 +50,11 @@ var valProduitsExcM: number = Sup.Storage.getJSON("valProduitsExcM", 0); //évè
 var valVarStoPiM: number = Sup.Storage.getJSON("valVarStoPiM", 0); //stocke le nombre de piece en stock du mois dernier
 var valResultatM: number = Sup.Storage.getJSON("valResultatM", 0); //stocke le resultat du mois dernier
 
-
-
 ///////////                            \\\\\\\\\\\\\\
-
 
 //pour la musique
 var musicMuted = false;
-var musicPlayer = Sup.Audio.playSound("Global/Sound/Intro", 0.1, { loop: true });;
+var musicPlayer = Sup.Audio.playSound("Global/Sound/Intro", 0.1, { loop: true });
 
 //défini le temps entre deux cliques
 var valTimer: number = 70;
@@ -71,6 +68,13 @@ var boolVisibleChassis : boolean = true;
 var boolVisibleComposant : boolean = true;
 var boolClique: boolean;
 
+// a ajouter au sauvegarde partie banque\\
+var varMoisREmp : number = 0; //sert dans la banque le nombre de mois restant de l'emprunt
+var varMoisFinEmp: number = 0; //a savoir quel mois se fini l'emprunt
+var varAnFinEmp: number = 0; //quel annne se fini l emprunt
+
+var empruntDC : boolean = false; //a tester pour savoir si l'emprunt a deja été commence
+var empruntCeMois: boolean = false;
 
 Sup.Input.on("exit", () => {
   ecrireFichier();
@@ -231,4 +235,14 @@ function moisDeLannee(){
                         }else{
                         return "décembre"; 
                         }
+}
+
+function gererEmprunt(){ //sert dans initialisation du scriptCompter
+  if (varMoisREmp > 0){
+    varMoisREmp --;
+  }
+  if(jeuMois==varMoisFinEmp && jeuAnnee==varAnFinEmp){
+    empruntDC = false;
+    valChargesFin = 0;
+  }
 }

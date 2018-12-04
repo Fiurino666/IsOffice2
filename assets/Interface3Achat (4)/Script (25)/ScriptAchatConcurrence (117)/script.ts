@@ -41,7 +41,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
   fab2 : string;
   fab3 : string;
   delaiTime : number = 25;
-  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });;
+  musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.1, { loop: false });
   
   awake(){
     musicAwake();
@@ -59,7 +59,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
     this.visibleEnchere(false);
     this.afficheNBNombre(15);
     updateMenu(this.boutonNombre.getChildren());
-    this.qInfo.textRenderer.setText(solde + " E"); //pour mettre a jour le solde a chaque achat
+    this.qInfo.textRenderer.setText(solde.toLocaleString() + " E"); //pour mettre a jour le solde a chaque achat
   }
 
   update(){
@@ -497,7 +497,8 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
               }
             }
             if(this.elementAchat > 0){
-              this.txtAffiche[4].textRenderer.setText("Vous avez acheté "+this.elementAchat+" "+gereS(this.elementAchat,"lot")+" à "+this.prixAchat+" € soit "+this.elementAchat*this.prixAchat+" €");
+              let varAff = this.elementAchat*this.prixAchat;
+              this.txtAffiche[4].textRenderer.setText("Vous avez acheté "+this.elementAchat+" "+gereS(this.elementAchat,"lot")+" à "+this.prixAchat+" € soit "+varAff.toLocaleString()+" €");
             }
             else{
               this.txtAffiche[4].textRenderer.setText("Vous avez proposé une enchère à "+this.prixAchat+" € mais vous n'avez remporté aucun lot.");
@@ -536,7 +537,7 @@ class ScriptAchatConcurrenceBehavior extends Sup.Behavior {
           this.timer = 0;
         }
       }
-    this.qInfo.textRenderer.setText(solde + " E"); //pour mettre a jour le solde a chaque achat
+    this.qInfo.textRenderer.setText(solde.toLocaleString() + " E"); //pour mettre a jour le solde a chaque achat
     
   }
   
