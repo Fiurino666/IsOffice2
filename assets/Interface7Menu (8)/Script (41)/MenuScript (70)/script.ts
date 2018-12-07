@@ -86,6 +86,11 @@ class MenuScriptBehavior extends Sup.Behavior {
     musicUpdate();
     updateMenu(this.menus);
     noclic(this.menus);
+    
+    if (Sup.Input.wasKeyJustPressed("ECHAP")) {
+      this.musicPlayer.play();
+      Sup.loadScene("Interface1Principal/Scene/PrincipalScene");
+    }
   }
   
   reinitialise(){

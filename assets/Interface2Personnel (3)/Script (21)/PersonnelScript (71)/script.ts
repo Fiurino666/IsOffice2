@@ -208,44 +208,43 @@ class PersonnelScriptBehavior extends Sup.Behavior {
     this.MasseSalariale.textRenderer.setText(varFre.toLocaleString());
   }
   
-  calculClick(employe, operation){
+  calculClick(employe: string, operation: string){
     switch(employe){
       case "ouvrier":
-        if (operation == "plus"){
+        if (operation == "plus"){ //on teste l'ajout d'un employé
           this.totalCoutOuvrier = this.totalCoutOuvrier + this.salaireOuvrier;
           this.localnbOuvrier += 1;
           clicVisuel(this.EmbaucherOuvrier);
         }
-        else{
-          this.totalCoutOuvrier = this.totalCoutOuvrier - this.licencierOuvrier;
-          if(this.localnbOuvrier > 0){
-            this.localnbOuvrier -= 1;
-            this.nbfoislicencierO ++;
-          }
-          clicVisuel(this.LicencierOuvrier);
+        else if (operation == "moins"){//si ce n'est pas l'ajout c'est donc le moins qu'on teste
+            this.totalCoutOuvrier = this.totalCoutOuvrier - this.licencierOuvrier;
+            if(this.localnbOuvrier > 0){
+              this.localnbOuvrier -= 1;
+              this.nbfoislicencierO ++;
+            }
+            clicVisuel(this.LicencierOuvrier);//cette fonction fait un flip vertical sur l'image du bouton
         }
-        this.EffectifOuvrier.textRenderer.setText(this.localnbOuvrier);
+        this.EffectifOuvrier.textRenderer.setText(this.localnbOuvrier);//on rafraichi l'affichage du nombre d'ouvrier
         let valO = this.localnbOuvrier*this.salaireOuvrier;
         this.SalaireTotOuvrier.textRenderer.setText(valO.toLocaleString());
+        //la methode toLocaleString permet un affichage des nombres avec un séparateur de millier 
         this.totalCoutOuvrier = valO + this.nbfoislicencierO*this.licencierOuvrier;
         this.TotalOuvrier.textRenderer.setText(this.totalCoutOuvrier);
-       
         this.MasseSalariale.textRenderer.setText(valSalaires);
-        break;
-        
+        break;        
       case "commercial":
         if (operation == "plus"){
           this.totalCoutCommercial = this.totalCoutCommercial + this.salaireOuvrier;
           this.localnbCommercial += 1;
           clicVisuel(this.EmbaucherCommercial);
         }
-        else{
-          this.totalCoutCommercial = this.totalCoutCommercial - this.licencierOuvrier;
-          if(this.localnbCommercial > 0){
-            this.localnbCommercial -= 1;
-            this.nbfoislicencierC ++;
-          }
-          clicVisuel(this.LicencierCommercial);
+        else if (operation == "moins"){
+            this.totalCoutCommercial = this.totalCoutCommercial - this.licencierOuvrier;
+            if(this.localnbCommercial > 0){
+              this.localnbCommercial -= 1;
+              this.nbfoislicencierC ++;
+            }
+            clicVisuel(this.LicencierCommercial);
         }
         this.EffectifCommercial.textRenderer.setText(this.localnbCommercial);
         let valC = this.localnbCommercial*this.salaireCommercial;
@@ -253,15 +252,14 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         this.totalCoutCommercial = valC + this.nbfoislicencierC*this.licencierCommercial;
         this.TotalCommercial.textRenderer.setText(this.totalCoutCommercial);
         this.MasseSalariale.textRenderer.setText(this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable);
-        break;
-        
+        break;        
       case "comptable":
         if (operation == "plus"){
           this.totalCoutComptable = this.totalCoutComptable + this.salaireOuvrier;
           this.localnbComptable += 1;
           clicVisuel(this.EmbaucherComptable);
         }
-        else{
+        else if (operation == "moins"){
           this.totalCoutComptable = this.totalCoutComptable - this.licencierOuvrier;
           if(this.localnbComptable > 0){
             this.localnbComptable -= 1;
@@ -275,8 +273,7 @@ class PersonnelScriptBehavior extends Sup.Behavior {
         this.totalCoutComptable = valCC + this.nbfoislicencierCC*this.licencierComptable;
         this.TotalComptable.textRenderer.setText(this.totalCoutComptable);
         this.MasseSalariale.textRenderer.setText(this.totalCoutOuvrier+this.totalCoutCommercial+this.totalCoutComptable);
-        break;
-        
+        break;        
       default:
         break;
     }

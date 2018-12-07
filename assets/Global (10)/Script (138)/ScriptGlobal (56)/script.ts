@@ -68,13 +68,13 @@ var boolVisibleChassis : boolean = true;
 var boolVisibleComposant : boolean = true;
 var boolClique: boolean;
 
-// a ajouter au sauvegarde partie banque\\
+// partie banque\\
 var varMoisREmp : number = 0; //sert dans la banque le nombre de mois restant de l'emprunt
 var varMoisFinEmp: number = 0; //a savoir quel mois se fini l'emprunt
 var varAnFinEmp: number = 0; //quel annne se fini l emprunt
 
 var empruntDC : boolean = false; //a tester pour savoir si l'emprunt a deja été commence
-var empruntCeMois: boolean = false;
+var empruntCeMois: boolean = false; //emprunt de ce mois
 
 Sup.Input.on("exit", () => {
   ecrireFichier();

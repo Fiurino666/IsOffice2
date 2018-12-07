@@ -76,8 +76,8 @@ class AssistantCompterBehavior extends Sup.Behavior {
         ils ont décidé de l'appeler 3310  \n \
         Et c'est Mokia qui le lance. \n \
         Pensez vous que ça va marcher? \n \
-        De toute façon je crois en vous  \n \
-        Grace à la puissance de la grenouille  \n \
+        De toute façon je crois en vous,  \n \
+        grace à la puissance de la grenouille,  \n \
         notre animal totem. \n \
         Vous avez un contrat commercial en moins ce tour.");
       

@@ -91,6 +91,7 @@ class BanqueScriptBehavior extends Sup.Behavior {
     this.btnValider.fMouseInput.emitter.on("leftClickReleased", () => { 
       this.musicPlayer.play();
       this.valideEmprunt();
+      this.calculEmprunt();
       });
   }
 

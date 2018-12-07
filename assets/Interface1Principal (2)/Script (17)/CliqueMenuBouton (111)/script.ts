@@ -28,7 +28,6 @@ class CliqueMenuBoutonBehavior extends Sup.Behavior {
 
   update() {
     
-    // FIXME: Temporary debug
     if (Sup.Input.wasKeyJustPressed("SPACE")) {
       this.musicPlayer.play();
       Sup.loadScene("Interface7Menu/Scene/MenuScene");

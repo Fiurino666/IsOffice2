@@ -111,7 +111,6 @@ class ScriptCompterBehavior extends Sup.Behavior {
   }
   
   initialiseBouton(){
-    gererEmprunt();
     Sup.log("valAchatMar "+valAchatMar);
     this.AchatMar.setText(valAchatMar.toLocaleString());
     if(valAchatMar!=0){
