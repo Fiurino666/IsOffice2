@@ -6,13 +6,12 @@ var anneeDepart : number = 2000;
 
 var nom: string  = Sup.Storage.getJSON("nom", "");
 var societe: string  = Sup.Storage.getJSON("societe", "");
-
 var jeuTour: number = Sup.Storage.getJSON("jeuTour", 0);
 //Une fois tous les tour de jeu effectué nous avons finis un mois
 var jeuMois: number = Sup.Storage.getJSON("jeuMois", 1);
 var jeuAnnee: number = Sup.Storage.getJSON("jeuAnnee", anneeDepart);
 //je définis les noms des entreprises concurrentes
-var entrepriseConc = new Array("Appel", "Mokia", "Xiamio");
+var entrepriseConc = new Array("Mappel", "Mokia", "Xiamio");
 //les variables globales necessaires au fonctionnement de l'entreprise
 var nbOuvrier: number = Sup.Storage.getJSON("nbOuvrier", 0);
 var nbCommercial: number = Sup.Storage.getJSON("nbCommercial", 0);

@@ -1617,6 +1617,57 @@
               "visible": true,
               "layer": 0,
               "prefab": null
+            },
+            {
+              "id": "47",
+              "name": "Achete",
+              "children": [],
+              "components": [
+                {
+                  "type": "SpriteRenderer",
+                  "config": {
+                    "formatVersion": 1,
+                    "spriteAssetId": "62",
+                    "animationId": null,
+                    "horizontalFlip": false,
+                    "verticalFlip": false,
+                    "castShadow": false,
+                    "receiveShadow": false,
+                    "color": "ffffff",
+                    "overrideOpacity": false,
+                    "opacity": null,
+                    "materialType": "basic",
+                    "shaderAssetId": null
+                  },
+                  "id": "0"
+                },
+                {
+                  "type": "fMouseInput",
+                  "config": {
+                    "cameraActorName": "Camera"
+                  },
+                  "id": "1"
+                }
+              ],
+              "position": {
+                "x": -0.9813347160816193,
+                "y": 0.3652200698852539,
+                "z": 3
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 0.8,
+                "y": 0.6,
+                "z": 1
+              },
+              "visible": false,
+              "layer": 0,
+              "prefab": null
             }
           ],
           "components": [],
@@ -1664,6 +1715,47 @@
           "position": {
             "x": -0.3940000832080841,
             "y": 2.700000286102295,
+            "z": 6
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 1
+          },
+          "visible": false,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "48",
+          "name": "TexteBouton2",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "80",
+                "text": "Achete",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 20,
+                "color": null,
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.3640672415494919,
+            "y": 3.8952183723449707,
             "z": 6
           },
           "orientation": {
@@ -1730,6 +1822,92 @@
       "position": {
         "x": 0.13152256608009338,
         "y": 4.328999996185303,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
+      "id": "49",
+      "name": "VueFin",
+      "children": [
+        {
+          "id": "50",
+          "name": "Texte",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "82",
+                "text": "Bravo cher",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 16,
+                "color": null,
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -4.411924555897713,
+            "y": -0.4801483154296875,
+            "z": 1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
+      "components": [
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "64",
+            "animationId": null,
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "0"
+        }
+      ],
+      "position": {
+        "x": -0.221,
+        "y": 22,
         "z": 0
       },
       "orientation": {

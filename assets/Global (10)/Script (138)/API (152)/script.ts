@@ -80,7 +80,7 @@ function apiRecupere(){
   solde = +myArr[0].solde;
   
   nom = myArr[0].nomJoueur;
-  jeuTour = +(myArr[0].tourJeux);
+  jeuTour = +myArr[0].tourJeux;
   jeuMois = +myArr[0].moisJeux;
   nbOuvrier = +myArr[0].nbOuvrierJeux;
   nbCommercial = +myArr[0].nbCommercialJeux;

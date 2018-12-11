@@ -5,12 +5,15 @@ class AssistantCompterBehavior extends Sup.Behavior {
   Texte : Sup.TextRenderer;
   camera : Sup.Actor;
   Bouton : Sup.Actor;
+  BtnAchete : Sup.Actor;
   TexteBouton : Sup.Actor;
+  TexteBouton2: Sup.Actor;
   menus : Sup.Actor[];
   estVisible : boolean;
   iaArray = new Array(3);
   Assistant : Sup.Actor;
   Ennemi : Sup.Actor;
+  TextFin: Sup.Actor;
   
   musicPlayer = Sup.Audio.playSound("Interface1Principal/Sound/Clique", 0.05, { loop: false });
   
@@ -20,10 +23,13 @@ class AssistantCompterBehavior extends Sup.Behavior {
     this.Titre = Sup.getActor("Vue2").getChild("Texte").getChild("Titre").textRenderer;
     this.camera = Sup.getActor("Camera");
     this.Bouton = Sup.getActor("Vue2").getChild("Bouton");
+    this.BtnAchete = Sup.getActor("Vue2").getChild("Bouton").getChild("Achete");
     this.menus = Sup.getActor("Vue2").getChild("Bouton").getChildren();
     this.TexteBouton = Sup.getActor("Vue2").getChild("TexteBouton");
+    this.TexteBouton2 = Sup.getActor("Vue2").getChild("TexteBouton2");
     this.Assistant = Sup.getActor("Vue2").getChild("Assistant");
     this.Ennemi = Sup.getActor("Vue2").getChild("Ennemi");
+    this.TextFin = Sup.getActor("VueFin").getChild("Texte");
     this.scenario();
     this.cliqueBouton();
     this.cliqueFin();
@@ -57,6 +63,7 @@ class AssistantCompterBehavior extends Sup.Behavior {
       this.musicPlayer.play();
       this.estVisible = true;
       this.Suivant.setVisible(false);
+      this.gagne();
     });
   }  
   
@@ -122,6 +129,32 @@ class AssistantCompterBehavior extends Sup.Behavior {
       "+this.iaArray[rng.random(0, 3)] +"?");
     }else {
       this.Texte.setText("Votre résultat est positif");
+    }
+  }
+  
+  gagne(){
+    if(solde >= 200000){
+      this.Texte.setText("Vous pouvez acheter votre concurrent Xiamio,\n \
+      le desirez vous ?");
+      this.TexteBouton.setVisible(true);
+      this.TexteBouton.textRenderer.setText("Non");
+      this.BtnAchete.setVisible(true);
+      this.BtnAchete.fMouseInput.emitter.on("leftClickReleased", () => { 
+        clicVisuel(this.BtnAchete);
+        this.musicPlayer.play();
+        Sup.log("FinDuMois");
+        this.camera.moveY(+11);
+        this.TextFin.textRenderer.setText("Bravo "+nom+" \n \
+                                          tu a dominer la partie  \n \
+                                          tu a fini le jeu \n \
+                                          avec un solde de "+solde+" E");
+      });
+      
+      this.TexteBouton2.setVisible(true);
+    }else{
+      this.BtnAchete.setVisible(false);
+      this.TexteBouton.textRenderer.setText("Fin du mois");
+      this.TexteBouton2.setVisible(false);
     }
   }
   
